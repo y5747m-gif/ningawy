@@ -1969,3 +1969,256 @@ footer p {
   }
 
 }
+/* ================================
+   NINJAWY V2 - HERO IMPROVEMENTS
+================================ */
+
+.hero{
+    position: relative;
+    min-height: 620px;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+
+    padding: 80px 10%;
+}
+
+/* محتوى الهيرو */
+
+.hero-content{
+    position: relative;
+    z-index: 10;
+
+    width: 50%;
+    max-width: 620px;
+}
+
+/* الشعار الصغير */
+
+.eyebrow{
+    display: inline-flex;
+
+    align-items: center;
+
+    padding: 10px 18px;
+
+    margin-bottom: 22px;
+
+    border-radius: 50px;
+
+    background: rgba(255,255,255,.05);
+
+    border: 1px solid rgba(255,255,255,.08);
+
+    color: #ffb000;
+
+    font-size: 14px;
+
+    backdrop-filter: blur(10px);
+}
+
+/* العنوان الرئيسي */
+
+.hero h1{
+    margin: 0;
+
+    font-size: clamp(48px,6vw,82px);
+
+    line-height: 1.1;
+
+    font-weight: 900;
+
+    color: #ffffff;
+
+    letter-spacing: -2px;
+}
+
+/* كلمة ننجاوي */
+
+.hero h1 span{
+    color: #ff1b1b;
+
+    text-shadow:
+        0 0 20px rgba(255,0,0,.35),
+        0 0 50px rgba(255,0,0,.2);
+}
+
+/* الوصف */
+
+.hero p{
+    margin-top: 25px;
+
+    max-width: 540px;
+
+    font-size: 17px;
+
+    line-height: 2;
+
+    color: #a7a7b2;
+}
+
+/* الأزرار */
+
+.hero-actions{
+    display: flex;
+
+    gap: 14px;
+
+    margin-top: 32px;
+
+    flex-wrap: wrap;
+}
+
+.btn{
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 15px 25px;
+
+    border-radius: 12px;
+
+    border: none;
+
+    cursor: pointer;
+
+    font-family: inherit;
+
+    font-weight: bold;
+
+    transition: .3s;
+}
+
+/* الزر الأحمر */
+
+.btn-primary{
+    background: linear-gradient(
+        135deg,
+        #ff1010,
+        #b50000
+    );
+
+    color: white;
+
+    box-shadow:
+        0 10px 30px rgba(255,0,0,.25);
+}
+
+.btn-primary:hover{
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 18px 40px rgba(255,0,0,.4);
+}
+
+/* الزر الثاني */
+
+.btn-secondary{
+    background: rgba(255,255,255,.06);
+
+    color: white;
+
+    border: 1px solid rgba(255,255,255,.12);
+}
+
+.btn-secondary:hover{
+    background: rgba(255,255,255,.12);
+
+    transform: translateY(-4px);
+}
+
+
+/* ================================
+   NINJA POSITION
+================================ */
+
+.ninja-figure{
+    position: absolute;
+
+    left: 8%;
+
+    bottom: 0;
+
+    width: 430px;
+
+    height: 470px;
+
+    z-index: 5;
+
+    transform: scale(1.05);
+
+    filter:
+        drop-shadow(0 0 40px rgba(255,0,0,.15));
+}
+
+
+/* ================================
+   HERO BACKGROUND EFFECT
+================================ */
+
+.hero::before{
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at 70% 45%,
+            rgba(255,0,0,.18),
+            transparent 40%
+        );
+
+    pointer-events: none;
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media(max-width: 900px){
+
+    .hero{
+        min-height: 700px;
+
+        padding: 70px 25px;
+
+        align-items: flex-start;
+    }
+
+    .hero-content{
+        width: 100%;
+
+        text-align: center;
+
+        margin: auto;
+    }
+
+    .hero-actions{
+        justify-content: center;
+    }
+
+    .ninja-figure{
+        opacity: .35;
+
+        left: 50%;
+
+        transform:
+            translateX(-50%)
+            scale(.85);
+
+        bottom: -40px;
+    }
+
+    .hero h1{
+        font-size: 48px;
+    }
+
+}
