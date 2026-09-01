@@ -1,24 +1,36 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
   <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="description" content="ننجاوي - متجر شامل بتجربة تسوق سريعة وتصميم مستوحى من عالم النينجا">
+  <meta name="description"
+    content="ننجاوي - متجر إلكتروني عصري بتجربة تسوق سريعة مستوحاة من عالم النينجا">
 
-  <title>ننجاوي | NINJAWY</title>
+  <title>ننجاوي | NINJAWY V2</title>
 
   <link rel="stylesheet" href="style.css">
 </head>
 
+
 <body>
+
+  <!-- خلفية الموقع -->
 
   <div class="site-bg"></div>
   <div class="noise"></div>
 
+
+  <!-- شريط العروض -->
+
   <div class="top-offer">
     🔥 عروض خاصة لفترة محدودة — شحن مجاني للطلبات فوق 500 ج.م ⚡
   </div>
+
+
+  <!-- القائمة -->
 
   <header class="navbar">
 
@@ -26,17 +38,28 @@
       ☰
     </button>
 
-    <a class="brand" href="#home">
+
+    <a href="#home" class="brand">
+
       <span class="brand-mark">✦</span>
+
       ننجاوي
+
     </a>
 
+
     <nav class="nav-links" id="navLinks">
+
       <a href="#home">الرئيسية</a>
+
       <a href="#products">المنتجات</a>
+
       <a href="#categories">الأقسام</a>
+
       <a href="#offers">العروض</a>
+
     </nav>
+
 
     <div class="nav-actions">
 
@@ -44,9 +67,13 @@
         ⌕
       </button>
 
+
       <button class="icon-btn cart-btn" id="cartBtn" aria-label="السلة">
+
         🛍
+
         <span id="cartCount">0</span>
+
       </button>
 
     </div>
@@ -54,44 +81,62 @@
   </header>
 
 
+
   <main id="home">
+
 
     <!-- HERO -->
 
     <section class="hero">
 
-      <div class="smoke smoke-one"></div>
-      <div class="smoke smoke-two"></div>
+      <div class="hero-glow"></div>
 
       <div class="shuriken s1">✦</div>
       <div class="shuriken s2">✣</div>
       <div class="shuriken s3">✦</div>
 
-      <div class="hero-content reveal">
+
+      <div class="hero-content">
 
         <div class="eyebrow">
+
           ⚡ تجربة تسوق بسرعة النينجا
+
         </div>
 
+
         <h1>
+
           كل ما تحتاجه...
+
           <br>
+
           <span>تجده في ننجاوي</span>
+
         </h1>
 
+
         <p>
-          متجر شامل يجمع لك منتجات متنوعة وعروض مميزة
-          وتجربة تسوق سهلة وسريعة في مكان واحد.
+
+          متجر عصري يجمع لك المنتجات المميزة والعروض القوية
+          وتجربة تسوق سريعة وسهلة في مكان واحد.
+
         </p>
+
 
         <div class="hero-actions">
 
           <a href="#products" class="btn btn-primary">
+
             🛍 تسوق الآن
+
           </a>
 
+
           <a href="#offers" class="btn btn-secondary">
+
             🔥 اكتشف العروض
+
           </a>
 
         </div>
@@ -99,132 +144,203 @@
       </div>
 
 
+
+      <!-- شخصية النينجا -->
+
       <div class="ninja-figure" aria-hidden="true">
 
-        <div class="head"></div>
-        <div class="mask"></div>
-        <div class="body"></div>
+        <div class="ninja-head"></div>
 
-        <div class="arm left"></div>
-        <div class="arm right"></div>
+        <div class="ninja-mask">
+          <span></span>
+        </div>
+
+        <div class="ninja-body"></div>
+
+        <div class="ninja-arm arm-left"></div>
+
+        <div class="ninja-arm arm-right"></div>
 
         <div class="katana katana-one"></div>
+
         <div class="katana katana-two"></div>
 
       </div>
 
+
     </section>
 
 
-    <!-- STATS -->
+
+    <!-- الإحصائيات -->
 
     <section class="stats">
 
-      <div class="stat reveal">
-        <strong>24/7</strong>
-        <span>دعم مستمر</span>
-      </div>
+      <div class="stat">
 
-      <div class="stat reveal">
-        <strong>4.9</strong>
-        <span>تقييم العملاء</span>
-      </div>
-
-      <div class="stat reveal">
-        <strong>50K+</strong>
-        <span>عميل سعيد</span>
-      </div>
-
-      <div class="stat reveal">
         <strong>12K+</strong>
+
         <span>منتج متوفر</span>
+
+      </div>
+
+
+      <div class="stat">
+
+        <strong>50K+</strong>
+
+        <span>عميل سعيد</span>
+
+      </div>
+
+
+      <div class="stat">
+
+        <strong>4.9</strong>
+
+        <span>تقييم العملاء</span>
+
+      </div>
+
+
+      <div class="stat">
+
+        <strong>24/7</strong>
+
+        <span>دعم مستمر</span>
+
       </div>
 
     </section>
 
 
-    <!-- CATEGORIES -->
+
+    <!-- الأقسام -->
 
     <section class="section" id="categories">
 
-      <div class="section-heading reveal">
+
+      <div class="section-heading">
 
         <span>استكشف المتجر</span>
 
         <h2>
+
           أقسام <em>ننجاوي</em>
+
         </h2>
 
       </div>
 
 
+
       <div class="categories">
 
+
         <button class="category active" data-category="الكل">
-          ✦
-          <span>الكل</span>
+
+          <span class="category-icon">✦</span>
+
+          الكل
+
         </button>
+
+
 
         <button class="category" data-category="إلكترونيات">
-          ⌘
-          <span>إلكترونيات</span>
+
+          <span class="category-icon">⌘</span>
+
+          إلكترونيات
+
         </button>
+
+
 
         <button class="category" data-category="أزياء">
-          ◈
-          <span>أزياء</span>
+
+          <span class="category-icon">◈</span>
+
+          أزياء
+
         </button>
+
+
 
         <button class="category" data-category="منزل">
-          ⌂
-          <span>منزل</span>
+
+          <span class="category-icon">⌂</span>
+
+          منزل
+
         </button>
+
+
 
         <button class="category" data-category="ألعاب">
-          ◉
-          <span>ألعاب</span>
+
+          <span class="category-icon">◉</span>
+
+          ألعاب
+
         </button>
 
+
+
         <button class="category" data-category="إكسسوارات">
-          ✧
-          <span>إكسسوارات</span>
+
+          <span class="category-icon">✧</span>
+
+          إكسسوارات
+
         </button>
+
 
       </div>
 
     </section>
 
 
-    <!-- PRODUCTS -->
+
+    <!-- المنتجات -->
 
     <section class="section products-section" id="products">
 
-      <div class="section-heading row-heading reveal">
+
+      <div class="section-heading row-heading">
 
         <div>
 
           <span>مختارات اليوم</span>
 
           <h2>
+
             أحدث <em>المنتجات</em>
+
           </h2>
 
         </div>
 
+
         <button class="text-btn" id="showAll">
+
           عرض الكل ←
+
         </button>
 
       </div>
 
 
+
       <div class="products-grid">
 
 
-        <article class="product-card reveal"
+        <!-- المنتج 1 -->
+
+        <article
+          class="product-card"
           data-category="إلكترونيات"
-          data-name="سماعات لاسلكية احترافية"
-          data-price="1299">
+          data-name="سماعات لاسلكية احترافية">
 
           <div class="product-visual visual-headphones">
 
@@ -235,6 +351,7 @@
             <span class="product-icon">🎧</span>
 
           </div>
+
 
           <div class="product-info">
 
@@ -247,14 +364,21 @@
             </h3>
 
             <div class="rating">
+
               ★★★★★
+
               <span>(4.9)</span>
+
             </div>
 
             <div class="price">
+
               1,299 ج.م
-              <del>1,599</del>
+
+              <del>1,599 ج.م</del>
+
             </div>
+
 
             <button
               class="add-btn"
@@ -270,10 +394,12 @@
 
 
 
-        <article class="product-card reveal"
+        <!-- المنتج 2 -->
+
+        <article
+          class="product-card"
           data-category="أزياء"
-          data-name="حقيبة عصرية مميزة"
-          data-price="899">
+          data-name="حقيبة عصرية مميزة">
 
           <div class="product-visual visual-bag">
 
@@ -282,6 +408,7 @@
             <span class="product-icon">👜</span>
 
           </div>
+
 
           <div class="product-info">
 
@@ -294,13 +421,19 @@
             </h3>
 
             <div class="rating">
+
               ★★★★★
+
               <span>(4.8)</span>
+
             </div>
 
             <div class="price">
+
               899 ج.م
+
             </div>
+
 
             <button
               class="add-btn"
@@ -316,10 +449,12 @@
 
 
 
-        <article class="product-card reveal"
+        <!-- المنتج 3 -->
+
+        <article
+          class="product-card"
           data-category="منزل"
-          data-name="مصباح ذكي متعدد الألوان"
-          data-price="749">
+          data-name="مصباح ذكي متعدد الألوان">
 
           <div class="product-visual visual-lamp">
 
@@ -330,6 +465,7 @@
             <span class="product-icon">💡</span>
 
           </div>
+
 
           <div class="product-info">
 
@@ -342,13 +478,19 @@
             </h3>
 
             <div class="rating">
+
               ★★★★★
+
               <span>(4.7)</span>
+
             </div>
 
             <div class="price">
+
               749 ج.م
+
             </div>
+
 
             <button
               class="add-btn"
@@ -364,10 +506,12 @@
 
 
 
-        <article class="product-card reveal"
+        <!-- المنتج 4 -->
+
+        <article
+          class="product-card"
           data-category="ألعاب"
-          data-name="وحدة تحكم لاسلكية"
-          data-price="1499">
+          data-name="وحدة تحكم لاسلكية">
 
           <div class="product-visual visual-game">
 
@@ -378,6 +522,7 @@
             <span class="product-icon">🎮</span>
 
           </div>
+
 
           <div class="product-info">
 
@@ -390,13 +535,19 @@
             </h3>
 
             <div class="rating">
+
               ★★★★★
+
               <span>(4.9)</span>
+
             </div>
 
             <div class="price">
+
               1,499 ج.م
+
             </div>
+
 
             <button
               class="add-btn"
@@ -412,10 +563,12 @@
 
 
 
-        <article class="product-card reveal"
+        <!-- المنتج 5 -->
+
+        <article
+          class="product-card"
           data-category="إكسسوارات"
-          data-name="ساعة ذكية أنيقة"
-          data-price="2199">
+          data-name="ساعة ذكية أنيقة">
 
           <div class="product-visual visual-watch">
 
@@ -426,6 +579,7 @@
             <span class="product-icon">⌚</span>
 
           </div>
+
 
           <div class="product-info">
 
@@ -438,13 +592,19 @@
             </h3>
 
             <div class="rating">
+
               ★★★★★
+
               <span>(4.8)</span>
+
             </div>
 
             <div class="price">
+
               2,199 ج.م
+
             </div>
+
 
             <button
               class="add-btn"
@@ -460,10 +620,12 @@
 
 
 
-        <article class="product-card reveal"
+        <!-- المنتج 6 -->
+
+        <article
+          class="product-card"
           data-category="إلكترونيات"
-          data-name="لوحة مفاتيح للألعاب"
-          data-price="1099">
+          data-name="لوحة مفاتيح للألعاب">
 
           <div class="product-visual visual-keyboard">
 
@@ -472,6 +634,7 @@
             <span class="product-icon">⌨️</span>
 
           </div>
+
 
           <div class="product-info">
 
@@ -484,13 +647,19 @@
             </h3>
 
             <div class="rating">
+
               ★★★★★
+
               <span>(4.7)</span>
+
             </div>
 
             <div class="price">
+
               1,099 ج.م
+
             </div>
+
 
             <button
               class="add-btn"
@@ -504,42 +673,61 @@
 
         </article>
 
+
       </div>
 
     </section>
 
 
-    <!-- OFFER -->
 
-    <section class="offer-banner reveal" id="offers">
+    <!-- العروض -->
 
-      <div class="offer-symbol">✦</div>
+    <section class="offer-banner" id="offers">
+
+
+      <div class="offer-symbol">
+
+        ✦
+
+      </div>
+
 
       <div>
 
         <span>عرض محدود</span>
 
         <h2>
+
           ادخل ساحة العروض واحصل على خصومات تصل إلى
+
           <b>40%</b>
+
         </h2>
 
         <p>
+
           عروض متجددة على منتجات مختارة لفترة محدودة.
+
         </p>
 
       </div>
 
+
       <button class="btn btn-primary" id="offerBtn">
+
         اكتشف الآن
+
       </button>
+
 
     </section>
 
 
-    <!-- NEWSLETTER -->
 
-    <section class="newsletter reveal">
+    <!-- النشرة البريدية -->
+
+    <section class="newsletter">
+
 
       <div>
 
@@ -548,10 +736,13 @@
         </span>
 
         <h2>
+
           انضم إلى قائمة <em>ننجاوي</em>
+
         </h2>
 
       </div>
+
 
       <form id="newsletterForm">
 
@@ -560,45 +751,58 @@
           required
           placeholder="اكتب بريدك الإلكتروني">
 
+
         <button class="btn btn-primary">
+
           اشترك ⚡
+
         </button>
 
       </form>
 
+
     </section>
+
 
   </main>
 
 
-  <!-- FOOTER -->
+
+  <!-- الفوتر -->
 
   <footer>
 
     <div class="brand footer-brand">
 
-      <span class="brand-mark">
-        ✦
-      </span>
+      <span class="brand-mark">✦</span>
 
       ننجاوي
 
     </div>
 
+
     <p>
-      متجر شامل لكل ما تحتاجه، بتجربة تسوق سريعة وهوية مستوحاة من عالم النينجا.
+
+      متجر شامل لكل ما تحتاجه، بتجربة تسوق سريعة
+      وهوية مستوحاة من عالم النينجا.
+
     </p>
 
+
     <span>
+
       © 2026 NINJAWY
+
     </span>
 
   </footer>
 
 
-  <!-- CART -->
+
+  <!-- السلة -->
 
   <aside class="cart-panel" id="cartPanel">
+
 
     <div class="cart-head">
 
@@ -606,64 +810,93 @@
         🛍 حقيبة ننجاوي
       </h3>
 
+
       <button id="closeCart">
+
         ×
+
       </button>
 
     </div>
+
 
 
     <div id="cartItems">
 
       <p class="empty">
+
         حقيبتك فارغة حاليًا.
+
       </p>
 
     </div>
 
 
+
     <div class="cart-footer">
 
+
       <strong>
+
         الإجمالي:
+
         <span id="cartTotal">0</span>
+
         ج.م
+
       </strong>
 
+
       <button class="clear-cart" id="clearCart">
+
         تفريغ الحقيبة
+
       </button>
 
+
       <button class="btn btn-primary" id="checkoutBtn">
+
         إتمام الطلب
+
       </button>
+
 
     </div>
 
+
   </aside>
+
 
 
   <div class="overlay" id="overlay"></div>
 
 
-  <!-- SEARCH -->
+
+  <!-- البحث -->
 
   <div class="search-box" id="searchBox">
 
     <input
       id="searchInput"
+      type="text"
       placeholder="ابحث عن منتج...">
 
+
     <button id="closeSearch">
+
       ×
+
     </button>
 
   </div>
 
 
+
   <div class="toast" id="toast"></div>
+
 
   <script src="script.js"></script>
 
 </body>
+
 </html>
