@@ -1036,3 +1036,33 @@ footer p {
   }
 
 }
+.ninja-figure {
+    position: relative;
+    width: 450px;
+    max-width: 40vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ninja-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+
+    filter: drop-shadow(0 20px 35px rgba(0, 0, 0, 0.45));
+
+    animation: ninjaFloat 5s ease-in-out infinite;
+}
+
+@keyframes ninjaFloat {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
