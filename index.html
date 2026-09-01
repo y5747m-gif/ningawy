@@ -2,6 +2,7 @@
 <html lang="ar" dir="rtl">
 
 <head>
+
   <meta charset="UTF-8">
 
   <meta
@@ -11,53 +12,97 @@
 
   <meta
     name="description"
-    content="ننجاوي - متجر إلكتروني بتجربة تسوق سريعة واحترافية"
+    content="ننجاوي - تجربة تسوق عصرية وسريعة"
   >
 
   <title>ننجاوي | NINJAWY</title>
 
-  <link rel="stylesheet" href="style.css">
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Tajawal:wght@400;500;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
 
 </head>
 
 
 <body>
 
-  <div class="site-bg"></div>
+
+  <!-- الخلفية -->
+
+  <div class="site-background"></div>
+
+  <div class="background-grid"></div>
 
 
-  <!-- TOP OFFER -->
+  <!-- عرض علوي -->
 
   <div class="top-offer">
 
-    🔥 عروض خاصة لفترة محدودة — شحن مجاني للطلبات فوق 500 ج.م ⚡
+    <span>⚡</span>
+
+    عروض خاصة لفترة محدودة
+
+    <span class="offer-line">—</span>
+
+    شحن مجاني للطلبات فوق 500 ج.م
+
+    <span>🔥</span>
 
   </div>
 
 
-  <!-- NAVBAR -->
+  <!-- HEADER -->
 
   <header class="navbar">
 
-    <button
-      class="icon-btn menu-btn"
-      id="menuBtn"
-      aria-label="القائمة"
-    >
-      ☰
-    </button>
+
+    <div class="nav-right">
 
 
-    <a
-      href="#home"
-      class="brand"
-    >
+      <button
+        class="mobile-menu-btn"
+        id="mobileMenuBtn"
+        aria-label="القائمة"
+      >
+        ☰
+      </button>
 
-      <span class="brand-mark">✦</span>
 
-      ننجاوي
+      <a
+        href="#home"
+        class="brand"
+      >
 
-    </a>
+        <span class="brand-star">
+          ✦
+        </span>
+
+        <span>
+          ننجاوي
+        </span>
+
+      </a>
+
+
+    </div>
+
 
 
     <nav
@@ -84,34 +129,56 @@
     </nav>
 
 
+
     <div class="nav-actions">
 
+
       <button
-        class="icon-btn"
+        class="nav-icon"
         id="searchBtn"
         aria-label="بحث"
       >
+
         🔍
+
       </button>
 
 
+
       <button
-        class="icon-btn cart-btn"
+        class="nav-icon cart-button"
         id="cartBtn"
         aria-label="السلة"
       >
 
         🛍
 
-        <span id="cartCount">
+        <span
+          class="cart-count"
+          id="cartCount"
+        >
           0
         </span>
 
       </button>
 
+
+
+      <button
+        class="admin-nav-btn"
+        id="adminOpenBtn"
+      >
+
+        الإدارة
+
+      </button>
+
+
     </div>
 
+
   </header>
+
 
 
   <!-- MAIN -->
@@ -123,115 +190,219 @@
 
     <section class="hero">
 
+
+      <div class="hero-glow glow-one"></div>
+
+      <div class="hero-glow glow-two"></div>
+
+
       <div class="hero-content">
 
-        <div class="eyebrow">
 
-          ⚡ تجربة تسوق بسرعة النينجا
+        <div class="hero-text">
+
+
+          <div class="hero-label">
+
+            <span class="pulse-dot"></span>
+
+            تجربة تسوق بسرعة النينجا
+
+          </div>
+
+
+
+          <h1>
+
+            كل ما تحتاجه...
+
+            <span>
+              تجده في ننجاوي
+            </span>
+
+          </h1>
+
+
+
+          <p>
+
+            متجر حديث يجمع لك المنتجات المميزة والعروض الحصرية
+            وتجربة تسوق سريعة وسهلة في مكان واحد.
+
+          </p>
+
+
+
+          <div class="hero-buttons">
+
+
+            <a
+              href="#products"
+              class="primary-btn"
+            >
+
+              <span>
+                تسوق الآن
+              </span>
+
+              🛍
+
+            </a>
+
+
+
+            <a
+              href="#offers"
+              class="secondary-btn"
+            >
+
+              اكتشف العروض
+
+              🔥
+
+            </a>
+
+
+          </div>
+
+
+
+          <div class="hero-mini-stats">
+
+
+            <div>
+
+              <strong>
+                +12K
+              </strong>
+
+              <span>
+                منتج
+              </span>
+
+            </div>
+
+
+            <div>
+
+              <strong>
+                +50K
+              </strong>
+
+              <span>
+                عميل
+              </span>
+
+            </div>
+
+
+            <div>
+
+              <strong>
+                4.9
+              </strong>
+
+              <span>
+                تقييم
+              </span>
+
+            </div>
+
+
+          </div>
+
 
         </div>
 
 
-        <h1>
 
-          كل ما تحتاجه...
+        <!-- صورة النينجا -->
 
-          <br>
-
-          <span>
-
-            تجده في ننجاوي
-
-          </span>
-
-        </h1>
+        <div class="ninja-scene">
 
 
-        <p>
-
-          متجر شامل يجمع لك منتجات متنوعة وعروض مميزة
-          وتجربة تسوق سهلة وسريعة في مكان واحد.
-
-        </p>
+          <div class="ninja-light"></div>
 
 
-        <div class="hero-actions">
-
-          <a
-            href="#products"
-            class="btn btn-primary"
+          <img
+            src="assets/ninja-cinematic.png"
+            class="ninja-image"
+            alt="نينجا ننجاوي"
           >
 
-            🛍 تسوق الآن
 
-          </a>
+          <div class="ninja-floor"></div>
 
-
-          <a
-            href="#offers"
-            class="btn btn-secondary"
-          >
-
-            🔥 اكتشف العروض
-
-          </a>
 
         </div>
+
 
       </div>
 
 
-      <!-- NINJA -->
+    </section>
 
-    <div class="ninja-figure" aria-hidden="true">
-  <img
-    src="images/ninja.png"
-    alt="نينجا ننجاوي"
-    class="ninja-image"
-  >
-</div>
 
 
     <!-- STATS -->
 
-    <section class="stats">
-
-      <div class="stat">
-
-        <strong>24/7</strong>
-
-        <span>دعم مستمر</span>
-
-      </div>
+    <section class="stats-section">
 
 
-      <div class="stat">
+      <div class="stat-box">
 
-        <strong>4.9</strong>
+        <strong>
+          +12K
+        </strong>
 
-        <span>تقييم العملاء</span>
+        <span>
+          منتج متوفر
+        </span>
 
       </div>
 
 
-      <div class="stat">
+      <div class="stat-box">
 
-        <strong>50K+</strong>
+        <strong>
+          +50K
+        </strong>
 
-        <span>عميل سعيد</span>
+        <span>
+          عميل سعيد
+        </span>
+
+      </div>
+
+
+      <div class="stat-box">
+
+        <strong>
+          4.9
+        </strong>
+
+        <span>
+          متوسط التقييم
+        </span>
 
       </div>
 
 
-      <div class="stat">
+      <div class="stat-box">
 
-        <strong>12K+</strong>
+        <strong>
+          24/7
+        </strong>
 
-        <span>منتج متوفر</span>
+        <span>
+          دعم مستمر
+        </span>
 
       </div>
+
 
     </section>
+
 
 
     <!-- CATEGORIES -->
@@ -241,103 +412,142 @@
       id="categories"
     >
 
-      <div class="section-heading">
 
-        <span>
+      <div class="section-title">
+
+
+        <span class="section-small">
           استكشف المتجر
         </span>
+
 
         <h2>
 
           أقسام
 
           <em>
-
             ننجاوي
-
           </em>
 
         </h2>
 
+
       </div>
 
 
-      <div class="categories">
+
+      <div
+        class="categories-grid"
+        id="categoriesGrid"
+      >
+
 
         <button
-          class="category active"
+          class="category-card active"
           data-category="الكل"
         >
 
-          ✦
+          <span class="category-icon">
+            ✦
+          </span>
 
-          <span>الكل</span>
+          <span>
+            كل المنتجات
+          </span>
 
         </button>
 
 
+
         <button
-          class="category"
+          class="category-card"
           data-category="إلكترونيات"
         >
 
-          💻
+          <span class="category-icon">
+            🎧
+          </span>
 
-          <span>إلكترونيات</span>
+          <span>
+            إلكترونيات
+          </span>
 
         </button>
 
 
+
         <button
-          class="category"
+          class="category-card"
           data-category="أزياء"
         >
 
-          👕
+          <span class="category-icon">
+            👕
+          </span>
 
-          <span>أزياء</span>
+          <span>
+            أزياء
+          </span>
 
         </button>
 
 
+
         <button
-          class="category"
+          class="category-card"
           data-category="منزل"
         >
 
-          🏠
+          <span class="category-icon">
+            🏠
+          </span>
 
-          <span>منزل</span>
+          <span>
+            منزل
+          </span>
 
         </button>
 
 
+
         <button
-          class="category"
+          class="category-card"
           data-category="ألعاب"
         >
 
-          🎮
+          <span class="category-icon">
+            🎮
+          </span>
 
-          <span>ألعاب</span>
+          <span>
+            ألعاب
+          </span>
 
         </button>
+
 
 
         <button
-          class="category"
+          class="category-card"
           data-category="إكسسوارات"
         >
 
-          ⌚
+          <span class="category-icon">
+            ⌚
+          </span>
 
-          <span>إكسسوارات</span>
+          <span>
+            إكسسوارات
+          </span>
 
         </button>
 
+
       </div>
 
+
     </section>
+
 
 
     <!-- PRODUCTS -->
@@ -347,13 +557,17 @@
       id="products"
     >
 
-      <div class="section-heading row-heading">
+
+      <div class="products-header">
+
 
         <div>
 
-          <span>
-            مختارات اليوم
+
+          <span class="section-small">
+            مختارات ننجاوي
           </span>
+
 
           <h2>
 
@@ -365,19 +579,25 @@
 
           </h2>
 
+
         </div>
 
 
+
         <button
-          class="text-btn"
-          id="showAll"
+          class="show-all-btn"
+          id="showAllBtn"
         >
 
-          عرض الكل ←
+          عرض الكل
+
+          ←
 
         </button>
 
+
       </div>
+
 
 
       <div
@@ -385,757 +605,232 @@
         id="productsGrid"
       >
 
-
-        <!-- PRODUCT 1 -->
-
-        <article
-          class="product-card"
-          data-id="default-headphones"
-          data-name="سماعات لاسلكية احترافية"
-          data-price="1299"
-          data-category="إلكترونيات"
-        >
-
-          <div class="product-visual">
-
-            <span class="discount">
-
-              -19%
-
-            </span>
-
-
-            <button class="favorite-btn">
-
-              ♡
-
-            </button>
-
-
-            <span class="product-icon">
-
-              🎧
-
-            </span>
-
-          </div>
-
-
-          <div class="product-info">
-
-            <span class="product-category">
-
-              إلكترونيات
-
-            </span>
-
-
-            <h3>
-
-              سماعات لاسلكية احترافية
-
-            </h3>
-
-
-            <p class="dynamic-description">
-
-              صوت عالي الجودة وتجربة استماع مميزة.
-
-            </p>
-
-
-            <div class="rating">
-
-              ★★★★★
-
-              <span>
-                (4.9)
-              </span>
-
-            </div>
-
-
-            <div class="price">
-
-              1,299 ج.م
-
-              <del>
-
-                1,599
-
-              </del>
-
-            </div>
-
-
-            <button class="add-btn">
-
-              أضف للسلة ⚔
-
-            </button>
-
-          </div>
-
-        </article>
-
-
-        <!-- PRODUCT 2 -->
-
-        <article
-          class="product-card"
-          data-id="default-bag"
-          data-name="حقيبة عصرية مميزة"
-          data-price="899"
-          data-category="أزياء"
-        >
-
-          <div class="product-visual">
-
-            <button class="favorite-btn">
-
-              ♡
-
-            </button>
-
-
-            <span class="product-icon">
-
-              👜
-
-            </span>
-
-          </div>
-
-
-          <div class="product-info">
-
-            <span class="product-category">
-
-              أزياء
-
-            </span>
-
-
-            <h3>
-
-              حقيبة عصرية مميزة
-
-            </h3>
-
-
-            <p class="dynamic-description">
-
-              تصميم أنيق مناسب للاستخدام اليومي.
-
-            </p>
-
-
-            <div class="rating">
-
-              ★★★★★
-
-              <span>
-                (4.8)
-              </span>
-
-            </div>
-
-
-            <div class="price">
-
-              899 ج.م
-
-            </div>
-
-
-            <button class="add-btn">
-
-              أضف للسلة ⚔
-
-            </button>
-
-          </div>
-
-        </article>
-
-
-        <!-- PRODUCT 3 -->
-
-        <article
-          class="product-card"
-          data-id="default-lamp"
-          data-name="مصباح ذكي متعدد الألوان"
-          data-price="749"
-          data-category="منزل"
-        >
-
-          <div class="product-visual">
-
-            <span class="discount">
-
-              جديد
-
-            </span>
-
-
-            <button class="favorite-btn">
-
-              ♡
-
-            </button>
-
-
-            <span class="product-icon">
-
-              💡
-
-            </span>
-
-          </div>
-
-
-          <div class="product-info">
-
-            <span class="product-category">
-
-              منزل
-
-            </span>
-
-
-            <h3>
-
-              مصباح ذكي متعدد الألوان
-
-            </h3>
-
-
-            <p class="dynamic-description">
-
-              إضاءة ذكية تضيف لمسة مميزة إلى منزلك.
-
-            </p>
-
-
-            <div class="rating">
-
-              ★★★★★
-
-              <span>
-                (4.7)
-              </span>
-
-            </div>
-
-
-            <div class="price">
-
-              749 ج.م
-
-            </div>
-
-
-            <button class="add-btn">
-
-              أضف للسلة ⚔
-
-            </button>
-
-          </div>
-
-        </article>
-
-
-        <!-- PRODUCT 4 -->
-
-        <article
-          class="product-card"
-          data-id="default-game"
-          data-name="وحدة تحكم لاسلكية"
-          data-price="1499"
-          data-category="ألعاب"
-        >
-
-          <div class="product-visual">
-
-            <span class="discount">
-
-              الأكثر طلبًا
-
-            </span>
-
-
-            <button class="favorite-btn">
-
-              ♡
-
-            </button>
-
-
-            <span class="product-icon">
-
-              🎮
-
-            </span>
-
-          </div>
-
-
-          <div class="product-info">
-
-            <span class="product-category">
-
-              ألعاب
-
-            </span>
-
-
-            <h3>
-
-              وحدة تحكم لاسلكية
-
-            </h3>
-
-
-            <p class="dynamic-description">
-
-              استمتع بتجربة لعب أكثر راحة ودقة.
-
-            </p>
-
-
-            <div class="rating">
-
-              ★★★★★
-
-              <span>
-                (4.9)
-              </span>
-
-            </div>
-
-
-            <div class="price">
-
-              1,499 ج.م
-
-            </div>
-
-
-            <button class="add-btn">
-
-              أضف للسلة ⚔
-
-            </button>
-
-          </div>
-
-        </article>
-
-
-        <!-- PRODUCT 5 -->
-
-        <article
-          class="product-card"
-          data-id="default-watch"
-          data-name="ساعة ذكية أنيقة"
-          data-price="2199"
-          data-category="إكسسوارات"
-        >
-
-          <div class="product-visual">
-
-            <span class="discount">
-
-              -12%
-
-            </span>
-
-
-            <button class="favorite-btn">
-
-              ♡
-
-            </button>
-
-
-            <span class="product-icon">
-
-              ⌚
-
-            </span>
-
-          </div>
-
-
-          <div class="product-info">
-
-            <span class="product-category">
-
-              إكسسوارات
-
-            </span>
-
-
-            <h3>
-
-              ساعة ذكية أنيقة
-
-            </h3>
-
-
-            <p class="dynamic-description">
-
-              متابعة النشاط والوقت والإشعارات بسهولة.
-
-            </p>
-
-
-            <div class="rating">
-
-              ★★★★★
-
-              <span>
-                (4.8)
-              </span>
-
-            </div>
-
-
-            <div class="price">
-
-              2,199 ج.م
-
-            </div>
-
-
-            <button class="add-btn">
-
-              أضف للسلة ⚔
-
-            </button>
-
-          </div>
-
-        </article>
-
-
-        <!-- PRODUCT 6 -->
-
-        <article
-          class="product-card"
-          data-id="default-keyboard"
-          data-name="لوحة مفاتيح للألعاب"
-          data-price="1099"
-          data-category="إلكترونيات"
-        >
-
-          <div class="product-visual">
-
-            <button class="favorite-btn">
-
-              ♡
-
-            </button>
-
-
-            <span class="product-icon">
-
-              ⌨️
-
-            </span>
-
-          </div>
-
-
-          <div class="product-info">
-
-            <span class="product-category">
-
-              إلكترونيات
-
-            </span>
-
-
-            <h3>
-
-              لوحة مفاتيح للألعاب
-
-            </h3>
-
-
-            <p class="dynamic-description">
-
-              لوحة مفاتيح مريحة للاستخدام والعمل والألعاب.
-
-            </p>
-
-
-            <div class="rating">
-
-              ★★★★★
-
-              <span>
-                (4.7)
-              </span>
-
-            </div>
-
-
-            <div class="price">
-
-              1,099 ج.م
-
-            </div>
-
-
-            <button class="add-btn">
-
-              أضف للسلة ⚔
-
-            </button>
-
-          </div>
-
-        </article>
-
       </div>
 
+
     </section>
+
 
 
     <!-- OFFERS -->
 
     <section
-      class="offer-banner"
+      class="offer-section"
       id="offers"
     >
 
-      <div class="offer-symbol">
 
-        ✦
-
-      </div>
+      <div class="offer-content">
 
 
-      <div>
+        <span class="offer-tag">
 
-        <span>
+          🔥
 
           عرض محدود
 
         </span>
 
 
+
         <h2>
 
-          ادخل ساحة العروض واحصل على خصومات تصل إلى
+          ادخل ساحة العروض
 
-          <b>
-
-            40%
-
-          </b>
+          <span>
+            واحصل على خصومات مميزة
+          </span>
 
         </h2>
 
 
+
         <p>
 
-          عروض متجددة على منتجات مختارة لفترة محدودة.
+          عروض متجددة على مجموعة مختارة من المنتجات.
 
         </p>
+
+
+
+        <a
+          href="#products"
+          class="primary-btn"
+        >
+
+          اكتشف المنتجات
+
+          ⚡
+
+        </a>
+
 
       </div>
 
 
-      <button
-        class="btn btn-primary"
-        id="offerBtn"
-      >
 
-        اكتشف الآن
+      <div class="offer-number">
 
-      </button>
+        <span>
+          حتى
+        </span>
+
+        <strong>
+          40%
+        </strong>
+
+        <span>
+          خصم
+        </span>
+
+      </div>
+
 
     </section>
+
 
 
     <!-- NEWSLETTER -->
 
     <section class="newsletter">
 
+
       <div>
 
-        <span>
 
+        <span class="section-small">
           كن أول من يعرف العروض
-
         </span>
 
 
         <h2>
 
-          انضم إلى قائمة
+          انضم إلى مجتمع
 
           <em>
-
             ننجاوي
-
           </em>
 
         </h2>
 
+
       </div>
 
 
-      <form id="newsletterForm">
+
+      <form
+        id="newsletterForm"
+        class="newsletter-form"
+      >
+
 
         <input
           type="email"
-          required
+          id="newsletterEmail"
           placeholder="اكتب بريدك الإلكتروني"
+          required
         >
 
 
-        <button class="btn btn-primary">
+        <button
+          type="submit"
+          class="primary-btn"
+        >
 
-          اشترك ⚡
+          اشترك الآن
+
+          ⚡
 
         </button>
 
+
       </form>
+
 
     </section>
 
+
   </main>
+
 
 
   <!-- FOOTER -->
 
   <footer>
 
-    <div class="brand footer-brand">
 
-      <span class="brand-mark">
+    <div class="footer-brand">
 
-        ✦
+      <div class="brand">
 
-      </span>
+        <span class="brand-star">
+          ✦
+        </span>
 
-      ننجاوي
+        ننجاوي
 
-    </div>
-
-
-    <p>
-
-      متجر شامل لكل ما تحتاجه،
-      بتجربة تسوق سريعة وهوية مستوحاة من عالم النينجا.
-
-    </p>
+      </div>
 
 
-    <p class="developer">
+      <p>
 
-      Developed by
-
-      <strong>
-
-        yaseen amr abd el rahem
-
-      </strong>
-
-    </p>
-
-
-    <span>
-
-      © 2026 NINJAWY
-
-    </span>
-
-  </footer>
-
-
-  <!-- CART -->
-
-  <aside
-    class="cart-panel"
-    id="cartPanel"
-  >
-
-    <div class="cart-head">
-
-      <h3>
-
-        🛍 حقيبة ننجاوي
-
-      </h3>
-
-
-      <button id="closeCart">
-
-        ×
-
-      </button>
-
-    </div>
-
-
-    <div
-      class="cart-items"
-      id="cartItems"
-    >
-
-      <p class="empty">
-
-        حقيبتك فارغة حاليًا.
+        تجربة تسوق حديثة تجمع المنتجات المميزة
+        والعروض الحصرية في مكان واحد.
 
       </p>
 
-    </div>
-
-
-    <div class="cart-footer">
-
-      <strong>
-
-        الإجمالي:
-
-        <span id="cartTotal">
-
-          0
-
-        </span>
-
-        ج.م
-
-      </strong>
-
-
-      <button
-        class="clear-cart"
-        id="clearCart"
-      >
-
-        تفريغ الحقيبة
-
-      </button>
-
-
-      <button
-        class="btn btn-primary"
-        id="checkoutBtn"
-      >
-
-        إتمام الطلب عبر واتساب
-
-      </button>
 
     </div>
 
-  </aside>
+
+
+    <div class="footer-links">
+
+
+      <a href="#home">
+        الرئيسية
+      </a>
+
+      <a href="#products">
+        المنتجات
+      </a>
+
+      <a href="#categories">
+        الأقسام
+      </a>
+
+      <a href="#offers">
+        العروض
+      </a>
+
+
+    </div>
+
+
+
+    <div class="footer-bottom">
+
+      <span>
+        © 2026 NINJAWY
+      </span>
+
+
+      <span class="developer">
+
+        Developed by
+
+        <strong>
+          yaseen amr abd el rahem
+        </strong>
+
+      </span>
+
+
+    </div>
+
+
+  </footer>
+
 
 
   <!-- OVERLAY -->
@@ -1146,27 +841,499 @@
   ></div>
 
 
+
   <!-- SEARCH -->
 
   <div
-    class="search-box"
-    id="searchBox"
+    class="search-modal"
+    id="searchModal"
   >
 
-    <input
-      id="searchInput"
-      type="text"
-      placeholder="ابحث عن منتج..."
-    >
+
+    <div class="search-window">
 
 
-    <button id="closeSearch">
+      <div class="modal-top">
 
-      ×
+        <h3>
+          البحث عن منتج
+        </h3>
 
-    </button>
+
+        <button
+          class="close-modal"
+          id="closeSearchBtn"
+        >
+          ×
+        </button>
+
+
+      </div>
+
+
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="اكتب اسم المنتج..."
+      >
+
+
+      <div
+        class="search-results"
+        id="searchResults"
+      ></div>
+
+
+    </div>
+
 
   </div>
+
+
+
+  <!-- CART -->
+
+  <aside
+    class="cart-panel"
+    id="cartPanel"
+  >
+
+
+    <div class="cart-header">
+
+
+      <div>
+
+        <span class="cart-label">
+          سلة المشتريات
+        </span>
+
+        <h3>
+          حقيبة ننجاوي 🛍
+        </h3>
+
+      </div>
+
+
+      <button
+        id="closeCartBtn"
+        class="close-modal"
+      >
+        ×
+      </button>
+
+
+    </div>
+
+
+
+    <div
+      class="cart-items"
+      id="cartItems"
+    >
+
+    </div>
+
+
+
+    <!-- بيانات العميل -->
+
+    <div class="customer-section">
+
+
+      <h3>
+        بيانات الطلب
+      </h3>
+
+
+
+      <div class="customer-fields">
+
+
+        <input
+          type="text"
+          id="customerName"
+          placeholder="الاسم بالكامل"
+        >
+
+
+        <input
+          type="tel"
+          id="customerPhone"
+          placeholder="رقم الهاتف"
+        >
+
+
+        <input
+          type="tel"
+          id="customerExtraPhone"
+          placeholder="رقم هاتف إضافي (اختياري)"
+        >
+
+
+        <input
+          type="text"
+          id="customerCity"
+          placeholder="المحافظة / المدينة"
+        >
+
+
+        <textarea
+          id="customerAddress"
+          placeholder="العنوان بالتفصيل"
+        ></textarea>
+
+
+        <textarea
+          id="customerNotes"
+          placeholder="ملاحظات إضافية على الطلب (اختياري)"
+        ></textarea>
+
+
+      </div>
+
+
+    </div>
+
+
+
+    <div class="cart-footer">
+
+
+      <div class="cart-total">
+
+        <span>
+          الإجمالي
+        </span>
+
+        <strong>
+
+          <span id="cartTotal">
+            0
+          </span>
+
+          ج.م
+
+        </strong>
+
+      </div>
+
+
+
+      <button
+        class="clear-cart-btn"
+        id="clearCartBtn"
+      >
+
+        تفريغ السلة
+
+      </button>
+
+
+
+      <button
+        class="primary-btn checkout-btn"
+        id="checkoutBtn"
+      >
+
+        إتمام الطلب عبر واتساب
+
+        🟢
+
+      </button>
+
+
+    </div>
+
+
+  </aside>
+
+
+
+  <!-- ADMIN LOGIN -->
+
+  <div
+    class="admin-modal"
+    id="adminLoginModal"
+  >
+
+
+    <div class="admin-window">
+
+
+      <div class="modal-top">
+
+        <div>
+
+          <span class="admin-small">
+            NINJAWY CONTROL
+          </span>
+
+          <h3>
+            تسجيل دخول الإدارة
+          </h3>
+
+        </div>
+
+
+        <button
+          class="close-modal"
+          id="closeAdminLogin"
+        >
+          ×
+        </button>
+
+
+      </div>
+
+
+
+      <form
+        id="adminLoginForm"
+        class="admin-login-form"
+      >
+
+
+        <input
+          type="text"
+          id="adminUsername"
+          placeholder="اسم المستخدم"
+          required
+        >
+
+
+        <input
+          type="password"
+          id="adminPassword"
+          placeholder="كلمة المرور"
+          required
+        >
+
+
+        <button
+          type="submit"
+          class="primary-btn"
+        >
+
+          دخول لوحة الإدارة
+
+          🔐
+
+        </button>
+
+
+      </form>
+
+
+      <p
+        class="login-error"
+        id="loginError"
+      ></p>
+
+
+    </div>
+
+
+  </div>
+
+
+
+  <!-- ADMIN PANEL -->
+
+  <div
+    class="admin-modal"
+    id="adminPanel"
+  >
+
+
+    <div class="admin-dashboard">
+
+
+      <div class="modal-top">
+
+
+        <div>
+
+          <span class="admin-small">
+            NINJAWY ADMIN PANEL
+          </span>
+
+          <h2>
+            إدارة المنتجات
+          </h2>
+
+        </div>
+
+
+
+        <div class="admin-actions">
+
+
+          <button
+            id="logoutAdminBtn"
+            class="logout-btn"
+          >
+            تسجيل الخروج
+          </button>
+
+
+          <button
+            class="close-modal"
+            id="closeAdminPanel"
+          >
+            ×
+          </button>
+
+
+        </div>
+
+
+      </div>
+
+
+
+      <div class="admin-content">
+
+
+        <!-- ADD PRODUCT -->
+
+        <div class="admin-card">
+
+
+          <h3>
+            إضافة منتج جديد
+          </h3>
+
+
+          <form
+            id="addProductForm"
+            class="product-form"
+          >
+
+
+            <input
+              type="text"
+              id="productName"
+              placeholder="اسم المنتج"
+              required
+            >
+
+
+            <textarea
+              id="productDescription"
+              placeholder="وصف المنتج"
+              required
+            ></textarea>
+
+
+
+            <input
+              type="number"
+              id="productPrice"
+              placeholder="سعر المنتج بالجنيه"
+              required
+            >
+
+
+
+            <select
+              id="productCategory"
+              required
+            >
+
+              <option value="">
+                اختر القسم
+              </option>
+
+              <option value="إلكترونيات">
+                إلكترونيات
+              </option>
+
+              <option value="أزياء">
+                أزياء
+              </option>
+
+              <option value="منزل">
+                منزل
+              </option>
+
+              <option value="ألعاب">
+                ألعاب
+              </option>
+
+              <option value="إكسسوارات">
+                إكسسوارات
+              </option>
+
+            </select>
+
+
+
+            <input
+              type="file"
+              id="productImage"
+              accept="image/*"
+            >
+
+
+
+            <div
+              class="image-preview"
+              id="imagePreview"
+            >
+
+              معاينة الصورة
+
+            </div>
+
+
+
+            <button
+              type="submit"
+              class="primary-btn"
+            >
+
+              إضافة المنتج
+
+              ＋
+
+            </button>
+
+
+          </form>
+
+
+        </div>
+
+
+
+        <!-- PRODUCTS MANAGEMENT -->
+
+        <div class="admin-card">
+
+
+          <h3>
+            المنتجات الحالية
+          </h3>
+
+
+          <div
+            class="admin-products"
+            id="adminProductsList"
+          ></div>
+
+
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+
+  </div>
+
 
 
   <!-- TOAST -->
@@ -1177,7 +1344,9 @@
   ></div>
 
 
+
   <script src="script.js"></script>
+
 
 </body>
 
