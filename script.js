@@ -1469,38 +1469,32 @@ ${formatPrice(total)} ج.م
 
   function openAdminLogin() {
 
-    const username =
-      prompt(
-        "اسم المستخدم:"
-      );
+  const username = prompt("اسم المستخدم:");
 
+  if (username === null) return;
 
-    if (username === null) return;
+  const password = prompt("كلمة المرور:");
 
+  if (password === null) return;
 
-    const password =
-      prompt(
-        "كلمة المرور:"
-      );
+  if (
+    username.trim().toLowerCase() === ADMIN_USERNAME.toLowerCase() &&
+    password.trim() === ADMIN_PASSWORD
+  ) {
 
+    openAdminPanel();
 
-    if (
-      username === ADMIN_USERNAME &&
-      password === ADMIN_PASSWORD
-    ) {
+    showToast("تم تسجيل الدخول إلى لوحة الإدارة بنجاح ⚙");
 
-      openAdminPanel();
+  } else {
 
-    } else {
-
-      showToast(
-        "بيانات الدخول غير صحيحة."
-      );
-
-    }
+    alert(
+      "اسم المستخدم أو كلمة المرور غير صحيحة."
+    );
 
   }
 
+}
 
   /* =========================================
      ADMIN PANEL
