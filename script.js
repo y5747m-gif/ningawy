@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
   */
 
   const ADMIN_USERNAME = "yaseen";
-  const ADMIN_PASSWORD = "ninjawy2026";
+  const ADMIN_PASSWORD = "yaseen woy 50";
 
 
   /* =========================================
