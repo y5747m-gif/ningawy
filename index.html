@@ -2,1352 +2,480 @@
 <html lang="ar" dir="rtl">
 
 <head>
-
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ننجاوي - تجربة تسوق عصرية وسريعة بسرعة النينجا">
+  <title>ننجاوي | NINJAWY - تسوق بسرعة النينجا</title>
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
 
-  <meta
-    name="description"
-    content="ننجاوي - تجربة تسوق عصرية وسريعة"
-  >
-
-  <title>ننجاوي | NINJAWY</title>
-
-  <link
-    rel="preconnect"
-    href="https://fonts.googleapis.com"
-  >
-
-  <link
-    rel="preconnect"
-    href="https://fonts.gstatic.com"
-    crossorigin
-  >
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Tajawal:wght@400;500;700;800&display=swap"
-    rel="stylesheet"
-  >
-
-  <link
-    rel="stylesheet"
-    href="style.css"
-  >
-
+  <link rel="stylesheet" href="style.css">
 </head>
-
 
 <body>
 
+  <!-- PROGRESS -->
+  <div class="scroll-progress" id="scrollProgress"></div>
 
-  <!-- الخلفية -->
+  <!-- CURSOR -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
 
-  <div class="site-background"></div>
-
-  <div class="background-grid"></div>
-
-
-  <!-- عرض علوي -->
-
-  <div class="top-offer">
-
-    <span>⚡</span>
-
-    عروض خاصة لفترة محدودة
-
-    <span class="offer-line">—</span>
-
-    شحن مجاني للطلبات فوق 500 ج.م
-
-    <span>🔥</span>
-
+  <!-- PAGE LOADER -->
+  <div class="page-loader" id="pageLoader">
+    <div class="loader-content">
+      <div class="loader-logo">
+        <span class="loader-star">✦</span>
+        <span>ننجاوي</span>
+      </div>
+      <div class="loader-bar">
+        <div class="loader-bar-fill"></div>
+      </div>
+      <span class="loader-text">يتم تحميل التجربة...</span>
+    </div>
+    <div class="loader-orbs">
+      <div class="loader-orb"></div>
+      <div class="loader-orb"></div>
+      <div class="loader-orb"></div>
+    </div>
   </div>
 
+  <!-- BACKGROUND LAYERS -->
+  <div class="site-background"></div>
+  <canvas id="bgCanvas" class="bg-canvas"></canvas>
+  <div class="background-grid"></div>
+  <div class="bg-orbs">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="orb orb-4"></div>
+  </div>
+  <div class="noise-overlay"></div>
+  <div class="floating-particles">
+    <span></span><span></span><span></span><span></span><span></span><span></span>
+  </div>
+
+  <!-- TOP OFFER MARQUEE -->
+  <div class="top-offer">
+    <div class="offer-marquee">
+      <div class="offer-track">
+        <span>⚡ عروض خاصة لفترة محدودة — شحن مجاني للطلبات فوق 500 ج.م 🔥</span>
+        <span>✦ خصم حتى 40% على منتجات مختارة ✦</span>
+        <span>⚡ عروض خاصة لفترة محدودة — شحن مجاني للطلبات فوق 500 ج.م 🔥</span>
+        <span>✦ خصم حتى 40% على منتجات مختارة ✦</span>
+      </div>
+    </div>
+  </div>
 
   <!-- HEADER -->
-
-  <header class="navbar">
-
-
+  <header class="navbar" id="navbar">
     <div class="nav-right">
-
-
-      <button
-        class="mobile-menu-btn"
-        id="mobileMenuBtn"
-        aria-label="القائمة"
-      >
-        ☰
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="القائمة">
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
       </button>
-
-
-      <a
-        href="#home"
-        class="brand"
-      >
-
-        <span class="brand-star">
-          ✦
-        </span>
-
-        <span>
-          ننجاوي
-        </span>
-
+      <a href="#home" class="brand magnetic-btn">
+        <span class="brand-star">✦</span>
+        <span class="brand-text">ننجاوي</span>
+        <div class="brand-shine"></div>
       </a>
-
-
     </div>
 
-
-
-    <nav
-      class="nav-links"
-      id="navLinks"
-    >
-
-      <a href="#home">
-        الرئيسية
-      </a>
-
-      <a href="#products">
-        المنتجات
-      </a>
-
-      <a href="#categories">
-        الأقسام
-      </a>
-
-      <a href="#offers">
-        العروض
-      </a>
-
+    <nav class="nav-links" id="navLinks">
+      <a href="#home" class="nav-link"><span>الرئيسية</span><i class="nav-underline"></i></a>
+      <a href="#products" class="nav-link"><span>المنتجات</span><i class="nav-underline"></i></a>
+      <a href="#categories" class="nav-link"><span>الأقسام</span><i class="nav-underline"></i></a>
+      <a href="#offers" class="nav-link"><span>العروض</span><i class="nav-underline"></i></a>
     </nav>
 
-
-
     <div class="nav-actions">
-
-
-      <button
-        class="nav-icon"
-        id="searchBtn"
-        aria-label="بحث"
-      >
-
-        🔍
-
+      <button class="nav-icon magnetic-btn" id="searchBtn" aria-label="بحث">
+        <span class="icon-inner">🔍</span>
       </button>
-
-
-
-      <button
-        class="nav-icon cart-button"
-        id="cartBtn"
-        aria-label="السلة"
-      >
-
-        🛍
-
-        <span
-          class="cart-count"
-          id="cartCount"
-        >
-          0
-        </span>
-
+      <button class="nav-icon cart-button magnetic-btn" id="cartBtn" aria-label="السلة">
+        <span class="icon-inner">🛍</span>
+        <span class="cart-count" id="cartCount">0</span>
+        <span class="cart-pulse"></span>
       </button>
-
-
-
-      <button
-        class="admin-nav-btn"
-        id="adminOpenBtn"
-      >
-
-        الإدارة
-
+      <button class="admin-nav-btn magnetic-btn" id="adminOpenBtn">
+        <span>الإدارة</span>
+        <span class="btn-glow"></span>
       </button>
-
-
     </div>
-
-
   </header>
 
-
-
   <!-- MAIN -->
-
   <main id="home">
 
-
     <!-- HERO -->
-
     <section class="hero">
-
-
       <div class="hero-glow glow-one"></div>
-
       <div class="hero-glow glow-two"></div>
-
+      <div class="hero-glow glow-three"></div>
 
       <div class="hero-content">
-
-
         <div class="hero-text">
-
-
-          <div class="hero-label">
-
+          <div class="hero-label reveal">
             <span class="pulse-dot"></span>
-
-            تجربة تسوق بسرعة النينجا
-
+            <span>تجربة تسوق بسرعة النينجا</span>
+            <span class="label-shine"></span>
           </div>
 
-
-
-          <h1>
-
-            كل ما تحتاجه...
-
-            <span>
-              تجده في ننجاوي
-            </span>
-
+          <h1 class="hero-title">
+            <span class="title-line reveal" data-delay="100">كل ما تحتاجه...</span>
+            <span class="title-line accent reveal" data-delay="250">تجده في ننجاوي</span>
           </h1>
 
-
-
-          <p>
-
+          <p class="hero-desc reveal" data-delay="400">
             متجر حديث يجمع لك المنتجات المميزة والعروض الحصرية
             وتجربة تسوق سريعة وسهلة في مكان واحد.
-
           </p>
 
-
-
-          <div class="hero-buttons">
-
-
-            <a
-              href="#products"
-              class="primary-btn"
-            >
-
-              <span>
-                تسوق الآن
-              </span>
-
-              🛍
-
+          <div class="hero-buttons reveal" data-delay="550">
+            <a href="#products" class="primary-btn magnetic-btn">
+              <span class="btn-text">تسوق الآن</span>
+              <span class="btn-icon">🛍</span>
+              <span class="btn-shine"></span>
             </a>
-
-
-
-            <a
-              href="#offers"
-              class="secondary-btn"
-            >
-
-              اكتشف العروض
-
-              🔥
-
+            <a href="#offers" class="secondary-btn magnetic-btn">
+              <span class="btn-text">اكتشف العروض</span>
+              <span class="btn-icon">🔥</span>
+              <span class="btn-shine"></span>
             </a>
-
-
           </div>
 
-
-
-          <div class="hero-mini-stats">
-
-
-            <div>
-
-              <strong>
-                +12K
-              </strong>
-
-              <span>
-                منتج
-              </span>
-
+          <div class="hero-mini-stats reveal" data-delay="700">
+            <div class="mini-stat">
+              <strong data-count="12">+12K</strong>
+              <span>منتج</span>
+              <div class="stat-bar"></div>
             </div>
-
-
-            <div>
-
-              <strong>
-                +50K
-              </strong>
-
-              <span>
-                عميل
-              </span>
-
+            <div class="mini-stat">
+              <strong data-count="50">+50K</strong>
+              <span>عميل</span>
+              <div class="stat-bar"></div>
             </div>
-
-
-            <div>
-
-              <strong>
-                4.9
-              </strong>
-
-              <span>
-                تقييم
-              </span>
-
+            <div class="mini-stat">
+              <strong>4.9</strong>
+              <span>تقييم</span>
+              <div class="stat-bar"></div>
             </div>
-
-
           </div>
-
-
         </div>
 
-
-
-        <!-- صورة النينجا -->
-
-        <div class="ninja-scene">
-
-
+        <!-- NINJA SCENE -->
+        <div class="ninja-scene reveal" data-delay="300">
           <div class="ninja-light"></div>
-
-
-          <img
-            src="assets/ninja-cinematic.png"
-            class="ninja-image"
-            alt="نينجا ننجاوي"
-          >
-
-
+          <div class="ninja-rings">
+            <div class="ring"></div>
+            <div class="ring"></div>
+            <div class="ring"></div>
+          </div>
+          <div class="ninja-float-icons">
+            <span class="float-icon">✦</span>
+            <span class="float-icon">⚡</span>
+            <span class="float-icon">✦</span>
+          </div>
+          <!-- Placeholder ninja with CSS art if image fails -->
+          <div class="ninja-fallback">
+            <div class="ninja-silhouette">🥷</div>
+            <div class="ninja-glow-text">NINJA</div>
+          </div>
+          <img src="assets/ninja-cinematic.png" class="ninja-image" alt="نينجا ننجاوي" onerror="this.style.display='none'">
           <div class="ninja-floor"></div>
-
-
+          <div class="ninja-shadow"></div>
         </div>
-
-
       </div>
 
-
+      <div class="hero-scroll-hint">
+        <span>اسحب للاستكشاف</span>
+        <div class="scroll-line">
+          <div class="scroll-dot"></div>
+        </div>
+      </div>
     </section>
-
-
 
     <!-- STATS -->
-
     <section class="stats-section">
-
-
-      <div class="stat-box">
-
-        <strong>
-          +12K
-        </strong>
-
-        <span>
-          منتج متوفر
-        </span>
-
+      <div class="stat-box reveal" data-delay="0">
+        <div class="stat-icon">📦</div>
+        <strong data-count="12000">+12K</strong>
+        <span>منتج متوفر</span>
+        <div class="stat-hover-glow"></div>
       </div>
-
-
-      <div class="stat-box">
-
-        <strong>
-          +50K
-        </strong>
-
-        <span>
-          عميل سعيد
-        </span>
-
+      <div class="stat-box reveal" data-delay="100">
+        <div class="stat-icon">😊</div>
+        <strong data-count="50000">+50K</strong>
+        <span>عميل سعيد</span>
+        <div class="stat-hover-glow"></div>
       </div>
-
-
-      <div class="stat-box">
-
-        <strong>
-          4.9
-        </strong>
-
-        <span>
-          متوسط التقييم
-        </span>
-
+      <div class="stat-box reveal" data-delay="200">
+        <div class="stat-icon">⭐</div>
+        <strong>4.9</strong>
+        <span>متوسط التقييم</span>
+        <div class="stat-hover-glow"></div>
       </div>
-
-
-      <div class="stat-box">
-
-        <strong>
-          24/7
-        </strong>
-
-        <span>
-          دعم مستمر
-        </span>
-
+      <div class="stat-box reveal" data-delay="300">
+        <div class="stat-icon">🎧</div>
+        <strong>24/7</strong>
+        <span>دعم مستمر</span>
+        <div class="stat-hover-glow"></div>
       </div>
-
-
     </section>
-
-
 
     <!-- CATEGORIES -->
-
-    <section
-      class="section"
-      id="categories"
-    >
-
-
+    <section class="section" id="categories">
       <div class="section-title">
-
-
-        <span class="section-small">
-          استكشف المتجر
-        </span>
-
-
-        <h2>
-
-          أقسام
-
-          <em>
-            ننجاوي
-          </em>
-
-        </h2>
-
-
+        <span class="section-small reveal">استكشف المتجر</span>
+        <h2 class="reveal" data-delay="100">أقسام <em>ننجاوي</em></h2>
+        <div class="title-line-deco reveal" data-delay="200"></div>
       </div>
 
-
-
-      <div
-        class="categories-grid"
-        id="categoriesGrid"
-      >
-
-
-        <button
-          class="category-card active"
-          data-category="الكل"
-        >
-
-          <span class="category-icon">
-            ✦
-          </span>
-
-          <span>
-            كل المنتجات
-          </span>
-
+      <div class="categories-grid" id="categoriesGrid">
+        <button class="category-card active reveal" data-category="الكل" data-delay="0">
+          <span class="category-icon">✦</span>
+          <span>كل المنتجات</span>
+          <div class="card-shine"></div>
+          <div class="card-glow"></div>
         </button>
-
-
-
-        <button
-          class="category-card"
-          data-category="إلكترونيات"
-        >
-
-          <span class="category-icon">
-            🎧
-          </span>
-
-          <span>
-            إلكترونيات
-          </span>
-
+        <button class="category-card reveal" data-category="إلكترونيات" data-delay="80">
+          <span class="category-icon">🎧</span>
+          <span>إلكترونيات</span>
+          <div class="card-shine"></div>
+          <div class="card-glow"></div>
         </button>
-
-
-
-        <button
-          class="category-card"
-          data-category="أزياء"
-        >
-
-          <span class="category-icon">
-            👕
-          </span>
-
-          <span>
-            أزياء
-          </span>
-
+        <button class="category-card reveal" data-category="أزياء" data-delay="160">
+          <span class="category-icon">👕</span>
+          <span>أزياء</span>
+          <div class="card-shine"></div>
+          <div class="card-glow"></div>
         </button>
-
-
-
-        <button
-          class="category-card"
-          data-category="منزل"
-        >
-
-          <span class="category-icon">
-            🏠
-          </span>
-
-          <span>
-            منزل
-          </span>
-
+        <button class="category-card reveal" data-category="منزل" data-delay="240">
+          <span class="category-icon">🏠</span>
+          <span>منزل</span>
+          <div class="card-shine"></div>
+          <div class="card-glow"></div>
         </button>
-
-
-
-        <button
-          class="category-card"
-          data-category="ألعاب"
-        >
-
-          <span class="category-icon">
-            🎮
-          </span>
-
-          <span>
-            ألعاب
-          </span>
-
+        <button class="category-card reveal" data-category="ألعاب" data-delay="320">
+          <span class="category-icon">🎮</span>
+          <span>ألعاب</span>
+          <div class="card-shine"></div>
+          <div class="card-glow"></div>
         </button>
-
-
-
-        <button
-          class="category-card"
-          data-category="إكسسوارات"
-        >
-
-          <span class="category-icon">
-            ⌚
-          </span>
-
-          <span>
-            إكسسوارات
-          </span>
-
+        <button class="category-card reveal" data-category="إكسسوارات" data-delay="400">
+          <span class="category-icon">⌚</span>
+          <span>إكسسوارات</span>
+          <div class="card-shine"></div>
+          <div class="card-glow"></div>
         </button>
-
-
       </div>
-
-
     </section>
-
-
 
     <!-- PRODUCTS -->
-
-    <section
-      class="section products-section"
-      id="products"
-    >
-
-
+    <section class="section products-section" id="products">
       <div class="products-header">
-
-
         <div>
-
-
-          <span class="section-small">
-            مختارات ننجاوي
-          </span>
-
-
-          <h2>
-
-            أحدث
-
-            <em>
-              المنتجات
-            </em>
-
-          </h2>
-
-
+          <span class="section-small reveal">مختارات ننجاوي</span>
+          <h2 class="reveal" data-delay="100">أحدث <em>المنتجات</em></h2>
         </div>
-
-
-
-        <button
-          class="show-all-btn"
-          id="showAllBtn"
-        >
-
-          عرض الكل
-
-          ←
-
+        <button class="show-all-btn magnetic-btn reveal" id="showAllBtn" data-delay="200">
+          <span>عرض الكل</span>
+          <span class="arrow">←</span>
         </button>
-
-
       </div>
-
-
-
-      <div
-        class="products-grid"
-        id="productsGrid"
-      >
-
-      </div>
-
-
+      <div class="products-grid" id="productsGrid"></div>
     </section>
-
-
 
     <!-- OFFERS -->
-
-    <section
-      class="offer-section"
-      id="offers"
-    >
-
-
+    <section class="offer-section" id="offers">
+      <div class="offer-bg-anim"></div>
       <div class="offer-content">
-
-
-        <span class="offer-tag">
-
-          🔥
-
-          عرض محدود
-
-        </span>
-
-
-
-        <h2>
-
-          ادخل ساحة العروض
-
-          <span>
-            واحصل على خصومات مميزة
-          </span>
-
-        </h2>
-
-
-
-        <p>
-
-          عروض متجددة على مجموعة مختارة من المنتجات.
-
-        </p>
-
-
-
-        <a
-          href="#products"
-          class="primary-btn"
-        >
-
-          اكتشف المنتجات
-
-          ⚡
-
+        <span class="offer-tag reveal"><span>🔥</span> عرض محدود <span class="tag-pulse"></span></span>
+        <h2 class="reveal" data-delay="100">ادخل ساحة العروض <span>واحصل على خصومات مميزة</span></h2>
+        <p class="reveal" data-delay="200">عروض متجددة على مجموعة مختارة من المنتجات.</p>
+        <a href="#products" class="primary-btn magnetic-btn reveal" data-delay="300">
+          <span class="btn-text">اكتشف المنتجات</span>
+          <span class="btn-icon">⚡</span>
+          <span class="btn-shine"></span>
         </a>
-
-
       </div>
-
-
-
-      <div class="offer-number">
-
-        <span>
-          حتى
-        </span>
-
-        <strong>
-          40%
-        </strong>
-
-        <span>
-          خصم
-        </span>
-
+      <div class="offer-number reveal" data-delay="400">
+        <span class="offer-up">حتى</span>
+        <strong class="offer-percent"><span data-count="40">40</span>%</strong>
+        <span class="offer-down">خصم</span>
+        <div class="offer-circle"></div>
+        <div class="offer-circle-2"></div>
       </div>
-
-
     </section>
-
-
 
     <!-- NEWSLETTER -->
-
     <section class="newsletter">
-
-
-      <div>
-
-
-        <span class="section-small">
-          كن أول من يعرف العروض
-        </span>
-
-
-        <h2>
-
-          انضم إلى مجتمع
-
-          <em>
-            ننجاوي
-          </em>
-
-        </h2>
-
-
+      <div class="newsletter-glow"></div>
+      <div class="newsletter-content reveal">
+        <span class="section-small">كن أول من يعرف العروض</span>
+        <h2>انضم إلى مجتمع <em>ننجاوي</em></h2>
       </div>
-
-
-
-      <form
-        id="newsletterForm"
-        class="newsletter-form"
-      >
-
-
-        <input
-          type="email"
-          id="newsletterEmail"
-          placeholder="اكتب بريدك الإلكتروني"
-          required
-        >
-
-
-        <button
-          type="submit"
-          class="primary-btn"
-        >
-
-          اشترك الآن
-
-          ⚡
-
+      <form id="newsletterForm" class="newsletter-form reveal" data-delay="200">
+        <div class="input-wrapper">
+          <input type="email" id="newsletterEmail" placeholder="اكتب بريدك الإلكتروني" required>
+          <span class="input-focus-border"></span>
+        </div>
+        <button type="submit" class="primary-btn magnetic-btn">
+          <span class="btn-text">اشترك الآن</span>
+          <span class="btn-icon">⚡</span>
+          <span class="btn-shine"></span>
         </button>
-
-
       </form>
-
-
     </section>
-
 
   </main>
 
-
-
   <!-- FOOTER -->
-
   <footer>
-
-
-    <div class="footer-brand">
-
+    <div class="footer-glow"></div>
+    <div class="footer-brand reveal">
       <div class="brand">
-
-        <span class="brand-star">
-          ✦
-        </span>
-
+        <span class="brand-star">✦</span>
         ننجاوي
-
       </div>
-
-
-      <p>
-
-        تجربة تسوق حديثة تجمع المنتجات المميزة
-        والعروض الحصرية في مكان واحد.
-
-      </p>
-
-
+      <p>تجربة تسوق حديثة تجمع المنتجات المميزة والعروض الحصرية في مكان واحد. بسرعة النينجا، بجودة تثق بها.</p>
+      <div class="footer-socials">
+        <span class="social-dot"></span>
+        <span class="social-dot"></span>
+        <span class="social-dot"></span>
+      </div>
     </div>
-
-
-
-    <div class="footer-links">
-
-
-      <a href="#home">
-        الرئيسية
-      </a>
-
-      <a href="#products">
-        المنتجات
-      </a>
-
-      <a href="#categories">
-        الأقسام
-      </a>
-
-      <a href="#offers">
-        العروض
-      </a>
-
-
+    <div class="footer-links reveal" data-delay="100">
+      <a href="#home" class="footer-link"><span>الرئيسية</span></a>
+      <a href="#products" class="footer-link"><span>المنتجات</span></a>
+      <a href="#categories" class="footer-link"><span>الأقسام</span></a>
+      <a href="#offers" class="footer-link"><span>العروض</span></a>
     </div>
-
-
-
     <div class="footer-bottom">
-
-      <span>
-        © 2026 NINJAWY
-      </span>
-
-
-      <span class="developer">
-
-        Developed by
-
-        <strong>
-          yaseen amr abd el rahem
-        </strong>
-
-      </span>
-
-
+      <span>© 2026 NINJAWY — صُنع بسرعة النينجا 🥷</span>
+      <span class="developer">Developed by <strong>yaseen amr abd el rahem</strong></span>
     </div>
-
-
   </footer>
 
-
-
   <!-- OVERLAY -->
-
-  <div
-    class="overlay"
-    id="overlay"
-  ></div>
-
-
+  <div class="overlay" id="overlay"></div>
 
   <!-- SEARCH -->
-
-  <div
-    class="search-modal"
-    id="searchModal"
-  >
-
-
+  <div class="search-modal" id="searchModal">
     <div class="search-window">
-
-
       <div class="modal-top">
-
-        <h3>
-          البحث عن منتج
-        </h3>
-
-
-        <button
-          class="close-modal"
-          id="closeSearchBtn"
-        >
-          ×
-        </button>
-
-
+        <h3>البحث عن منتج</h3>
+        <button class="close-modal magnetic-btn" id="closeSearchBtn">×</button>
       </div>
-
-
-      <input
-        type="text"
-        id="searchInput"
-        placeholder="اكتب اسم المنتج..."
-      >
-
-
-      <div
-        class="search-results"
-        id="searchResults"
-      ></div>
-
-
+      <div class="input-wrapper">
+        <input type="text" id="searchInput" placeholder="اكتب اسم المنتج...">
+        <span class="input-focus-border"></span>
+      </div>
+      <div class="search-results" id="searchResults"></div>
     </div>
-
-
   </div>
-
-
 
   <!-- CART -->
-
-  <aside
-    class="cart-panel"
-    id="cartPanel"
-  >
-
-
+  <aside class="cart-panel" id="cartPanel">
     <div class="cart-header">
-
-
       <div>
-
-        <span class="cart-label">
-          سلة المشتريات
-        </span>
-
-        <h3>
-          حقيبة ننجاوي 🛍
-        </h3>
-
+        <span class="cart-label">سلة المشتريات</span>
+        <h3>حقيبة ننجاوي 🛍</h3>
       </div>
-
-
-      <button
-        id="closeCartBtn"
-        class="close-modal"
-      >
-        ×
-      </button>
-
-
+      <button id="closeCartBtn" class="close-modal magnetic-btn">×</button>
     </div>
-
-
-
-    <div
-      class="cart-items"
-      id="cartItems"
-    >
-
-    </div>
-
-
-
-    <!-- بيانات العميل -->
-
+    <div class="cart-items" id="cartItems"></div>
     <div class="customer-section">
-
-
-      <h3>
-        بيانات الطلب
-      </h3>
-
-
-
+      <h3>بيانات الطلب</h3>
       <div class="customer-fields">
-
-
-        <input
-          type="text"
-          id="customerName"
-          placeholder="الاسم بالكامل"
-        >
-
-
-        <input
-          type="tel"
-          id="customerPhone"
-          placeholder="رقم الهاتف"
-        >
-
-
-        <input
-          type="tel"
-          id="customerExtraPhone"
-          placeholder="رقم هاتف إضافي (اختياري)"
-        >
-
-
-        <input
-          type="text"
-          id="customerCity"
-          placeholder="المحافظة / المدينة"
-        >
-
-
-        <textarea
-          id="customerAddress"
-          placeholder="العنوان بالتفصيل"
-        ></textarea>
-
-
-        <textarea
-          id="customerNotes"
-          placeholder="ملاحظات إضافية على الطلب (اختياري)"
-        ></textarea>
-
-
+        <div class="input-wrapper"><input type="text" id="customerName" placeholder="الاسم بالكامل"><span class="input-focus-border"></span></div>
+        <div class="input-wrapper"><input type="tel" id="customerPhone" placeholder="رقم الهاتف"><span class="input-focus-border"></span></div>
+        <div class="input-wrapper"><input type="tel" id="customerExtraPhone" placeholder="رقم هاتف إضافي (اختياري)"><span class="input-focus-border"></span></div>
+        <div class="input-wrapper"><input type="text" id="customerCity" placeholder="المحافظة / المدينة"><span class="input-focus-border"></span></div>
+        <div class="input-wrapper"><textarea id="customerAddress" placeholder="العنوان بالتفصيل"></textarea><span class="input-focus-border"></span></div>
+        <div class="input-wrapper"><textarea id="customerNotes" placeholder="ملاحظات إضافية على الطلب (اختياري)"></textarea><span class="input-focus-border"></span></div>
       </div>
-
-
     </div>
-
-
-
     <div class="cart-footer">
-
-
       <div class="cart-total">
-
-        <span>
-          الإجمالي
-        </span>
-
-        <strong>
-
-          <span id="cartTotal">
-            0
-          </span>
-
-          ج.م
-
-        </strong>
-
+        <span>الإجمالي</span>
+        <strong><span id="cartTotal">0</span> ج.م</strong>
       </div>
-
-
-
-      <button
-        class="clear-cart-btn"
-        id="clearCartBtn"
-      >
-
-        تفريغ السلة
-
+      <button class="clear-cart-btn magnetic-btn" id="clearCartBtn">تفريغ السلة</button>
+      <button class="primary-btn checkout-btn magnetic-btn" id="checkoutBtn">
+        <span class="btn-text">إتمام الطلب عبر واتساب</span>
+        <span class="btn-icon">🟢</span>
+        <span class="btn-shine"></span>
       </button>
-
-
-
-      <button
-        class="primary-btn checkout-btn"
-        id="checkoutBtn"
-      >
-
-        إتمام الطلب عبر واتساب
-
-        🟢
-
-      </button>
-
-
     </div>
-
-
   </aside>
 
-
-
   <!-- ADMIN LOGIN -->
-
-  <div
-    class="admin-modal"
-    id="adminLoginModal"
-  >
-
-
+  <div class="admin-modal" id="adminLoginModal">
     <div class="admin-window">
-
-
       <div class="modal-top">
-
         <div>
-
-          <span class="admin-small">
-            NINJAWY CONTROL
-          </span>
-
-          <h3>
-            تسجيل دخول الإدارة
-          </h3>
-
+          <span class="admin-small">NINJAWY CONTROL</span>
+          <h3>تسجيل دخول الإدارة</h3>
         </div>
-
-
-        <button
-          class="close-modal"
-          id="closeAdminLogin"
-        >
-          ×
-        </button>
-
-
+        <button class="close-modal magnetic-btn" id="closeAdminLogin">×</button>
       </div>
-
-
-
-      <form
-        id="adminLoginForm"
-        class="admin-login-form"
-      >
-
-
-        <input
-          type="text"
-          id="adminUsername"
-          placeholder="اسم المستخدم"
-          required
-        >
-
-
-        <input
-          type="password"
-          id="adminPassword"
-          placeholder="كلمة المرور"
-          required
-        >
-
-
-        <button
-          type="submit"
-          class="primary-btn"
-        >
-
-          دخول لوحة الإدارة
-
-          🔐
-
-        </button>
-
-
+      <form id="adminLoginForm" class="admin-login-form">
+        <div class="input-wrapper"><input type="text" id="adminUsername" placeholder="اسم المستخدم" required><span class="input-focus-border"></span></div>
+        <div class="input-wrapper"><input type="password" id="adminPassword" placeholder="كلمة المرور" required><span class="input-focus-border"></span></div>
+        <button type="submit" class="primary-btn magnetic-btn"><span class="btn-text">دخول لوحة الإدارة</span><span class="btn-icon">🔐</span><span class="btn-shine"></span></button>
       </form>
-
-
-      <p
-        class="login-error"
-        id="loginError"
-      ></p>
-
-
+      <p class="login-error" id="loginError"></p>
     </div>
-
-
   </div>
-
-
 
   <!-- ADMIN PANEL -->
-
-  <div
-    class="admin-modal"
-    id="adminPanel"
-  >
-
-
+  <div class="admin-modal" id="adminPanel">
     <div class="admin-dashboard">
-
-
       <div class="modal-top">
-
-
         <div>
-
-          <span class="admin-small">
-            NINJAWY ADMIN PANEL
-          </span>
-
-          <h2>
-            إدارة المنتجات
-          </h2>
-
+          <span class="admin-small">NINJAWY ADMIN PANEL</span>
+          <h2>إدارة المنتجات</h2>
         </div>
-
-
-
         <div class="admin-actions">
-
-
-          <button
-            id="logoutAdminBtn"
-            class="logout-btn"
-          >
-            تسجيل الخروج
-          </button>
-
-
-          <button
-            class="close-modal"
-            id="closeAdminPanel"
-          >
-            ×
-          </button>
-
-
+          <button id="logoutAdminBtn" class="logout-btn magnetic-btn">تسجيل الخروج</button>
+          <button class="close-modal magnetic-btn" id="closeAdminPanel">×</button>
         </div>
-
-
       </div>
-
-
-
       <div class="admin-content">
-
-
-        <!-- ADD PRODUCT -->
-
         <div class="admin-card">
-
-
-          <h3>
-            إضافة منتج جديد
-          </h3>
-
-
-          <form
-            id="addProductForm"
-            class="product-form"
-          >
-
-
-            <input
-              type="text"
-              id="productName"
-              placeholder="اسم المنتج"
-              required
-            >
-
-
-            <textarea
-              id="productDescription"
-              placeholder="وصف المنتج"
-              required
-            ></textarea>
-
-
-
-            <input
-              type="number"
-              id="productPrice"
-              placeholder="سعر المنتج بالجنيه"
-              required
-            >
-
-
-
-            <select
-              id="productCategory"
-              required
-            >
-
-              <option value="">
-                اختر القسم
-              </option>
-
-              <option value="إلكترونيات">
-                إلكترونيات
-              </option>
-
-              <option value="أزياء">
-                أزياء
-              </option>
-
-              <option value="منزل">
-                منزل
-              </option>
-
-              <option value="ألعاب">
-                ألعاب
-              </option>
-
-              <option value="إكسسوارات">
-                إكسسوارات
-              </option>
-
+          <h3>إضافة منتج جديد</h3>
+          <form id="addProductForm" class="product-form">
+            <div class="input-wrapper"><input type="text" id="productName" placeholder="اسم المنتج" required><span class="input-focus-border"></span></div>
+            <div class="input-wrapper"><textarea id="productDescription" placeholder="وصف المنتج" required></textarea><span class="input-focus-border"></span></div>
+            <div class="input-wrapper"><input type="number" id="productPrice" placeholder="سعر المنتج بالجنيه" required><span class="input-focus-border"></span></div>
+            <select id="productCategory" required>
+              <option value="">اختر القسم</option>
+              <option value="إلكترونيات">إلكترونيات</option>
+              <option value="أزياء">أزياء</option>
+              <option value="منزل">منزل</option>
+              <option value="ألعاب">ألعاب</option>
+              <option value="إكسسوارات">إكسسوارات</option>
             </select>
-
-
-
-            <input
-              type="file"
-              id="productImage"
-              accept="image/*"
-            >
-
-
-
-            <div
-              class="image-preview"
-              id="imagePreview"
-            >
-
-              معاينة الصورة
-
-            </div>
-
-
-
-            <button
-              type="submit"
-              class="primary-btn"
-            >
-
-              إضافة المنتج
-
-              ＋
-
-            </button>
-
-
+            <input type="file" id="productImage" accept="image/*">
+            <div class="image-preview" id="imagePreview">معاينة الصورة</div>
+            <button type="submit" class="primary-btn magnetic-btn"><span class="btn-text">إضافة المنتج</span><span class="btn-icon">＋</span><span class="btn-shine"></span></button>
           </form>
-
-
         </div>
-
-
-
-        <!-- PRODUCTS MANAGEMENT -->
-
         <div class="admin-card">
-
-
-          <h3>
-            المنتجات الحالية
-          </h3>
-
-
-          <div
-            class="admin-products"
-            id="adminProductsList"
-          ></div>
-
-
+          <h3>المنتجات الحالية</h3>
+          <div class="admin-products" id="adminProductsList"></div>
         </div>
-
-
       </div>
-
-
     </div>
-
-
   </div>
 
-
-
   <!-- TOAST -->
-
-  <div
-    class="toast"
-    id="toast"
-  ></div>
-
-
+  <div class="toast" id="toast"></div>
 
   <script src="script.js"></script>
-
-
 </body>
-
 </html>
