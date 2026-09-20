@@ -4,6 +4,8 @@
 
 ## الملفات
 - index.html
+- assets/icons/sprite.svg (مكتبة الأيقونات SVG)
+- assets/ninja-hero.png
 - style.css
 - script.js
 

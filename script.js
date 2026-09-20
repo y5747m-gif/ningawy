@@ -12,17 +12,21 @@ const FAVORITES_STORAGE = "ninjawy_favorites";
 const ADMIN_SESSION = "ninjawy_admin_session";
 
 const defaultProducts = [
-  { id: 1, name: "سماعات لاسلكية احترافية", description: "صوت نقي وتصميم مريح للاستخدام اليومي.", category: "إلكترونيات", price: 1299, image: "", icon: "🎧" },
-  { id: 2, name: "حقيبة عصرية مميزة", description: "تصميم أنيق وخامة مناسبة للاستخدام اليومي.", category: "أزياء", price: 899, image: "", icon: "👜" },
-  { id: 3, name: "مصباح ذكي متعدد الألوان", description: "إضاءة ذكية تمنح منزلك أجواء مميزة.", category: "منزل", price: 749, image: "", icon: "💡" },
-  { id: 4, name: "وحدة تحكم لاسلكية", description: "تحكم مريح واستجابة ممتازة للألعاب.", category: "ألعاب", price: 1499, image: "", icon: "🎮" },
-  { id: 5, name: "ساعة ذكية أنيقة", description: "تصميم حديث مع خصائص ذكية متعددة.", category: "إكسسوارات", price: 2199, image: "", icon: "⌚" },
-  { id: 6, name: "لوحة مفاتيح للألعاب", description: "تصميم عملي مناسب للألعاب والعمل.", category: "إلكترونيات", price: 1099, image: "", icon: "⌨️" }
+  { id: 1, name: "سماعات لاسلكية احترافية", description: "صوت نقي وتصميم مريح للاستخدام اليومي.", category: "إلكترونيات", price: 1299, image: "", icon: "headset" },
+  { id: 2, name: "حقيبة عصرية مميزة", description: "تصميم أنيق وخامة مناسبة للاستخدام اليومي.", category: "أزياء", price: 899, image: "", icon: "handbag" },
+  { id: 3, name: "مصباح ذكي متعدد الألوان", description: "إضاءة ذكية تمنح منزلك أجواء مميزة.", category: "منزل", price: 749, image: "", icon: "lamp" },
+  { id: 4, name: "وحدة تحكم لاسلكية", description: "تحكم مريح واستجابة ممتازة للألعاب.", category: "ألعاب", price: 1499, image: "", icon: "gamepad" },
+  { id: 5, name: "ساعة ذكية أنيقة", description: "تصميم حديث مع خصائص ذكية متعددة.", category: "إكسسوارات", price: 2199, image: "", icon: "watch" },
+  { id: 6, name: "لوحة مفاتيح للألعاب", description: "تصميم عملي مناسب للألعاب والعمل.", category: "إلكترونيات", price: 1099, image: "", icon: "keyboard" }
 ];
 
 let products = JSON.parse(localStorage.getItem(PRODUCTS_STORAGE)) || defaultProducts;
+// migrate legacy emoji icons to sprite icon names
+const legacyIcons={"🎧":"headset","👜":"handbag","💡":"lamp","🎮":"gamepad","⌚":"watch","⌨️":"keyboard","📦":"box"};
+products=products.map(p=>({...p, icon: legacyIcons[p.icon] || (/^[a-z-]+$/.test(p.icon||"") ? p.icon : "box")}));
 let cart = JSON.parse(localStorage.getItem(CART_STORAGE)) || [];
 let favorites = JSON.parse(localStorage.getItem(FAVORITES_STORAGE)) || [];
+const icon=(n,c="ic")=>`<svg class="${c}" aria-hidden="true"><use href="#i-${n}"/></svg>`;
 let selectedCategory = "الكل";
 let uploadedImage = "";
 
@@ -387,7 +391,7 @@ function renderProducts(){
   }
   filteredProducts.forEach((product, index)=>{
     const isFavorite=favorites.includes(product.id);
-    const imageContent=product.image?`<img src="${product.image}" class="product-image" alt="${product.name}" loading="lazy">`:`<div class="product-placeholder">${product.icon||"📦"}</div>`;
+    const imageContent=product.image?`<img src="${product.image}" class="product-image" alt="${product.name}" loading="lazy">`:`<div class="product-placeholder">${icon(product.icon||"box")}</div>`;
     const card=document.createElement("article");
     card.className="product-card reveal";
     card.dataset.delay = (index*60).toString();
@@ -396,7 +400,7 @@ function renderProducts(){
       <div class="product-image-box">
         ${imageContent}
         <span class="product-badge">${product.category}</span>
-        <button class="favorite-btn ${isFavorite?"active":""}" data-favorite="${product.id}">${isFavorite?"♥":"♡"}</button>
+        <button class="favorite-btn ${isFavorite?"active":""}" data-favorite="${product.id}">${icon("heart")}</button>
       </div>
       <div class="product-info">
         <span class="product-category">${product.category}</span>
@@ -406,7 +410,7 @@ function renderProducts(){
           <strong class="product-price">${formatPrice(product.price)} ج.م</strong>
         </div>
         <button class="add-btn magnetic-btn" data-add="${product.id}">
-          <span class="btn-text">أضف للسلة ⚔</span>
+          <span class="btn-text">أضف للسلة</span><span class="btn-icon">${icon("katana")}</span>
           <span class="btn-shine"></span>
         </button>
       </div>
@@ -502,7 +506,7 @@ function addToCart(id, button){
   // cart count pop
   cartCount.animate([{transform:"scale(1)"},{transform:"scale(1.4)"},{transform:"scale(1)"}],{duration:350,easing:"cubic-bezier(.34,1.56,.64,1)"});
 
-  showToast("تمت إضافة المنتج إلى السلة 🛍");
+  showToast("تمت إضافة المنتج إلى السلة");
 }
 
 function renderCart(){
@@ -518,7 +522,7 @@ function renderCart(){
   cart.forEach((item, idx)=>{
     total+=item.price*item.quantity;
     totalQuantity+=item.quantity;
-    const image=item.image?`<img src="${item.image}" class="cart-item-image" alt="${item.name}">`:`<div class="cart-item-image product-placeholder">${item.icon||"📦"}</div>`;
+    const image=item.image?`<img src="${item.image}" class="cart-item-image" alt="${item.name}">`:`<div class="cart-item-image product-placeholder">${icon(item.icon||"box")}</div>`;
     const cartItem=document.createElement("div");
     cartItem.className="cart-item";
     cartItem.style.animationDelay=(idx*60)+"ms";
@@ -528,10 +532,10 @@ function renderCart(){
         <h4>${item.name}</h4>
         <strong>${formatPrice(item.price)} ج.م</strong>
         <div class="cart-controls">
-          <button class="qty-btn" data-increase="${item.id}">+</button>
+          <button class="qty-btn" data-increase="${item.id}">${icon("plus")}</button>
           <span>${item.quantity}</span>
-          <button class="qty-btn" data-decrease="${item.id}">−</button>
-          <button class="remove-cart-item" data-remove="${item.id}">حذف</button>
+          <button class="qty-btn" data-decrease="${item.id}">${icon("minus")}</button>
+          <button class="remove-cart-item" data-remove="${item.id}">${icon("trash")} حذف</button>
         </div>
       </div>
     `;
@@ -684,7 +688,7 @@ document.getElementById("newsletterForm").addEventListener("submit", e=>{
   const btn=e.target.querySelector("button");
   btn.animate([{transform:"scale(1)"},{transform:"scale(.95)"},{transform:"scale(1)"}],{duration:300});
   e.target.reset();
-  showToast("تم الاشتراك بنجاح ⚡");
+  showToast("تم الاشتراك بنجاح");
 });
 
 /* MOBILE MENU */
@@ -734,7 +738,7 @@ document.getElementById("adminLoginForm").addEventListener("submit", e=>{
     overlay.classList.remove("show");
     openAdminPanel();
     e.target.reset();
-    showToast("تم تسجيل الدخول بنجاح ✦");
+    showToast("تم تسجيل الدخول بنجاح");
   } else {
     loginError.textContent="بيانات الدخول غير صحيحة.";
     loginError.animate([{transform:"translateX(0)"},{transform:"translateX(-6px)"},{transform:"translateX(6px)"},{transform:"translateX(0)"}],{duration:300});
@@ -786,7 +790,7 @@ document.getElementById("addProductForm").addEventListener("submit", e=>{
   if(!name||!description||!price||!category){
     showToast("أكمل جميع بيانات المنتج."); return;
   }
-  const newProduct={id:Date.now(), name, description, price, category, image:uploadedImage, icon:"📦"};
+  const newProduct={id:Date.now(), name, description, price, category, image:uploadedImage, icon:"box"};
   products.unshift(newProduct);
   saveProducts();
   renderProducts();
@@ -794,7 +798,7 @@ document.getElementById("addProductForm").addEventListener("submit", e=>{
   e.target.reset();
   uploadedImage="";
   document.getElementById("imagePreview").textContent="معاينة الصورة";
-  showToast("تمت إضافة المنتج بنجاح ✦");
+  showToast("تمت إضافة المنتج بنجاح");
 });
 
 /* ADMIN PRODUCTS */
@@ -805,11 +809,11 @@ function renderAdminProducts(){
     const item=document.createElement("div");
     item.className="admin-product-item";
     item.style.animationDelay=(i*40)+"ms";
-    const image=product.image?`<img src="${product.image}" alt="${product.name}">`:`<div class="cart-item-image product-placeholder">${product.icon||"📦"}</div>`;
+    const image=product.image?`<img src="${product.image}" alt="${product.name}">`:`<div class="cart-item-image product-placeholder">${icon(product.icon||"box")}</div>`;
     item.innerHTML=`
       ${image}
       <div class="admin-product-info"><h4>${product.name}</h4><span>${formatPrice(product.price)} ج.م</span></div>
-      <button class="delete-product-btn" data-delete-product="${product.id}">حذف</button>
+      <button class="delete-product-btn" data-delete-product="${product.id}">${icon("trash")} حذف</button>
     `;
     list.appendChild(item);
   });
@@ -850,7 +854,7 @@ function checkout(){
   // button loading animation
   const btn=document.getElementById("checkoutBtn");
   const originalHTML=btn.innerHTML;
-  btn.innerHTML=`<span class="btn-text">جاري التحويل...</span> <span class="btn-icon">⏳</span>`;
+  btn.innerHTML=`<span class="btn-text">جاري التحويل...</span> <span class="btn-icon">${icon("bolt")}</span>`;
   btn.disabled=true;
 
   let total=0;
@@ -867,7 +871,7 @@ function checkout(){
     window.open(url,"_blank");
     btn.innerHTML=originalHTML;
     btn.disabled=false;
-    showToast("تم فتح واتساب لإتمام الطلب 🟢");
+    showToast("تم فتح واتساب لإتمام الطلب");
   }, 900);
 }
 
