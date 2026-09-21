@@ -734,7 +734,7 @@ html[data-theme="light"] .ninja-shadow{background:radial-gradient(ellipse,rgba(2
 .cd-box:hover{transform:translateY(-4px);border-color:var(--border-accent)}
 .cd-box strong{display:block;font-family:var(--font-display);font-size:26px;font-weight:900;color:var(--accent);letter-spacing:-.02em;font-variant-numeric:tabular-nums}
 .cd-box span{display:block;font-size:10px;color:var(--muted);font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-top:3px}
-.cd-sep{font-size:22px;font-weight:900;color:var(--faint);animation:textPulse 1.4s ease-in-out infinite}
+.cd-sep{font-size:22px;font-weight:900;color:var(--faint);animation:none}
 
 .offer-number{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;min-width:250px;padding:34px 26px;border-radius:var(--r-lg);background:linear-gradient(150deg,var(--primary-3),var(--primary));box-shadow:var(--shadow-glow);overflow:hidden;color:#fff}
 .offer-up,.offer-down{font-size:12px;font-weight:800;letter-spacing:.24em;text-transform:uppercase;opacity:.85}

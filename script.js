@@ -891,14 +891,27 @@
 
   /* ---------------- REVEAL ---------------- */
   let revealObserver;
+  const revealActivated = new WeakSet();
+
+  function revealNode(node) {
+    // Fire once per node: `.active` is added exactly once and never removed,
+    // so content can never disappear/reappear when the observer re-fires
+    // (resize, layout shift, re-render). The CSS transition handles the
+    // smooth, one-time entrance (see `.reveal` in style.css).
+    if (!node || revealActivated.has(node)) return;
+    revealActivated.add(node);
+    node.classList.add("active");
+  }
+
   function initReveal() {
     revealObserver = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (!entry.isIntersecting) return;
         const node = entry.target;
         const delay = parseInt(node.dataset.delay || "0", 10);
-        setTimeout(() => node.classList.add("active"), delay);
         revealObserver.unobserve(node);
+        if (delay > 0) setTimeout(() => revealNode(node), delay);
+        else revealNode(node);
       });
     }, { threshold: .12, rootMargin: "0px 0px -40px 0px" });
     observeReveals();
@@ -1023,6 +1036,8 @@
   }
 
   /* ---------------- PRODUCTS ---------------- */
+  let productsRenderedOnce = false;
+
   function visibleProducts() {
     return selectedCategory === "all" ? products : products.filter(p => p.category === selectedCategory);
   }
@@ -1030,6 +1045,7 @@
   function renderProducts() {
     if (!el.productsGrid) return;
     const list = visibleProducts();
+    const firstRender = !productsRenderedOnce;
     if (el.resultsCount) el.resultsCount.textContent = t("prod.results", { n: numberFmt().format(list.length) });
 
     el.productsGrid.innerHTML = "";
@@ -1040,6 +1056,7 @@
           <strong>${t("prod.emptyTitle")}</strong>
           <span>${t("prod.emptyDesc")}</span>
         </div>`;
+      productsRenderedOnce = true;
       return;
     }
 
@@ -1052,8 +1069,11 @@
         : `<div class="product-placeholder">${icon(product.icon || "box")}</div>`;
 
       const card = document.createElement("article");
-      card.className = "product-card reveal";
-      card.dataset.delay = String(Math.min(index * 60, 400));
+      // Cards are always rendered in their visible state — never in a hidden
+      // `.reveal` state — so re-renders (language switch, category tap,
+      // favorite toggle, admin edit) no longer make the text blink out and
+      // reappear. A light one-shot entrance is applied on the first paint only.
+      card.className = "product-card";
       card.style.setProperty("--i", index);
       card.innerHTML = `
         <div class="product-image-box">
@@ -1086,11 +1106,20 @@
     bindProductEvents();
     initTilt(el.productsGrid);
     initMagnetic(el.productsGrid);
-    observeReveals(el.productsGrid);
-    // staggered entrance
-    $$(".product-card.reveal:not(.active)", el.productsGrid).forEach((node, i) => {
-      setTimeout(() => node.classList.add("active"), 60 + i * 55);
-    });
+
+    // Gentle one-shot entrance on the very first paint only. Re-renders swap
+    // content instantly, which keeps the page stable instead of flickering.
+    if (firstRender) {
+      const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      $$(".product-card", el.productsGrid).forEach((card, i) => {
+        if (reduce || !card.animate) return;
+        card.animate(
+          [{ opacity: 0, transform: "translateY(18px)" }, { opacity: 1, transform: "translateY(0)" }],
+          { duration: 460, delay: Math.min(i * 45, 360), easing: "cubic-bezier(.2,.8,.2,1)", fill: "backwards" }
+        );
+      });
+    }
+    productsRenderedOnce = true;
   }
 
   function bindProductEvents() {
