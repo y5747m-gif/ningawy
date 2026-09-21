@@ -1099,7 +1099,6 @@
       btn.dataset.bound = "1";
       btn.addEventListener("click", () => {
         addToCart(Number(btn.dataset.add), btn);
-        createBurst(btn);
       });
     });
     $$("[data-favorite]", el.productsGrid).forEach(btn => {
@@ -1110,24 +1109,6 @@
         btn.animate([{ transform: "scale(1)" }, { transform: "scale(1.4)" }, { transform: "scale(1)" }], { duration: 420, easing: "cubic-bezier(.34,1.56,.64,1)" });
       });
     });
-  }
-
-  function createBurst(btn) {
-    const r = btn.getBoundingClientRect();
-    for (let i = 0; i < 8; i++) {
-      const dot = document.createElement("span");
-      Object.assign(dot.style, {
-        position: "fixed", left: r.left + r.width / 2 + "px", top: r.top + r.height / 2 + "px",
-        width: "6px", height: "6px", background: "var(--accent)", borderRadius: "50%",
-        pointerEvents: "none", zIndex: "9999", boxShadow: "0 0 10px var(--glow)"
-      });
-      document.body.appendChild(dot);
-      const angle = (Math.PI * 2 / 8) * i, dist = 42 + Math.random() * 34;
-      dot.animate([
-        { transform: "translate(-50%,-50%) scale(1)", opacity: 1 },
-        { transform: `translate(calc(-50% + ${Math.cos(angle) * dist}px), calc(-50% + ${Math.sin(angle) * dist}px)) scale(0)`, opacity: 0 }
-      ], { duration: 620 + Math.random() * 220, easing: "cubic-bezier(.2,.8,.2,1)" }).onfinish = () => dot.remove();
-    }
   }
 
   function toggleFavorite(id) {
@@ -1144,6 +1125,116 @@
   const escapeAttr = escapeHTML;
 
   /* ---------------- CART ---------------- */
+  const cartMotionPreference = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const activeCartFlights = new Set();
+  const addButtonTimers = new WeakMap();
+
+  function cancelCartFlights() {
+    activeCartFlights.forEach(cancel => cancel());
+  }
+  window.addEventListener("pagehide", cancelCartFlights);
+  window.addEventListener("resize", cancelCartFlights);
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) cancelCartFlights();
+  });
+  cartMotionPreference.addEventListener("change", cancelCartFlights);
+
+  function pulseCart() {
+    if (cartMotionPreference.matches || !Element.prototype.animate) return;
+    // Replace only our arrival effects, not other button interactions.
+    [$("#cartBtn"), el.cartCount].forEach(node => {
+      if (!node) return;
+      node.getAnimations().filter(animation => animation.id === "cart-arrival").forEach(animation => animation.cancel());
+      const animation = node.animate([
+        { transform: "scale(1)" },
+        { transform: node === el.cartCount ? "scale(1.45)" : "translateY(-5px) scale(1.12)", offset: .4 },
+        { transform: "scale(1)" }
+      ], { duration: 460, easing: "cubic-bezier(.22,1,.36,1)" });
+      animation.id = "cart-arrival";
+    });
+  }
+
+  async function flyProductToCart(product, button) {
+    const cartButton = $("#cartBtn");
+    if (!button || !cartButton || document.hidden || cartMotionPreference.matches || !Element.prototype.animate) return;
+
+    // Keep rapid clicks responsive without accumulating unlimited overlay nodes.
+    if (activeCartFlights.size >= 4) activeCartFlights.values().next().value();
+    const source = button.closest(".product-card")?.querySelector(".product-image, .product-placeholder");
+    let origin = (source || button).getBoundingClientRect();
+    if (origin.bottom <= 0 || origin.top >= window.innerHeight) origin = button.getBoundingClientRect();
+    const size = Math.min(190, window.innerWidth * .38, window.innerHeight * .3);
+    const center = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+    const start = { x: origin.left + origin.width / 2, y: Math.max(0, Math.min(window.innerHeight, origin.top + origin.height / 2)) };
+    const direction = start.x < center.x ? -1 : 1;
+    const flyer = document.createElement("div");
+    flyer.className = "cart-flight";
+    flyer.setAttribute("aria-hidden", "true");
+    flyer.style.width = flyer.style.height = `${size}px`;
+    const visual = document.createElement("div");
+    visual.className = "cart-flight-visual";
+    visual.innerHTML = icon(product.icon || "box");
+    const sourceImage = source?.tagName === "IMG" ? source : null;
+    if (product.image && (!sourceImage?.complete || sourceImage.naturalWidth > 0)) {
+      const image = new Image();
+      image.alt = "";
+      image.draggable = false;
+      image.addEventListener("error", () => image.remove(), { once: true });
+      image.src = sourceImage?.currentSrc || product.image;
+      visual.appendChild(image);
+    }
+    flyer.appendChild(visual);
+    document.body.appendChild(flyer);
+
+    let animation;
+    const cancel = () => {
+      animation?.cancel();
+      flyer.remove();
+      activeCartFlights.delete(cancel);
+    };
+    activeCartFlights.add(cancel);
+    const transform = (x, y, scale, rotation = 0) =>
+      `translate3d(${x - size / 2}px, ${y - size / 2}px, 0) rotate(${rotation}deg) scale(${scale})`;
+    try {
+      // Toss upward, overshoot slightly, then settle in the viewport center.
+      animation = flyer.animate([
+        { transform: transform(start.x, start.y, .42, direction * -12), opacity: .25, offset: 0 },
+        { transform: transform(start.x + (center.x - start.x) * .38, Math.min(start.y, center.y) - size * .45, .8, direction * 9), opacity: 1, offset: .32 },
+        { transform: transform(center.x, center.y - 12, 1.08, direction * -4), opacity: 1, offset: .68 },
+        { transform: transform(center.x, center.y, 1), opacity: 1, offset: .86 },
+        { transform: transform(center.x, center.y, 1), opacity: 1, offset: 1 }
+      ], { duration: 780, easing: "cubic-bezier(.22,.7,.3,1)", fill: "forwards" });
+      await animation.finished;
+
+      // Measure again after the toss: scrolling can change the sticky header.
+      const target = (el.cartPanel?.classList.contains("open")
+        ? el.cartPanel.querySelector(".cart-header h3 .ic") : cartButton) || cartButton;
+      const rect = target.getBoundingClientRect();
+      const end = { x: rect.left + rect.width / 2, y: rect.top + rect.height / 2 };
+      const control = { x: center.x + (end.x - center.x) * .2, y: Math.min(center.y, end.y) - 40 };
+      const frames = Array.from({ length: 25 }, (_, i) => {
+        const t = i / 24, u = 1 - t;
+        return {
+          transform: transform(u * u * center.x + 2 * u * t * control.x + t * t * end.x,
+            u * u * center.y + 2 * u * t * control.y + t * t * end.y,
+            1 - .94 * t, direction * 14 * t),
+          opacity: t < .8 ? 1 : (1 - t) / .2,
+          offset: t
+        };
+      });
+      const departure = flyer.animate(frames, { duration: 560, easing: "cubic-bezier(.5,0,.8,.5)", fill: "forwards" });
+      animation.cancel();
+      animation = departure;
+      await animation.finished;
+      pulseCart();
+    } catch (error) {
+      // Cancellation (resize, hidden tab, reduced motion) must never affect cart data.
+      if (error.name !== "AbortError") console.warn("Cart animation unavailable", error);
+    } finally {
+      cancel();
+    }
+  }
+
   function addToCart(id, button) {
     const product = products.find(p => p.id === id);
     if (!product) return;
@@ -1154,22 +1245,19 @@
     renderCart();
 
     if (button) {
-      button.classList.remove("added"); void button.offsetWidth; button.classList.add("added");
+      clearTimeout(addButtonTimers.get(button));
+      button.classList.add("added");
       const label = button.querySelector(".btn-text");
-      if (label) {
-        const original = label.textContent;
-        label.textContent = t("prod.added");
-        setTimeout(() => { label.textContent = original; }, 900);
-      }
-      setTimeout(() => button.classList.remove("added"), 750);
+      if (label) label.textContent = t("prod.added");
+      addButtonTimers.set(button, setTimeout(() => {
+        if (label) label.textContent = t("prod.addToCart");
+        button.classList.remove("added");
+        addButtonTimers.delete(button);
+      }, 1400));
     }
 
-    const cartBtn = $("#cartBtn");
-    if (cartBtn) {
-      cartBtn.classList.remove("has-items"); void cartBtn.offsetWidth; cartBtn.classList.add("has-items");
-      cartBtn.animate([{ transform: "translateY(0)" }, { transform: "translateY(-5px)" }, { transform: "translateY(0)" }, { transform: "translateY(-2px)" }, { transform: "translateY(0)" }], { duration: 520, easing: "ease-out" });
-    }
-    if (el.cartCount) el.cartCount.animate([{ transform: "scale(1)" }, { transform: "scale(1.45)" }, { transform: "scale(1)" }], { duration: 360, easing: "cubic-bezier(.34,1.56,.64,1)" });
+    // Persist immediately; the decorative flight never blocks or duplicates an order.
+    void flyProductToCart(product, button);
     showToast(t("cart.added"));
   }
 
