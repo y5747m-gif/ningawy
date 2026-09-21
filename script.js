@@ -1387,15 +1387,28 @@
 
     const { total } = cartTotals();
     const line = "━━━━━━━━━━━━━━";
-    let msg = `🥷 ${t("wa.title")}\n\n${line}\n\n👤 ${t("wa.customer")}\n\n`;
-    msg += `${t("wa.name")}: ${name}\n${t("wa.phone")}: ${phone}\n${t("wa.phone2")}: ${extraPhone || t("wa.none")}\n${t("wa.city")}: ${city}\n${t("wa.address")}: ${address}\n${t("wa.notes")}: ${notes || t("wa.none")}\n\n`;
-    msg += `${line}\n\n🛍 ${t("wa.products")}\n\n`;
+    // 1 → 1️⃣ , 12 → 1️⃣2️⃣  (keycap digits work for any item number)
+    const keycap = n => String(n).replace(/\d/g, d => `${d}\uFE0F\u20E3`);
+
+    let msg = `🥷 ${t("wa.title")} 🛒\n\n${line}\n\n👤 ${t("wa.customer")}\n\n`;
+    msg += `🧑 ${t("wa.name")}: ${name}\n`;
+    msg += `📱 ${t("wa.phone")}: ${phone}\n`;
+    msg += `☎️ ${t("wa.phone2")}: ${extraPhone || t("wa.none")}\n`;
+    msg += `🏙️ ${t("wa.city")}: ${city}\n`;
+    msg += `📍 ${t("wa.address")}: ${address}\n`;
+    msg += `📝 ${t("wa.notes")}: ${notes || t("wa.none")}\n\n`;
+
+    msg += `${line}\n\n🛍️ ${t("wa.products")}\n\n`;
     cart.forEach((item, i) => {
       const fresh = products.find(p => p.id === item.id) || item;
       const itemTotal = fresh.price * item.quantity;
-      msg += `${i + 1}. ${pName(fresh)}\n${t("wa.qty")}: ${item.quantity}\n${t("wa.price")}: ${money(fresh.price)}\n${t("wa.itemTotal")}: ${money(itemTotal)}\n\n`;
+      msg += `${keycap(i + 1)} ${pName(fresh)}\n`;
+      msg += `📦 ${t("wa.qty")}: ${item.quantity}\n`;
+      msg += `💵 ${t("wa.price")}: ${money(fresh.price)}\n`;
+      msg += `🧾 ${t("wa.itemTotal")}: ${money(itemTotal)}\n\n`;
     });
-    msg += `${line}\n\n💰 ${t("wa.total")}\n\n${money(total)}\n\n${line}\n\n${t("wa.thanks")}\n`;
+
+    msg += `${line}\n\n💰 ${t("wa.total")}\n\n💳 *${money(total)}*\n\n${line}\n\n🙏 ${t("wa.thanks")}\n`;
 
     setTimeout(() => {
       window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`, "_blank");
