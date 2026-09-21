@@ -1,0 +1,12 @@
+# OS / editor junk
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+# dependencies & builds (this is a static site — none expected)
+node_modules/
+dist/
+build/
+*.log

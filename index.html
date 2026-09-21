@@ -1,15 +1,41 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar" dir="rtl" data-theme="dark">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="ننجاوي - تجربة تسوق عصرية وسريعة بسرعة النينجا">
-  <title>ننجاوي | NINJAWY - تسوق بسرعة النينجا</title>
+  <meta name="theme-color" content="#0a0a0e">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="NINJAWY">
+  <meta property="og:title" content="ننجاوي | NINJAWY — تسوّق بسرعة النينجا">
+  <meta property="og:description" content="متجر حديث: منتجات مختارة، عروض حصرية، توصيل لكل المحافظات ودفع عند الاستلام.">
+  <meta property="og:locale" content="ar_EG">
+  <meta property="og:locale:alternate" content="en_US">
+  <title>ننجاوي | NINJAWY — تسوّق بسرعة النينجا</title>
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23e11d3f' d='M12 1.9 13.9 10.1 22.1 12 13.9 13.9 12 22.1 10.1 13.9 1.9 12 10.1 10.1Z'/%3E%3Ccircle cx='12' cy='12' r='1.8' fill='%230a0a0e'/%3E%3C/svg%3E">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Tajawal:wght@400;500;700;800&family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap"
+    rel="stylesheet">
+
+  <script>
+    /* Apply saved theme + language before first paint (no flash) */
+    (function () {
+      try {
+        var t = localStorage.getItem('ninjawy_theme');
+        if (!t) t = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', t);
+        var l = localStorage.getItem('ninjawy_lang');
+        if (!l) l = (navigator.language || 'ar').slice(0, 2).toLowerCase() === 'ar' ? 'ar' : 'en';
+        document.documentElement.lang = l;
+        document.documentElement.dir = l === 'ar' ? 'rtl' : 'ltr';
+      } catch (e) { }
+    })();
+  </script>
 
   <link rel="stylesheet" href="style.css">
 </head>
@@ -17,48 +43,362 @@
 <body>
 
   <!-- ICON SPRITE -->
-  <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
-    <symbol id="i-shuriken" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M12 2l2.2 7.8L22 12l-7.8 2.2L12 22l-2.2-7.8L2 12l7.8-2.2z"/><circle cx="12" cy="12" r="1.6" fill="currentColor"/></symbol>
-    <symbol id="i-katana" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 4L8.5 15.5"/><path d="M20 4l-1 4-10 8"/><path d="M7 13l4 4"/><path d="M8.5 15.5L4 20"/><path d="M5 17l2 2"/></symbol>
-    <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="M20 20l-4.2-4.2"/></symbol>
-    <symbol id="i-bag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1 12H6z"/><path d="M9 8V6a3 3 0 016 0v2"/></symbol>
-    <symbol id="i-fire" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c4 0 7-2.8 7-6.8 0-3.5-2.4-5.2-3.6-7.2-.6 1.6-1.3 2.4-2.4 3-.2-2.6-1.4-5.4-4-7 .4 3.4-1.4 4.8-2.7 6.7C5.3 12.4 5 13.8 5 15.2 5 19.2 8 22 12 22z"/><path d="M12 22c-1.8 0-3-1.3-3-3 0-1.7 1.4-2.6 2-4 .9 1 2 1.2 2.7 2.4.9 1.5-.1 4.6-1.7 4.6z"/></symbol>
-    <symbol id="i-bolt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></symbol>
-    <symbol id="i-box" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9z"/><path d="M4 7.5l8 4.5 8-4.5M12 12v9"/></symbol>
-    <symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0113 0"/><circle cx="17" cy="9" r="2.5"/><path d="M16 14.5a5 5 0 015.5 5.5"/></symbol>
-    <symbol id="i-star" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M12 3l2.7 5.8 6.3.7-4.7 4.3 1.3 6.2L12 16.9 6.4 20l1.3-6.2L3 9.5l6.3-.7z"/></symbol>
-    <symbol id="i-headset" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13a8 8 0 0116 0"/><rect x="3" y="13" width="4" height="6" rx="1.5"/><rect x="17" y="13" width="4" height="6" rx="1.5"/><path d="M19 19v1a2 2 0 01-2 2h-4"/></symbol>
-    <symbol id="i-shirt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M8.5 3L3 6.5l2 4 2.5-1V21h9V9.5l2.5 1 2-4L15.5 3a3.5 3.5 0 01-7 0z"/></symbol>
-    <symbol id="i-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5.5 9.5V21h13V9.5"/><path d="M10 21v-6h4v6"/></symbol>
-    <symbol id="i-gamepad" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10a5 5 0 014.9 6l-.6 3.2a2.5 2.5 0 01-4.4 1.1L15 15H9l-1.9 2.3a2.5 2.5 0 01-4.4-1.1L2.1 13A5 5 0 017 7z"/><path d="M7.5 10v3M6 11.5h3"/><circle cx="16" cy="10.5" r=".8" fill="currentColor"/><circle cx="18" cy="12.5" r=".8" fill="currentColor"/></symbol>
-    <symbol id="i-watch" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5.5"/><path d="M12 9.5V12l1.8 1.2"/><path d="M9 6.5L9.7 2h4.6L15 6.5M9 17.5L9.7 22h4.6l.7-4.5"/></symbol>
-    <symbol id="i-lamp" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4"/><path d="M12 2a6 6 0 00-3.5 10.9c.7.5 1 1.3 1 2.1h5c0-.8.3-1.6 1-2.1A6 6 0 0012 2z"/></symbol>
-    <symbol id="i-keyboard" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="6" width="19" height="12" rx="2"/><path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M6 14h.01M9 14h6M18 14h.01"/></symbol>
-    <symbol id="i-handbag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h16l1.5 11h-19z"/><path d="M8 9V7a4 4 0 018 0v2"/><path d="M4 13h16"/></symbol>
-    <symbol id="i-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 20.5s-7.5-4.6-7.5-10A4.2 4.2 0 0112 8a4.2 4.2 0 017.5 2.5c0 5.4-7.5 10-7.5 10z"/></symbol>
-    <symbol id="i-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></symbol>
-    <symbol id="i-minus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14"/></symbol>
-    <symbol id="i-trash" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13"/><path d="M10 11v6M14 11v6"/></symbol>
-    <symbol id="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></symbol>
-    <symbol id="i-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><rect x="5" y="10.5" width="14" height="10" rx="2"/><path d="M8 10.5V8a4 4 0 018 0v2.5"/><circle cx="12" cy="15.5" r="1.3" fill="currentColor"/></symbol>
-    <symbol id="i-whatsapp" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm0 1.8a8.2 8.2 0 11-4.2 15.3l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 0112 3.8zm-3 4.4c-.2 0-.5 0-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.3 5.2 4.5 2.6 1 3.1.8 3.6.8.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4l-.6-.3-2-1c-.3-.1-.5-.2-.7.1l-1 1.2c-.2.2-.3.2-.6.1a6.7 6.7 0 01-3.4-3c-.2-.4.3-.4.7-1.3.1-.2 0-.4 0-.5l-.9-2.2c-.3-.6-.5-.5-.7-.5H9z"/></symbol>
-    <symbol id="i-arrow-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></symbol>
-    <symbol id="i-mask" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M12 3a9 9 0 00-9 9c0 5 4 9 9 9s9-4 9-9a9 9 0 00-9-9z"/><path d="M4 11h16"/><path d="M7 11.5l2 2h2M17 11.5l-2 2h-2"/><path d="M5 14c0 3 3 5 7 5s7-2 7-5"/></symbol>
-    <symbol id="i-truck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7h11v9H2zM13 10h4l3 3v3h-7z"/><circle cx="6" cy="18" r="1.8"/><circle cx="17" cy="18" r="1.8"/></symbol>
-    <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M12 2l8 3.5v6c0 5-3.5 8.5-8 10.5-4.5-2-8-5.5-8-10.5v-6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></symbol>
-    <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></symbol>
-    <symbol id="i-instagram" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></symbol>
-    <symbol id="i-facebook" viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 22v-8h2.7l.4-3.2h-3.1V8.7c0-.9.3-1.6 1.6-1.6h1.7V4.2c-.3 0-1.3-.1-2.5-.1-2.5 0-4.1 1.5-4.1 4.2v2.5H7.4V14h2.8v8z"/></symbol>
-    <symbol id="i-tiktok" viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 3c.3 2.3 1.7 3.8 4 4v3.3c-1.5 0-2.9-.5-4-1.3v6.3a5.7 5.7 0 11-5.7-5.7l.7.1v3.4a2.4 2.4 0 10 1.7 2.3V3z"/></symbol>
-    <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></symbol>
-    <symbol id="i-sparkle" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c.6 5.4 4.6 9.4 10 10-5.4.6-9.4 4.6-10 10-.6-5.4-4.6-9.4-10-10 5.4-.6 9.4-4.6 10-10z"/></symbol>
-  </svg>
-  
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+  <!-- ============ NINJAWY ICON SYSTEM v2 ============
+       24x24 grid · 1.5px stroke · round caps & joins
+       Brand glyphs use solid fill.                     -->
 
-  <!-- PROGRESS -->
+  <!-- BRAND / THEME -->
+  <symbol id="i-shuriken" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 1.9 13.9 10.1 22.1 12 13.9 13.9 12 22.1 10.1 13.9 1.9 12 10.1 10.1Z"/>
+    <circle cx="12" cy="12" r="1.7"/>
+  </symbol>
+
+  <symbol id="i-katana" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21.1 2.9 12.4 11.6"/>
+    <path d="M9.6 9.4 14.6 14.4"/>
+    <path d="m11.4 12.6-6.2 6.2"/>
+    <path d="m8.5 14.1 1.4 1.4M6.7 15.9l1.4 1.4"/>
+    <circle cx="4" cy="20" r="1.2"/>
+  </symbol>
+
+  <symbol id="i-mask" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 3.1a8.9 8.9 0 0 0-8.9 8.9c0 4.9 4 8.9 8.9 8.9s8.9-4 8.9-8.9A8.9 8.9 0 0 0 12 3.1Z"/>
+    <path d="M3.4 11.1h17.2"/>
+    <path d="m7.3 11.7 1.9 1.9h2.1M16.7 11.7l-1.9 1.9h-2.1"/>
+    <path d="M5.6 14.7c1.1 2.3 3.6 3.8 6.4 3.8s5.3-1.5 6.4-3.8"/>
+  </symbol>
+
+  <symbol id="i-sparkle" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M12 1.8c.7 5.4 4.3 9 9.7 9.7-5.4.7-9 4.3-9.7 9.7-.7-5.4-4.3-9-9.7-9.7C7.7 10.8 11.3 7.2 12 1.8Z"/>
+  </symbol>
+
+  <symbol id="i-sparkle-line" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round">
+    <path d="M12 2.6c.6 4.9 3.9 8.2 8.8 8.8-4.9.6-8.2 3.9-8.8 8.8-.6-4.9-3.9-8.2-8.8-8.8 4.9-.6 8.2-3.9 8.8-8.8Z"/>
+    <path d="M18.6 16.4c.3 2.2 1.7 3.6 3.9 3.9-2.2.3-3.6 1.7-3.9 3.9-.3-2.2-1.7-3.6-3.9-3.9 2.2-.3 3.6-1.7 3.9-3.9Z" opacity=".55"/>
+  </symbol>
+
+  <!-- NAVIGATION / UI -->
+  <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="10.9" cy="10.9" r="6.9"/>
+    <path d="m20.4 20.4-4.7-4.7"/>
+  </symbol>
+
+  <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round">
+    <path d="M3.8 6.8h16.4M3.8 12h16.4M3.8 17.2h11.4"/>
+  </symbol>
+
+  <symbol id="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+    <path d="m6.3 6.3 11.4 11.4M17.7 6.3 6.3 17.7"/>
+  </symbol>
+
+  <symbol id="i-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round">
+    <path d="M12 5.3v13.4M5.3 12h13.4"/>
+  </symbol>
+
+  <symbol id="i-minus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round">
+    <path d="M5.3 12h13.4"/>
+  </symbol>
+
+  <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="m4.9 12.6 4.6 4.6L19.2 7.1"/>
+  </symbol>
+
+  <symbol id="i-check-circle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="9.2"/>
+    <path d="m8.1 12.3 2.7 2.7 5.1-5.6"/>
+  </symbol>
+
+  <symbol id="i-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M10.6 3.9 2.5 18a1.6 1.6 0 0 0 1.4 2.4h16.2A1.6 1.6 0 0 0 21.5 18L13.4 3.9a1.6 1.6 0 0 0-2.8 0Z"/>
+    <path d="M12 9.3v4.2M12 17.2h.01"/>
+  </symbol>
+
+  <symbol id="i-info" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="9.2"/>
+    <path d="M12 11.2v5.2M12 7.9h.01"/>
+  </symbol>
+
+  <symbol id="i-arrow-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M20 12H4.4M10.6 5.4 4 12l6.6 6.6"/>
+  </symbol>
+
+  <symbol id="i-arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 12h15.6M13.4 5.4 20 12l-6.6 6.6"/>
+  </symbol>
+
+  <symbol id="i-arrow-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 20V4.4M5.4 10.6 12 4l6.6 6.6"/>
+  </symbol>
+
+  <symbol id="i-arrow-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 4v15.6M5.4 13.4 12 20l6.6-6.6"/>
+  </symbol>
+
+  <symbol id="i-chevron-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="m5.8 9.2 6.2 6.2 6.2-6.2"/>
+  </symbol>
+
+  <symbol id="i-chevron-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="m5.8 14.8 6.2-6.2 6.2 6.2"/>
+  </symbol>
+
+  <symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="4.2"/>
+    <path d="M12 1.9v2.4M12 19.7v2.4M4.5 4.5l1.7 1.7M17.8 17.8l1.7 1.7M1.9 12h2.4M19.7 12h2.4M4.5 19.5l1.7-1.7M17.8 6.2l1.7-1.7"/>
+  </symbol>
+
+  <symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M20.8 14.4A8.8 8.8 0 0 1 9.6 3.2a8.9 8.9 0 1 0 11.2 11.2Z"/>
+    <path d="M17.2 3.4v3M15.7 4.9h3" opacity=".6"/>
+  </symbol>
+
+  <symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="9.2"/>
+    <path d="M3.1 9.6h17.8M3.1 14.4h17.8"/>
+    <path d="M12 2.8c2.4 2.4 3.7 5.6 3.7 9.2S14.4 18.8 12 21.2c-2.4-2.4-3.7-5.6-3.7-9.2S9.6 5.2 12 2.8Z"/>
+  </symbol>
+
+  <symbol id="i-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M2.4 12S6.1 5.6 12 5.6 21.6 12 21.6 12 17.9 18.4 12 18.4 2.4 12 2.4 12Z"/>
+    <circle cx="12" cy="12" r="3.1"/>
+  </symbol>
+
+  <symbol id="i-grid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round">
+    <rect x="3.4" y="3.4" width="7" height="7" rx="2"/>
+    <rect x="13.6" y="3.4" width="7" height="7" rx="2"/>
+    <rect x="3.4" y="13.6" width="7" height="7" rx="2"/>
+    <rect x="13.6" y="13.6" width="7" height="7" rx="2"/>
+  </symbol>
+
+  <symbol id="i-trash" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3.9 6.6h16.2M9.4 6.6V4.6a1.4 1.4 0 0 1 1.4-1.4h2.4a1.4 1.4 0 0 1 1.4 1.4v2"/>
+    <path d="m5.9 6.6 1 12.8a1.8 1.8 0 0 0 1.8 1.6h6.6a1.8 1.8 0 0 0 1.8-1.6l1-12.8"/>
+    <path d="M10.2 10.6v6.4M13.8 10.6v6.4"/>
+  </symbol>
+
+  <symbol id="i-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="4.6" y="10.4" width="14.8" height="10.4" rx="2.6"/>
+    <path d="M8.1 10.4V7.8a3.9 3.9 0 0 1 7.8 0v2.6"/>
+    <circle cx="12" cy="15.6" r="1.4" fill="currentColor" stroke="none"/>
+  </symbol>
+
+  <symbol id="i-logout" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M9.6 20.8H5.9a1.9 1.9 0 0 1-1.9-1.9V5.1a1.9 1.9 0 0 1 1.9-1.9h3.7"/>
+    <path d="m15.4 16.6 4.6-4.6-4.6-4.6M20 12H9.6"/>
+  </symbol>
+
+  <symbol id="i-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="8.1" r="4.1"/>
+    <path d="M4.4 20.6a7.6 7.6 0 0 1 15.2 0"/>
+  </symbol>
+
+  <symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="9.2" cy="8.2" r="3.7"/>
+    <path d="M2.7 20.4a6.5 6.5 0 0 1 13 0"/>
+    <path d="M16.3 4.9a3.6 3.6 0 0 1 0 6.6M17.6 14.5a5.8 5.8 0 0 1 3.7 5.4"/>
+  </symbol>
+
+  <!-- COMMERCE -->
+  <symbol id="i-bag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4.5 7.3h15l1.2 11.9a1.7 1.7 0 0 1-1.7 1.9H5a1.7 1.7 0 0 1-1.7-1.9Z"/>
+    <path d="M8.7 7.3V6.1a3.3 3.3 0 0 1 6.6 0v1.2"/>
+    <path d="M9.2 11.1a2.8 2.8 0 0 0 5.6 0"/>
+  </symbol>
+
+  <symbol id="i-cart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M2.6 3.6h2.2a1.6 1.6 0 0 1 1.6 1.3l1.9 9.2a1.8 1.8 0 0 0 1.8 1.4h7.6a1.8 1.8 0 0 0 1.7-1.3l1.6-5.4H6.2"/>
+    <circle cx="9.6" cy="19.6" r="1.6"/>
+    <circle cx="17.4" cy="19.6" r="1.6"/>
+  </symbol>
+
+  <symbol id="i-box" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M20.6 7.9v8.2a1.7 1.7 0 0 1-.9 1.5l-6.9 3.6a1.7 1.7 0 0 1-1.6 0l-6.9-3.6a1.7 1.7 0 0 1-.9-1.5V7.9a1.7 1.7 0 0 1 .9-1.5l6.9-3.6a1.7 1.7 0 0 1 1.6 0l6.9 3.6c.5.3.9.9.9 1.5Z"/>
+    <path d="m3.7 7 8.3 4.4L20.3 7M12 11.5V21"/>
+  </symbol>
+
+  <symbol id="i-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 20.7 4.6 13.5A4.7 4.7 0 0 1 11.2 6.8L12 7.6l.8-.8a4.7 4.7 0 1 1 6.6 6.7Z"/>
+  </symbol>
+
+  <symbol id="i-star" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="m12 3.2 2.6 5.5 6 .8-4.4 4.2 1.1 6-5.3-2.9-5.3 2.9 1.1-6L3.4 9.5l6-.8Z"/>
+  </symbol>
+
+  <symbol id="i-tag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M20.5 13.3 13.3 20.5a2 2 0 0 1-2.9 0l-7-7a2 2 0 0 1-.6-1.5V4.9A1.9 1.9 0 0 1 4.7 3h7.1a2 2 0 0 1 1.5.6l7.2 7.2a2 2 0 0 1 0 2.5Z"/>
+    <circle cx="7.8" cy="7.8" r="1.3" fill="currentColor" stroke="none"/>
+  </symbol>
+
+  <symbol id="i-percent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+    <path d="M6.6 17.4 17.4 6.6"/>
+    <circle cx="7.7" cy="7.7" r="2.5"/>
+    <circle cx="16.3" cy="16.3" r="2.5"/>
+  </symbol>
+
+  <symbol id="i-fire" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 21.6c3.9 0 6.9-2.7 6.9-6.4 0-3.4-2.3-5-3.5-6.9-.6 1.5-1.3 2.3-2.3 2.9-.2-2.5-1.4-5.2-3.9-6.8.4 3.3-1.3 4.6-2.6 6.5-1 1.5-1.5 2.8-1.5 4.3 0 3.7 3 6.4 6.9 6.4Z"/>
+    <path d="M12 21.6c-1.7 0-2.9-1.2-2.9-2.8 0-1.6 1.3-2.5 1.9-3.9.9 1 1.9 1.2 2.6 2.3.8 1.4-.1 4.4-1.6 4.4Z"/>
+  </symbol>
+
+  <symbol id="i-bolt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M13.3 2.2 4.7 13.3h6.1l-.9 8.5 9-11.5h-6.3Z"/>
+  </symbol>
+
+  <symbol id="i-gift" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="3.1" y="8.4" width="17.8" height="4" rx="1.3"/>
+    <path d="M4.9 12.4v6.9a1.8 1.8 0 0 0 1.8 1.8h10.6a1.8 1.8 0 0 0 1.8-1.8v-6.9M12 8.4v12.7"/>
+    <path d="M12 8.4S10.6 3.2 8 3.2a2.6 2.6 0 0 0 0 5.2ZM12 8.4s1.4-5.2 4-5.2a2.6 2.6 0 0 1 0 5.2Z"/>
+  </symbol>
+
+  <symbol id="i-wallet" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3.3 7.6a2.4 2.4 0 0 1 2.4-2.4h11.2a1.9 1.9 0 0 1 1.9 1.9v1.2"/>
+    <rect x="3.3" y="7.6" width="17.4" height="12.1" rx="2.5"/>
+    <path d="M20.7 11.9h-3.3a2.1 2.1 0 0 0 0 4.2h3.3"/>
+  </symbol>
+
+  <symbol id="i-card" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="2.7" y="5.2" width="18.6" height="13.6" rx="2.6"/>
+    <path d="M2.7 9.9h18.6M6.4 14.6h3.8"/>
+  </symbol>
+
+  <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="9.1"/>
+    <path d="M12 6.9V12l3.4 2"/>
+  </symbol>
+
+  <symbol id="i-truck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M2.7 7a1.5 1.5 0 0 1 1.5-1.5h9.3A1.5 1.5 0 0 1 15 7v10.3H2.7Z"/>
+    <path d="M15 10.2h3a1.7 1.7 0 0 1 1.4.7l2 2.7v3.7H15Z"/>
+    <circle cx="7.1" cy="18.9" r="1.9"/>
+    <circle cx="17.6" cy="18.9" r="1.9"/>
+    <path d="M9.2 18.9h6.3"/>
+  </symbol>
+
+  <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 2.6 19.6 5.7v5.9c0 4.6-3.2 8.1-7.6 9.4-4.4-1.3-7.6-4.8-7.6-9.4V5.7Z"/>
+    <path d="m8.7 11.9 2.4 2.4 4.3-4.7"/>
+  </symbol>
+
+  <symbol id="i-refresh" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M20.4 12a8.4 8.4 0 0 1-14.3 6L3.4 15.4M3.6 12a8.4 8.4 0 0 1 14.3-6l2.7 2.6"/>
+    <path d="M20.6 3.9v4.7h-4.7M3.4 20.1v-4.7h4.7"/>
+  </symbol>
+
+  <symbol id="i-award" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="9.2" r="6"/>
+    <path d="m8.4 14.3-1.3 6.9 4.9-2.5 4.9 2.5-1.3-6.9"/>
+    <path d="m12 6.4.9 1.9 2 .3-1.5 1.4.4 2.1-1.8-1-1.8 1 .4-2.1L9.1 8.6l2-.3Z"/>
+  </symbol>
+
+  <symbol id="i-headset" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4.1 14.4v-2.2a7.9 7.9 0 0 1 15.8 0v2.2"/>
+    <rect x="2.5" y="13.6" width="4.2" height="6.6" rx="2.1"/>
+    <rect x="17.3" y="13.6" width="4.2" height="6.6" rx="2.1"/>
+    <path d="M19.4 20.2v.4a2.4 2.4 0 0 1-2.4 2.4h-3.3"/>
+  </symbol>
+
+  <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M6.4 3.3h2.9a1.2 1.2 0 0 1 1.2.9l1 3.4a1.2 1.2 0 0 1-.4 1.3l-1.6 1.2a12.4 12.4 0 0 0 5.2 5.2l1.2-1.6a1.2 1.2 0 0 1 1.3-.4l3.4 1a1.2 1.2 0 0 1 .9 1.2v2.9a2 2 0 0 1-2.2 2A17.6 17.6 0 0 1 4.4 5.5a2 2 0 0 1 2-2.2Z"/>
+  </symbol>
+
+  <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="2.8" y="4.9" width="18.4" height="14.2" rx="2.6"/>
+    <path d="m3.6 7.6 7.3 5.1a2 2 0 0 0 2.2 0l7.3-5.1"/>
+  </symbol>
+
+  <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 21.4s7.1-5.9 7.1-11.2a7.1 7.1 0 1 0-14.2 0C4.9 15.5 12 21.4 12 21.4Z"/>
+    <circle cx="12" cy="10" r="2.7"/>
+  </symbol>
+
+  <symbol id="i-image" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="3" y="4.6" width="18" height="14.8" rx="2.6"/>
+    <circle cx="8.6" cy="10" r="1.7"/>
+    <path d="m3.9 17.9 4.3-3.9a1.8 1.8 0 0 1 2.4 0l2.7 2.4a1.8 1.8 0 0 0 2.4 0l3.4-3"/>
+  </symbol>
+
+  <!-- CATEGORY ICONS -->
+  <symbol id="i-shirt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M8.7 3 3.9 6.1a1.2 1.2 0 0 0-.4 1.5l1.9 3.3a1.2 1.2 0 0 0 1.5.5l1.3-.6V20a1.2 1.2 0 0 0 1.2 1.2h5.2A1.2 1.2 0 0 0 15.8 20v-9.2l1.3.6a1.2 1.2 0 0 0 1.5-.5l1.9-3.3a1.2 1.2 0 0 0-.4-1.5L15.3 3a3.4 3.4 0 0 1-6.6 0Z"/>
+  </symbol>
+
+  <symbol id="i-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="m3.2 10.6 8.1-6.9a1.1 1.1 0 0 1 1.4 0l8.1 6.9"/>
+    <path d="M5.6 9.2v10.4a1.6 1.6 0 0 0 1.6 1.6h9.6a1.6 1.6 0 0 0 1.6-1.6V9.2"/>
+    <path d="M9.8 21.2v-6.1h4.4v6.1"/>
+  </symbol>
+
+  <symbol id="i-gamepad" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M7.6 7.4h8.8a5 5 0 0 1 4.9 4l1 5.1a2.5 2.5 0 0 1-4.3 2.2L15.7 16H8.3l-2.3 2.7a2.5 2.5 0 0 1-4.3-2.2l1-5.1a5 5 0 0 1 4.9-4Z"/>
+    <path d="M7.1 10.3v3M5.6 11.8h3"/>
+    <circle cx="16" cy="11" r=".95" fill="currentColor" stroke="none"/>
+    <circle cx="18.1" cy="13.1" r=".95" fill="currentColor" stroke="none"/>
+  </symbol>
+
+  <symbol id="i-mouse" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="6.6" y="2.6" width="10.8" height="18.8" rx="5.4"/>
+    <path d="M12 6.3v3.6"/>
+  </symbol>
+
+  <symbol id="i-watch" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="5.7"/>
+    <path d="M12 9.3V12l1.9 1.2"/>
+    <path d="m8.9 6.8.7-4.2h4.8l.7 4.2M8.9 17.2l.7 4.2h4.8l.7-4.2"/>
+  </symbol>
+
+  <symbol id="i-lamp" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M9.5 18.3h5M10.4 21.2h3.2"/>
+    <path d="M12 2.6a6.2 6.2 0 0 0-3.6 11.3c.7.5 1.1 1.3 1.1 2.1h5c0-.8.4-1.6 1.1-2.1A6.2 6.2 0 0 0 12 2.6Z"/>
+  </symbol>
+
+  <symbol id="i-keyboard" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="2.4" y="5.8" width="19.2" height="12.4" rx="2.6"/>
+    <path d="M6.4 9.8h.01M9.8 9.8h.01M13.2 9.8h.01M16.6 9.8h.01M6.4 12.9h.01M16.6 12.9h.01M9.4 15.4h5.2M9.8 12.9h3.4"/>
+  </symbol>
+
+  <symbol id="i-handbag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4.1 9.1h15.8l1.3 9.6a1.9 1.9 0 0 1-1.9 2.1H4.7a1.9 1.9 0 0 1-1.9-2.1Z"/>
+    <path d="M8.4 9.1V6.9a3.6 3.6 0 0 1 7.2 0v2.2"/>
+    <path d="M4.6 13.4h14.8"/>
+  </symbol>
+
+  <symbol id="i-quote" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M9.9 5.6C7 6.9 5.2 9.4 5.2 12.5v5.9h5.6v-5.9H8.1c0-1.9.8-3.3 2.5-4.2Z"/>
+    <path d="M19.4 5.6c-2.9 1.3-4.7 3.8-4.7 6.9v5.9h5.6v-5.9h-2.7c0-1.9.8-3.3 2.5-4.2Z"/>
+  </symbol>
+
+  <!-- SOCIAL / BRAND GLYPHS -->
+  <symbol id="i-whatsapp" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M12.04 2c-5.5 0-9.96 4.46-9.96 9.96 0 1.76.46 3.48 1.34 5L2 22l5.2-1.36a9.9 9.9 0 0 0 4.84 1.24h.01c5.5 0 9.96-4.46 9.96-9.96 0-2.66-1.04-5.16-2.92-7.04A9.89 9.89 0 0 0 12.04 2Zm0 1.82c2.17 0 4.21.85 5.74 2.38a8.09 8.09 0 0 1 2.38 5.74c0 4.5-3.66 8.15-8.15 8.15a8.2 8.2 0 0 1-4.16-1.14l-.3-.18-3.09.81.82-3.01-.2-.31a8.09 8.09 0 0 1-1.24-4.32c0-4.49 3.66-8.12 8.2-8.12Zm-4.5 4.4c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1s.9 2.44 1.03 2.6c.13.17 1.75 2.67 4.24 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.2-.58.2-1.07.14-1.18-.06-.1-.22-.16-.47-.28-.25-.13-1.47-.72-1.7-.81-.22-.08-.39-.12-.55.13-.16.25-.63.8-.77.97-.14.16-.28.18-.53.06-.25-.13-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.38-1.72-.15-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.41.09-.17.04-.31-.02-.43-.06-.13-.55-1.33-.76-1.82-.2-.47-.4-.41-.55-.42h-.47Z"/>
+  </symbol>
+
+  <symbol id="i-instagram" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="3.1" y="3.1" width="17.8" height="17.8" rx="5.2"/>
+    <circle cx="12" cy="12" r="4.1"/>
+    <circle cx="17.2" cy="6.8" r="1.05" fill="currentColor" stroke="none"/>
+  </symbol>
+
+  <symbol id="i-facebook" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5.02 3.66 9.18 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.51 1.49-3.9 3.77-3.9 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.78-1.63 1.57v1.88h2.78l-.45 2.91h-2.33V22c4.78-.76 8.44-4.92 8.44-9.94Z"/>
+  </symbol>
+
+  <symbol id="i-tiktok" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M16.6 5.82A4.28 4.28 0 0 1 15.54 3h-3.09v12.4a2.59 2.59 0 1 1-2.59-2.59c.27 0 .53.04.77.12V9.79a5.66 5.66 0 0 0-.77-.05A5.69 5.69 0 1 0 15.55 15.4V9.01a7.35 7.35 0 0 0 4.3 1.38V7.3a4.28 4.28 0 0 1-3.25-1.48Z"/>
+  </symbol>
+
+  <symbol id="i-x" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M17.53 3h3.05l-6.66 7.61L21.75 21h-6.13l-4.8-6.28L5.32 21H2.27l7.12-8.14L2.25 3h6.29l4.34 5.74L17.53 3Zm-1.07 16.16h1.69L7.62 4.74H5.81l10.65 14.42Z"/>
+  </symbol>
+</svg>
+
+  <!-- SKIP LINK -->
+  <a class="skip-link" href="#home" data-i18n="common.skip">تخطَّ إلى المحتوى</a>
+
+  <!-- SCROLL PROGRESS -->
   <div class="scroll-progress" id="scrollProgress"></div>
 
-  <!-- CURSOR -->
+  <!-- CUSTOM CURSOR -->
   <div class="cursor-dot" id="cursorDot"></div>
   <div class="cursor-ring" id="cursorRing"></div>
 
@@ -66,13 +406,13 @@
   <div class="page-loader" id="pageLoader">
     <div class="loader-content">
       <div class="loader-logo">
-        <span class="loader-star"><svg class="ic" aria-hidden="true"><use href="#i-shuriken"/></svg></span>
-        <span>ننجاوي</span>
+        <span class="loader-star"><svg class="ic" aria-hidden="true"><use href="#i-shuriken" /></svg></span>
+        <span data-i18n="brand.name">ننجاوي</span>
       </div>
       <div class="loader-bar">
         <div class="loader-bar-fill"></div>
       </div>
-      <span class="loader-text">يتم تحميل التجربة...</span>
+      <span class="loader-text" data-i18n="loader.text">يتم تحميل التجربة...</span>
     </div>
     <div class="loader-orbs">
       <div class="loader-orb"></div>
@@ -81,66 +421,101 @@
     </div>
   </div>
 
-  <!-- BACKGROUND LAYERS -->
-  <div class="site-background"></div>
-  <canvas id="bgCanvas" class="bg-canvas"></canvas>
-  <div class="background-grid"></div>
-  <div class="bg-orbs">
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
-    <div class="orb orb-3"></div>
-    <div class="orb orb-4"></div>
-  </div>
-  <div class="noise-overlay"></div>
-  <div class="floating-particles">
-    <span></span><span></span><span></span><span></span><span></span><span></span>
+  <!-- ============ ANIMATED BACKGROUND ============ -->
+  <div class="bg-stack" aria-hidden="true">
+    <div class="site-background"></div>
+    <div class="bg-aurora">
+      <span class="aurora a1"></span>
+      <span class="aurora a2"></span>
+      <span class="aurora a3"></span>
+      <span class="aurora a4"></span>
+    </div>
+    <canvas id="bgCanvas" class="bg-canvas"></canvas>
+    <div class="background-grid"></div>
+    <div class="bg-beams"><span></span><span></span><span></span></div>
+    <div class="bg-orbs">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+      <div class="orb orb-4"></div>
+    </div>
+    <div class="shooting-stars"><span></span><span></span><span></span></div>
+    <div class="floating-particles">
+      <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+    <div class="noise-overlay"></div>
   </div>
 
   <!-- TOP OFFER MARQUEE -->
   <div class="top-offer">
     <div class="offer-marquee">
-      <div class="offer-track">
-        <span><svg class="ic" aria-hidden="true"><use href="#i-bolt"/></svg> عروض خاصة لفترة محدودة — شحن مجاني للطلبات فوق 500 ج.م <svg class="ic" aria-hidden="true"><use href="#i-fire"/></svg></span>
-        <span><svg class="ic" aria-hidden="true"><use href="#i-shuriken"/></svg> خصم حتى 40% على منتجات مختارة <svg class="ic" aria-hidden="true"><use href="#i-shuriken"/></svg></span>
-        <span><svg class="ic" aria-hidden="true"><use href="#i-bolt"/></svg> عروض خاصة لفترة محدودة — شحن مجاني للطلبات فوق 500 ج.م <svg class="ic" aria-hidden="true"><use href="#i-fire"/></svg></span>
-        <span><svg class="ic" aria-hidden="true"><use href="#i-shuriken"/></svg> خصم حتى 40% على منتجات مختارة <svg class="ic" aria-hidden="true"><use href="#i-shuriken"/></svg></span>
+      <div class="offer-track" id="offerTrack">
+        <span><svg class="ic" aria-hidden="true"><use href="#i-bolt" /></svg> <b data-i18n="marquee.1">عروض خاصة لفترة محدودة — شحن مجاني للطلبات فوق 500 ج.م</b> <svg class="ic" aria-hidden="true"><use href="#i-fire" /></svg></span>
+        <span><svg class="ic" aria-hidden="true"><use href="#i-shuriken" /></svg> <b data-i18n="marquee.2">خصم حتى 40% على منتجات مختارة</b> <svg class="ic" aria-hidden="true"><use href="#i-shuriken" /></svg></span>
+        <span><svg class="ic" aria-hidden="true"><use href="#i-truck" /></svg> <b data-i18n="marquee.3">توصيل لكل المحافظات · دفع عند الاستلام</b> <svg class="ic" aria-hidden="true"><use href="#i-shield" /></svg></span>
+        <span><svg class="ic" aria-hidden="true"><use href="#i-bolt" /></svg> <b data-i18n="marquee.1">عروض خاصة لفترة محدودة — شحن مجاني للطلبات فوق 500 ج.م</b> <svg class="ic" aria-hidden="true"><use href="#i-fire" /></svg></span>
+        <span><svg class="ic" aria-hidden="true"><use href="#i-shuriken" /></svg> <b data-i18n="marquee.2">خصم حتى 40% على منتجات مختارة</b> <svg class="ic" aria-hidden="true"><use href="#i-shuriken" /></svg></span>
+        <span><svg class="ic" aria-hidden="true"><use href="#i-truck" /></svg> <b data-i18n="marquee.3">توصيل لكل المحافظات · دفع عند الاستلام</b> <svg class="ic" aria-hidden="true"><use href="#i-shield" /></svg></span>
       </div>
     </div>
   </div>
 
   <!-- HEADER -->
   <header class="navbar" id="navbar">
-    <div class="nav-right">
-      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="القائمة">
+    <div class="nav-side nav-start">
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="القائمة" aria-expanded="false" data-i18n-aria="nav.menu">
         <span class="burger-line"></span>
         <span class="burger-line"></span>
         <span class="burger-line"></span>
       </button>
-      <a href="#home" class="brand magnetic-btn">
-        <span class="brand-star"><svg class="ic" aria-hidden="true"><use href="#i-shuriken"/></svg></span>
-        <span class="brand-text">ننجاوي</span>
+      <a href="#home" class="brand magnetic-btn" aria-label="NINJAWY">
+        <span class="brand-mark"><svg class="ic" aria-hidden="true"><use href="#i-shuriken" /></svg></span>
+        <span class="brand-text-wrap">
+          <span class="brand-text" data-i18n="brand.name">ننجاوي</span>
+          <span class="brand-sub">NINJAWY STORE</span>
+        </span>
         <div class="brand-shine"></div>
       </a>
     </div>
 
-    <nav class="nav-links" id="navLinks">
-      <a href="#home" class="nav-link"><span>الرئيسية</span><i class="nav-underline"></i></a>
-      <a href="#products" class="nav-link"><span>المنتجات</span><i class="nav-underline"></i></a>
-      <a href="#categories" class="nav-link"><span>الأقسام</span><i class="nav-underline"></i></a>
-      <a href="#offers" class="nav-link"><span>العروض</span><i class="nav-underline"></i></a>
+    <nav class="nav-links" id="navLinks" aria-label="Main">
+      <a href="#home" class="nav-link"><span data-i18n="nav.home">الرئيسية</span><i class="nav-underline"></i></a>
+      <a href="#categories" class="nav-link"><span data-i18n="nav.categories">الأقسام</span><i class="nav-underline"></i></a>
+      <a href="#products" class="nav-link"><span data-i18n="nav.products">المنتجات</span><i class="nav-underline"></i></a>
+      <a href="#offers" class="nav-link"><span data-i18n="nav.offers">العروض</span><i class="nav-underline"></i></a>
+      <a href="#reviews" class="nav-link"><span data-i18n="nav.reviews">آراء العملاء</span><i class="nav-underline"></i></a>
+      <button class="nav-link mobile-only admin-link" id="adminOpenBtnMobile" type="button">
+        <span data-i18n="nav.admin">الإدارة</span><i class="nav-underline"></i>
+      </button>
     </nav>
 
     <div class="nav-actions">
-      <button class="nav-icon magnetic-btn" id="searchBtn" aria-label="بحث">
-        <span class="icon-inner"><svg class="ic" aria-hidden="true"><use href="#i-search"/></svg></span>
+      <div class="lang-switch" role="group" aria-label="Language">
+        <span class="lang-thumb" aria-hidden="true"></span>
+        <button type="button" class="lang-opt" data-lang="ar" aria-pressed="true">ع</button>
+        <button type="button" class="lang-opt" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+
+      <button class="nav-icon theme-toggle magnetic-btn" id="themeToggle" type="button" aria-label="تبديل المظهر" data-i18n-aria="nav.theme">
+        <span class="icon-inner">
+          <svg class="ic ic-sun" aria-hidden="true"><use href="#i-sun" /></svg>
+          <svg class="ic ic-moon" aria-hidden="true"><use href="#i-moon" /></svg>
+        </span>
       </button>
-      <button class="nav-icon cart-button magnetic-btn" id="cartBtn" aria-label="السلة">
-        <span class="icon-inner"><svg class="ic" aria-hidden="true"><use href="#i-bag"/></svg></span>
+
+      <button class="nav-icon magnetic-btn" id="searchBtn" type="button" aria-label="بحث" data-i18n-aria="nav.search">
+        <span class="icon-inner"><svg class="ic" aria-hidden="true"><use href="#i-search" /></svg></span>
+      </button>
+
+      <button class="nav-icon cart-button magnetic-btn" id="cartBtn" type="button" aria-label="السلة" data-i18n-aria="nav.cart">
+        <span class="icon-inner"><svg class="ic" aria-hidden="true"><use href="#i-bag" /></svg></span>
         <span class="cart-count" id="cartCount">0</span>
         <span class="cart-pulse"></span>
       </button>
-      <button class="admin-nav-btn magnetic-btn" id="adminOpenBtn">
-        <span>الإدارة</span>
+
+      <button class="admin-nav-btn magnetic-btn" id="adminOpenBtn" type="button">
+        <span class="btn-icon"><svg class="ic" aria-hidden="true"><use href="#i-lock" /></svg></span>
+        <span data-i18n="nav.admin">الإدارة</span>
         <span class="btn-glow"></span>
       </button>
     </div>
@@ -159,29 +534,28 @@
         <div class="hero-text">
           <div class="hero-label reveal">
             <span class="pulse-dot"></span>
-            <span>تجربة تسوق بسرعة النينجا</span>
+            <span data-i18n="hero.badge">تجربة تسوق بسرعة النينجا</span>
             <span class="label-shine"></span>
           </div>
 
           <h1 class="hero-title">
-            <span class="title-line reveal" data-delay="100">كل ما تحتاجه...</span>
-            <span class="title-line accent reveal" data-delay="250">تجده في ننجاوي</span>
+            <span class="title-line reveal" data-delay="100" data-i18n="hero.title1">كل ما تحتاجه...</span>
+            <span class="title-line accent reveal" data-delay="250" data-i18n="hero.title2">تجده في ننجاوي</span>
           </h1>
 
-          <p class="hero-desc reveal" data-delay="400">
-            متجر حديث يجمع لك المنتجات المميزة والعروض الحصرية
-            وتجربة تسوق سريعة وسهلة في مكان واحد.
+          <p class="hero-desc reveal" data-delay="400" data-i18n="hero.desc">
+            متجر حديث يجمع لك المنتجات المميزة والعروض الحصرية وتجربة تسوق سريعة وسهلة في مكان واحد.
           </p>
 
           <div class="hero-buttons reveal" data-delay="550">
             <a href="#products" class="primary-btn magnetic-btn">
-              <span class="btn-text">تسوق الآن</span>
-              <span class="btn-icon"><svg class="ic" aria-hidden="true"><use href="#i-bag"/></svg></span>
+              <span class="btn-text" data-i18n="hero.cta1">تسوق الآن</span>
+              <span class="btn-icon"><svg class="ic" aria-hidden="true"><use href="#i-bag" /></svg></span>
               <span class="btn-shine"></span>
             </a>
             <a href="#offers" class="secondary-btn magnetic-btn">
-              <span class="btn-text">اكتشف العروض</span>
-              <span class="btn-icon"><svg class="ic" aria-hidden="true"><use href="#i-fire"/></svg></span>
+              <span class="btn-text" data-i18n="hero.cta2">اكتشف العروض</span>
+              <span class="btn-icon"><svg class="ic" aria-hidden="true"><use href="#i-fire" /></svg></span>
               <span class="btn-shine"></span>
             </a>
           </div>
@@ -189,17 +563,17 @@
           <div class="hero-mini-stats reveal" data-delay="700">
             <div class="mini-stat">
               <strong data-count="12">+12K</strong>
-              <span>منتج</span>
+              <span data-i18n="hero.stat1">منتج</span>
               <div class="stat-bar"></div>
             </div>
             <div class="mini-stat">
               <strong data-count="50">+50K</strong>
-              <span>عميل</span>
+              <span data-i18n="hero.stat2">عميل</span>
               <div class="stat-bar"></div>
             </div>
             <div class="mini-stat">
               <strong>4.9</strong>
-              <span>تقييم</span>
+              <span data-i18n="hero.stat3">تقييم</span>
               <div class="stat-bar"></div>
             </div>
           </div>
@@ -214,23 +588,35 @@
             <div class="ring"></div>
           </div>
           <div class="ninja-float-icons">
-            <span class="float-icon"><svg class="ic" aria-hidden="true"><use href="#i-shuriken"/></svg></span>
-            <span class="float-icon"><svg class="ic" aria-hidden="true"><use href="#i-katana"/></svg></span>
-            <span class="float-icon"><svg class="ic" aria-hidden="true"><use href="#i-shuriken"/></svg></span>
+            <span class="float-icon"><svg class="ic" aria-hidden="true"><use href="#i-shuriken" /></svg></span>
+            <span class="float-icon"><svg class="ic" aria-hidden="true"><use href="#i-katana" /></svg></span>
+            <span class="float-icon"><svg class="ic" aria-hidden="true"><use href="#i-shuriken" /></svg></span>
+            <span class="float-icon"><svg class="ic" aria-hidden="true"><use href="#i-sparkle" /></svg></span>
           </div>
-          <!-- Placeholder ninja with CSS art if image fails -->
+          <div class="ninja-card-badge">
+            <span class="ncb-icon"><svg class="ic" aria-hidden="true"><use href="#i-bolt" /></svg></span>
+            <span>
+              <strong data-i18n="hero.badgeCard1">توصيل سريع</strong>
+              <em data-i18n="hero.badgeCard2">خلال 2-4 أيام</em>
+            </span>
+          </div>
+          <!-- Fallback ninja art if the image fails -->
           <div class="ninja-fallback">
-            <div class="ninja-silhouette"><svg class="ic" aria-hidden="true"><use href="#i-mask"/></svg></div>
+            <div class="ninja-silhouette"><svg class="ic" aria-hidden="true"><use href="#i-mask" /></svg></div>
             <div class="ninja-glow-text">NINJA</div>
           </div>
-          <img src="assets/ninja-hero.png" class="ninja-image" alt="نينجا ننجاوي" onerror="this.style.display='none'">
+          <picture class="ninja-picture">
+            <source srcset="assets/ninja-hero.webp" type="image/webp">
+            <img src="assets/ninja-hero.png" class="ninja-image" alt="نينجا ننجاوي" width="768" height="1376"
+              fetchpriority="high" data-i18n-alt="hero.ninjaAlt" onerror="this.style.display='none'">
+          </picture>
           <div class="ninja-floor"></div>
           <div class="ninja-shadow"></div>
         </div>
       </div>
 
       <div class="hero-scroll-hint">
-        <span>اسحب للاستكشاف</span>
+        <span data-i18n="hero.scroll">اسحب للاستكشاف</span>
         <div class="scroll-line">
           <div class="scroll-dot"></div>
         </div>
@@ -239,36 +625,48 @@
 
     <!-- TRUST BADGES -->
     <section class="trust-strip reveal">
-      <div class="trust-item"><svg class="ic-lg" aria-hidden="true"><use href="#i-truck"/></svg><div><strong>شحن سريع</strong><span>لكل المحافظات</span></div></div>
-      <div class="trust-item"><svg class="ic-lg" aria-hidden="true"><use href="#i-shield"/></svg><div><strong>ضمان الجودة</strong><span>منتجات أصلية 100%</span></div></div>
-      <div class="trust-item"><svg class="ic-lg" aria-hidden="true"><use href="#i-whatsapp"/></svg><div><strong>طلب عبر واتساب</strong><span>بدون تعقيد</span></div></div>
-      <div class="trust-item"><svg class="ic-lg" aria-hidden="true"><use href="#i-check"/></svg><div><strong>دفع عند الاستلام</strong><span>افحص ثم ادفع</span></div></div>
+      <div class="trust-item">
+        <span class="trust-icon"><svg class="ic" aria-hidden="true"><use href="#i-truck" /></svg></span>
+        <div><strong data-i18n="trust.1.title">شحن سريع</strong><span data-i18n="trust.1.sub">لكل المحافظات</span></div>
+      </div>
+      <div class="trust-item">
+        <span class="trust-icon"><svg class="ic" aria-hidden="true"><use href="#i-shield" /></svg></span>
+        <div><strong data-i18n="trust.2.title">ضمان الجودة</strong><span data-i18n="trust.2.sub">منتجات أصلية 100%</span></div>
+      </div>
+      <div class="trust-item">
+        <span class="trust-icon"><svg class="ic" aria-hidden="true"><use href="#i-whatsapp" /></svg></span>
+        <div><strong data-i18n="trust.3.title">طلب عبر واتساب</strong><span data-i18n="trust.3.sub">بدون تعقيد</span></div>
+      </div>
+      <div class="trust-item">
+        <span class="trust-icon"><svg class="ic" aria-hidden="true"><use href="#i-wallet" /></svg></span>
+        <div><strong data-i18n="trust.4.title">دفع عند الاستلام</strong><span data-i18n="trust.4.sub">افحص ثم ادفع</span></div>
+      </div>
     </section>
 
     <!-- STATS -->
     <section class="stats-section">
       <div class="stat-box reveal" data-delay="0">
-        <div class="stat-icon"><svg class="ic" aria-hidden="true"><use href="#i-box"/></svg></div>
+        <div class="stat-icon"><svg class="ic" aria-hidden="true"><use href="#i-box" /></svg></div>
         <strong data-count="12000">+12K</strong>
-        <span>منتج متوفر</span>
+        <span data-i18n="stats.1">منتج متوفر</span>
         <div class="stat-hover-glow"></div>
       </div>
       <div class="stat-box reveal" data-delay="100">
-        <div class="stat-icon"><svg class="ic" aria-hidden="true"><use href="#i-users"/></svg></div>
+        <div class="stat-icon"><svg class="ic" aria-hidden="true"><use href="#i-users" /></svg></div>
         <strong data-count="50000">+50K</strong>
-        <span>عميل سعيد</span>
+        <span data-i18n="stats.2">عميل سعيد</span>
         <div class="stat-hover-glow"></div>
       </div>
       <div class="stat-box reveal" data-delay="200">
-        <div class="stat-icon"><svg class="ic" aria-hidden="true"><use href="#i-star"/></svg></div>
-        <strong>4.9</strong>
-        <span>متوسط التقييم</span>
+        <div class="stat-icon"><svg class="ic" aria-hidden="true"><use href="#i-star" /></svg></div>
+        <strong data-decimal="4.9">4.9</strong>
+        <span data-i18n="stats.3">متوسط التقييم</span>
         <div class="stat-hover-glow"></div>
       </div>
       <div class="stat-box reveal" data-delay="300">
-        <div class="stat-icon"><svg class="ic" aria-hidden="true"><use href="#i-headset"/></svg></div>
+        <div class="stat-icon"><svg class="ic" aria-hidden="true"><use href="#i-headset" /></svg></div>
         <strong>24/7</strong>
-        <span>دعم مستمر</span>
+        <span data-i18n="stats.4">دعم مستمر</span>
         <div class="stat-hover-glow"></div>
       </div>
     </section>
@@ -276,45 +674,52 @@
     <!-- CATEGORIES -->
     <section class="section" id="categories">
       <div class="section-title">
-        <span class="section-small reveal">استكشف المتجر</span>
-        <h2 class="reveal" data-delay="100">أقسام <em>ننجاوي</em></h2>
+        <span class="section-small reveal" data-i18n="cat.eyebrow">استكشف المتجر</span>
+        <h2 class="reveal" data-delay="100" data-i18n-html="cat.title">أقسام <em>ننجاوي</em></h2>
+        <p class="section-desc reveal" data-delay="150" data-i18n="cat.desc">تسوّق حسب القسم واختار ما يناسبك في ثوانٍ.</p>
         <div class="title-line-deco reveal" data-delay="200"></div>
       </div>
 
       <div class="categories-grid" id="categoriesGrid">
-        <button class="category-card active reveal" data-category="الكل" data-delay="0">
-          <span class="category-icon"><svg class="ic" aria-hidden="true"><use href="#i-shuriken"/></svg></span>
-          <span>كل المنتجات</span>
+        <button class="category-card active reveal" data-category="all" data-delay="0">
+          <span class="category-icon"><svg class="ic" aria-hidden="true"><use href="#i-grid" /></svg></span>
+          <span data-i18n="cat.all">كل المنتجات</span>
+          <em class="cat-count" data-cat-count="all">0</em>
           <div class="card-shine"></div>
           <div class="card-glow"></div>
         </button>
-        <button class="category-card reveal" data-category="إلكترونيات" data-delay="80">
-          <span class="category-icon"><svg class="ic" aria-hidden="true"><use href="#i-headset"/></svg></span>
-          <span>إلكترونيات</span>
+        <button class="category-card reveal" data-category="electronics" data-delay="80">
+          <span class="category-icon"><svg class="ic" aria-hidden="true"><use href="#i-headset" /></svg></span>
+          <span data-i18n="cat.electronics">إلكترونيات</span>
+          <em class="cat-count" data-cat-count="electronics">0</em>
           <div class="card-shine"></div>
           <div class="card-glow"></div>
         </button>
-        <button class="category-card reveal" data-category="أزياء" data-delay="160">
-          <span class="category-icon"><svg class="ic" aria-hidden="true"><use href="#i-shirt"/></svg></span>
-          <span>أزياء</span>
+        <button class="category-card reveal" data-category="fashion" data-delay="160">
+          <span class="category-icon"><svg class="ic" aria-hidden="true"><use href="#i-shirt" /></svg></span>
+          <span data-i18n="cat.fashion">أزياء</span>
+          <em class="cat-count" data-cat-count="fashion">0</em>
           <div class="card-shine"></div>
           <div class="card-glow"></div>
         </button>
-        <button class="category-card reveal" data-category="منزل" data-delay="240">
-          <span class="category-icon"><svg class="ic" aria-hidden="true"><use href="#i-home"/></svg></span>
-          <span>منزل</span>
+        <button class="category-card reveal" data-category="home" data-delay="240">
+          <span class="category-icon"><svg class="ic" aria-hidden="true"><use href="#i-home" /></svg></span>
+          <span data-i18n="cat.home">منزل</span>
+          <em class="cat-count" data-cat-count="home">0</em>
           <div class="card-shine"></div>
           <div class="card-glow"></div>
         </button>
-        <button class="category-card reveal" data-category="ألعاب" data-delay="320">
-          <span class="category-icon"><svg class="ic" aria-hidden="true"><use href="#i-gamepad"/></svg></span>
-          <span>ألعاب</span>
+        <button class="category-card reveal" data-category="gaming" data-delay="320">
+          <span class="category-icon"><svg class="ic" aria-hidden="true"><use href="#i-gamepad" /></svg></span>
+          <span data-i18n="cat.gaming">ألعاب</span>
+          <em class="cat-count" data-cat-count="gaming">0</em>
           <div class="card-shine"></div>
           <div class="card-glow"></div>
         </button>
-        <button class="category-card reveal" data-category="إكسسوارات" data-delay="400">
-          <span class="category-icon"><svg class="ic" aria-hidden="true"><use href="#i-watch"/></svg></span>
-          <span>إكسسوارات</span>
+        <button class="category-card reveal" data-category="accessories" data-delay="400">
+          <span class="category-icon"><svg class="ic" aria-hidden="true"><use href="#i-watch" /></svg></span>
+          <span data-i18n="cat.accessories">إكسسوارات</span>
+          <em class="cat-count" data-cat-count="accessories">0</em>
           <div class="card-shine"></div>
           <div class="card-glow"></div>
         </button>
@@ -325,13 +730,16 @@
     <section class="section products-section" id="products">
       <div class="products-header">
         <div>
-          <span class="section-small reveal">مختارات ننجاوي</span>
-          <h2 class="reveal" data-delay="100">أحدث <em>المنتجات</em></h2>
+          <span class="section-small reveal" data-i18n="prod.eyebrow">مختارات ننجاوي</span>
+          <h2 class="reveal" data-delay="100" data-i18n-html="prod.title">أحدث <em>المنتجات</em></h2>
         </div>
-        <button class="show-all-btn magnetic-btn reveal" id="showAllBtn" data-delay="200">
-          <span>عرض الكل</span>
-          <span class="arrow"><svg class="ic" aria-hidden="true"><use href="#i-arrow-left"/></svg></span>
-        </button>
+        <div class="products-tools reveal" data-delay="200">
+          <span class="results-count" id="resultsCount"></span>
+          <button class="show-all-btn magnetic-btn" id="showAllBtn" type="button">
+            <span data-i18n="prod.showAll">عرض الكل</span>
+            <span class="arrow dir-flip"><svg class="ic" aria-hidden="true"><use href="#i-arrow-left" /></svg></span>
+          </button>
+        </div>
       </div>
       <div class="products-grid" id="productsGrid"></div>
     </section>
@@ -340,21 +748,85 @@
     <section class="offer-section" id="offers">
       <div class="offer-bg-anim"></div>
       <div class="offer-content">
-        <span class="offer-tag reveal"><svg class="ic" aria-hidden="true"><use href="#i-fire"/></svg> عرض محدود <span class="tag-pulse"></span></span>
-        <h2 class="reveal" data-delay="100">ادخل ساحة العروض <span>واحصل على خصومات مميزة</span></h2>
-        <p class="reveal" data-delay="200">عروض متجددة على مجموعة مختارة من المنتجات.</p>
-        <a href="#products" class="primary-btn magnetic-btn reveal" data-delay="300">
-          <span class="btn-text">اكتشف المنتجات</span>
-          <span class="btn-icon"><svg class="ic" aria-hidden="true"><use href="#i-bolt"/></svg></span>
+        <span class="offer-tag reveal">
+          <svg class="ic" aria-hidden="true"><use href="#i-fire" /></svg>
+          <b data-i18n="offer.tag">عرض محدود</b>
+          <span class="tag-pulse"></span>
+        </span>
+        <h2 class="reveal" data-delay="100" data-i18n-html="offer.title">ادخل ساحة العروض <span>واحصل على خصومات مميزة</span></h2>
+        <p class="reveal" data-delay="200" data-i18n="offer.desc">عروض متجددة على مجموعة مختارة من المنتجات، لفترة محدودة فقط.</p>
+
+        <div class="countdown reveal" data-delay="260" id="countdown">
+          <div class="cd-box"><strong id="cdDays">00</strong><span data-i18n="offer.days">يوم</span></div>
+          <div class="cd-sep">:</div>
+          <div class="cd-box"><strong id="cdHours">00</strong><span data-i18n="offer.hours">ساعة</span></div>
+          <div class="cd-sep">:</div>
+          <div class="cd-box"><strong id="cdMinutes">00</strong><span data-i18n="offer.minutes">دقيقة</span></div>
+          <div class="cd-sep">:</div>
+          <div class="cd-box"><strong id="cdSeconds">00</strong><span data-i18n="offer.seconds">ثانية</span></div>
+        </div>
+
+        <a href="#products" class="primary-btn magnetic-btn reveal" data-delay="320">
+          <span class="btn-text" data-i18n="offer.cta">اكتشف المنتجات</span>
+          <span class="btn-icon"><svg class="ic" aria-hidden="true"><use href="#i-bolt" /></svg></span>
           <span class="btn-shine"></span>
         </a>
       </div>
       <div class="offer-number reveal" data-delay="400">
-        <span class="offer-up">حتى</span>
+        <span class="offer-up" data-i18n="offer.upTo">حتى</span>
         <strong class="offer-percent"><span data-count="40">40</span>%</strong>
-        <span class="offer-down">خصم</span>
+        <span class="offer-down" data-i18n="offer.off">خصم</span>
         <div class="offer-circle"></div>
         <div class="offer-circle-2"></div>
+      </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section class="section reviews-section" id="reviews">
+      <div class="section-title center">
+        <span class="section-small reveal" data-i18n="rev.eyebrow">آراء العملاء</span>
+        <h2 class="reveal" data-delay="100" data-i18n-html="rev.title">ثقة <em>تستحقها</em></h2>
+        <p class="section-desc reveal" data-delay="150" data-i18n="rev.desc">تجارب حقيقية من عملاء اشتروا من ننجاوي.</p>
+        <div class="title-line-deco center reveal" data-delay="200"></div>
+      </div>
+
+      <div class="reviews-grid">
+        <article class="review-card reveal" data-delay="0">
+          <span class="review-quote"><svg class="ic" aria-hidden="true"><use href="#i-quote" /></svg></span>
+          <div class="review-stars" data-stars="5"></div>
+          <p data-i18n="rev.1.text">الطلب وصل في يومين والتغليف ممتاز، والتعامل كان محترم جدًا.</p>
+          <footer>
+            <span class="review-avatar">م</span>
+            <div>
+              <strong data-i18n="rev.1.name">محمود عادل</strong>
+              <em data-i18n="rev.1.role">القاهرة</em>
+            </div>
+          </footer>
+        </article>
+        <article class="review-card reveal" data-delay="120">
+          <span class="review-quote"><svg class="ic" aria-hidden="true"><use href="#i-quote" /></svg></span>
+          <div class="review-stars" data-stars="5"></div>
+          <p data-i18n="rev.2.text">أحسن حاجة إن الدفع عند الاستلام، فحصت المنتج قبل ما أدفع.</p>
+          <footer>
+            <span class="review-avatar">س</span>
+            <div>
+              <strong data-i18n="rev.2.name">سارة إبراهيم</strong>
+              <em data-i18n="rev.2.role">الإسكندرية</em>
+            </div>
+          </footer>
+        </article>
+        <article class="review-card reveal" data-delay="240">
+          <span class="review-quote"><svg class="ic" aria-hidden="true"><use href="#i-quote" /></svg></span>
+          <div class="review-stars" data-stars="5"></div>
+          <p data-i18n="rev.3.text">الأسعار منافسة والجودة أعلى من المتوقع، هرجع أشتري تاني أكيد.</p>
+          <footer>
+            <span class="review-avatar">أ</span>
+            <div>
+              <strong data-i18n="rev.3.name">أحمد سمير</strong>
+              <em data-i18n="rev.3.role">المنصورة</em>
+            </div>
+          </footer>
+        </article>
       </div>
     </section>
 
@@ -362,17 +834,19 @@
     <section class="newsletter">
       <div class="newsletter-glow"></div>
       <div class="newsletter-content reveal">
-        <span class="section-small">كن أول من يعرف العروض</span>
-        <h2>انضم إلى مجتمع <em>ننجاوي</em></h2>
+        <span class="section-small" data-i18n="nl.eyebrow">كن أول من يعرف العروض</span>
+        <h2 data-i18n-html="nl.title">انضم إلى مجتمع <em>ننجاوي</em></h2>
+        <p data-i18n="nl.desc">رسالة واحدة أسبوعيًا بأهم العروض والمنتجات الجديدة — بدون إزعاج.</p>
       </div>
-      <form id="newsletterForm" class="newsletter-form reveal" data-delay="200">
-        <div class="input-wrapper">
-          <input type="email" id="newsletterEmail" placeholder="اكتب بريدك الإلكتروني" required>
+      <form id="newsletterForm" class="newsletter-form reveal" data-delay="200" novalidate>
+        <div class="input-wrapper with-icon">
+          <span class="input-icon"><svg class="ic" aria-hidden="true"><use href="#i-mail" /></svg></span>
+          <input type="email" id="newsletterEmail" placeholder="اكتب بريدك الإلكتروني" data-i18n-ph="nl.placeholder" required>
           <span class="input-focus-border"></span>
         </div>
         <button type="submit" class="primary-btn magnetic-btn">
-          <span class="btn-text">اشترك الآن</span>
-          <span class="btn-icon"><svg class="ic" aria-hidden="true"><use href="#i-bolt"/></svg></span>
+          <span class="btn-text" data-i18n="nl.cta">اشترك الآن</span>
+          <span class="btn-icon"><svg class="ic" aria-hidden="true"><use href="#i-bolt" /></svg></span>
           <span class="btn-shine"></span>
         </button>
       </form>
@@ -383,28 +857,63 @@
   <!-- FOOTER -->
   <footer>
     <div class="footer-glow"></div>
-    <div class="footer-brand reveal">
-      <div class="brand">
-        <span class="brand-star"><svg class="ic" aria-hidden="true"><use href="#i-shuriken"/></svg></span>
-        ننجاوي
+    <div class="footer-grid">
+      <div class="footer-brand reveal">
+        <div class="brand footer-logo">
+          <span class="brand-mark"><svg class="ic" aria-hidden="true"><use href="#i-shuriken" /></svg></span>
+          <span class="brand-text-wrap">
+            <span class="brand-text" data-i18n="brand.name">ننجاوي</span>
+            <span class="brand-sub">NINJAWY STORE</span>
+          </span>
+        </div>
+        <p data-i18n="footer.about">تجربة تسوق حديثة تجمع المنتجات المميزة والعروض الحصرية في مكان واحد. بسرعة النينجا، بجودة تثق بها.</p>
+        <div class="footer-socials">
+          <a href="#" class="social-btn" aria-label="Instagram"><svg class="ic" aria-hidden="true"><use href="#i-instagram" /></svg></a>
+          <a href="#" class="social-btn" aria-label="Facebook"><svg class="ic" aria-hidden="true"><use href="#i-facebook" /></svg></a>
+          <a href="#" class="social-btn" aria-label="TikTok"><svg class="ic" aria-hidden="true"><use href="#i-tiktok" /></svg></a>
+          <a href="#" class="social-btn" aria-label="X"><svg class="ic" aria-hidden="true"><use href="#i-x" /></svg></a>
+          <a href="#" class="social-btn" aria-label="WhatsApp"><svg class="ic" aria-hidden="true"><use href="#i-whatsapp" /></svg></a>
+        </div>
       </div>
-      <p>تجربة تسوق حديثة تجمع المنتجات المميزة والعروض الحصرية في مكان واحد. بسرعة النينجا، بجودة تثق بها.</p>
-      <div class="footer-socials">
-        <a href="#" class="social-btn" aria-label="Instagram"><svg class="ic" aria-hidden="true"><use href="#i-instagram"/></svg></a>
-        <a href="#" class="social-btn" aria-label="Facebook"><svg class="ic" aria-hidden="true"><use href="#i-facebook"/></svg></a>
-        <a href="#" class="social-btn" aria-label="TikTok"><svg class="ic" aria-hidden="true"><use href="#i-tiktok"/></svg></a>
-        <a href="#" class="social-btn" aria-label="WhatsApp"><svg class="ic" aria-hidden="true"><use href="#i-whatsapp"/></svg></a>
+
+      <div class="footer-col reveal" data-delay="100">
+        <h4 data-i18n="footer.quick">روابط سريعة</h4>
+        <a href="#home" class="footer-link"><span data-i18n="nav.home">الرئيسية</span></a>
+        <a href="#categories" class="footer-link"><span data-i18n="nav.categories">الأقسام</span></a>
+        <a href="#products" class="footer-link"><span data-i18n="nav.products">المنتجات</span></a>
+        <a href="#offers" class="footer-link"><span data-i18n="nav.offers">العروض</span></a>
+        <a href="#reviews" class="footer-link"><span data-i18n="nav.reviews">آراء العملاء</span></a>
+      </div>
+
+      <div class="footer-col reveal" data-delay="180">
+        <h4 data-i18n="footer.help">المساعدة</h4>
+        <a href="#" class="footer-link"><span data-i18n="footer.shipping">الشحن والتوصيل</span></a>
+        <a href="#" class="footer-link"><span data-i18n="footer.returns">الاستبدال والاسترجاع</span></a>
+        <a href="#" class="footer-link"><span data-i18n="footer.payment">طرق الدفع</span></a>
+        <a href="#" class="footer-link"><span data-i18n="footer.faq">الأسئلة الشائعة</span></a>
+        <a href="#" class="footer-link"><span data-i18n="footer.privacy">سياسة الخصوصية</span></a>
+      </div>
+
+      <div class="footer-col reveal" data-delay="260">
+        <h4 data-i18n="footer.contact">تواصل معنا</h4>
+        <a href="https://wa.me/201141362626" class="footer-contact" target="_blank" rel="noopener">
+          <svg class="ic" aria-hidden="true"><use href="#i-whatsapp" /></svg><span dir="ltr">+20 114 136 2626</span>
+        </a>
+        <a href="mailto:hello@ninjawy.store" class="footer-contact">
+          <svg class="ic" aria-hidden="true"><use href="#i-mail" /></svg><span dir="ltr">hello@ninjawy.store</span>
+        </a>
+        <p class="footer-contact static">
+          <svg class="ic" aria-hidden="true"><use href="#i-pin" /></svg><span data-i18n="footer.address">مصر — توصيل لكل المحافظات</span>
+        </p>
+        <p class="footer-contact static">
+          <svg class="ic" aria-hidden="true"><use href="#i-clock" /></svg><span data-i18n="footer.hours">يوميًا من 10 صباحًا حتى 12 منتصف الليل</span>
+        </p>
       </div>
     </div>
-    <div class="footer-links reveal" data-delay="100">
-      <a href="#home" class="footer-link"><span>الرئيسية</span></a>
-      <a href="#products" class="footer-link"><span>المنتجات</span></a>
-      <a href="#categories" class="footer-link"><span>الأقسام</span></a>
-      <a href="#offers" class="footer-link"><span>العروض</span></a>
-    </div>
+
     <div class="footer-bottom">
-      <span>© 2026 NINJAWY — صُنع بسرعة النينجا <svg class="ic" aria-hidden="true"><use href="#i-mask"/></svg></span>
-      <span class="developer">Developed by <strong>yaseen amr abd el rahem</strong></span>
+      <span data-i18n-html="footer.rights">© 2026 NINJAWY — صُنع بسرعة النينجا <svg class="ic" aria-hidden="true"><use href="#i-mask" /></svg></span>
+      <span class="developer" data-i18n-html="footer.dev">Developed by <strong>yaseen amr abd el rahem</strong></span>
     </div>
   </footer>
 
@@ -412,109 +921,162 @@
   <div class="overlay" id="overlay"></div>
 
   <!-- SEARCH -->
-  <div class="search-modal" id="searchModal">
+  <div class="search-modal" id="searchModal" role="dialog" aria-modal="true">
     <div class="search-window">
       <div class="modal-top">
-        <h3>البحث عن منتج</h3>
-        <button class="close-modal magnetic-btn" id="closeSearchBtn"><svg class="ic" aria-hidden="true"><use href="#i-close"/></svg></button>
+        <h3 data-i18n="search.title">البحث عن منتج</h3>
+        <button class="close-modal magnetic-btn" id="closeSearchBtn" type="button" aria-label="إغلاق" data-i18n-aria="common.close"><svg class="ic" aria-hidden="true"><use href="#i-close" /></svg></button>
       </div>
-      <div class="input-wrapper">
-        <input type="text" id="searchInput" placeholder="اكتب اسم المنتج...">
+      <div class="input-wrapper with-icon">
+        <span class="input-icon"><svg class="ic" aria-hidden="true"><use href="#i-search" /></svg></span>
+        <input type="text" id="searchInput" placeholder="اكتب اسم المنتج..." data-i18n-ph="search.placeholder">
         <span class="input-focus-border"></span>
       </div>
+      <p class="search-hint" data-i18n="search.hint">جرّب: سماعات، ساعة، ألعاب...</p>
       <div class="search-results" id="searchResults"></div>
     </div>
   </div>
 
   <!-- CART -->
-  <aside class="cart-panel" id="cartPanel">
+  <aside class="cart-panel" id="cartPanel" aria-label="Cart">
     <div class="cart-header">
       <div>
-        <span class="cart-label">سلة المشتريات</span>
-        <h3>حقيبة ننجاوي <svg class="ic" aria-hidden="true"><use href="#i-bag"/></svg></h3>
+        <span class="cart-label" data-i18n="cart.label">سلة المشتريات</span>
+        <h3><span data-i18n="cart.title">حقيبة ننجاوي</span> <svg class="ic" aria-hidden="true"><use href="#i-bag" /></svg></h3>
+        <em class="cart-sub" id="cartSummary"></em>
       </div>
-      <button id="closeCartBtn" class="close-modal magnetic-btn"><svg class="ic" aria-hidden="true"><use href="#i-close"/></svg></button>
+      <button id="closeCartBtn" class="close-modal magnetic-btn" type="button" aria-label="إغلاق" data-i18n-aria="common.close"><svg class="ic" aria-hidden="true"><use href="#i-close" /></svg></button>
     </div>
+
     <div class="cart-items" id="cartItems"></div>
+
     <div class="customer-section">
-      <h3>بيانات الطلب</h3>
+      <h3><svg class="ic" aria-hidden="true"><use href="#i-user" /></svg> <span data-i18n="cart.details">بيانات الطلب</span></h3>
       <div class="customer-fields">
-        <div class="input-wrapper"><input type="text" id="customerName" placeholder="الاسم بالكامل"><span class="input-focus-border"></span></div>
-        <div class="input-wrapper"><input type="tel" id="customerPhone" placeholder="رقم الهاتف"><span class="input-focus-border"></span></div>
-        <div class="input-wrapper"><input type="tel" id="customerExtraPhone" placeholder="رقم هاتف إضافي (اختياري)"><span class="input-focus-border"></span></div>
-        <div class="input-wrapper"><input type="text" id="customerCity" placeholder="المحافظة / المدينة"><span class="input-focus-border"></span></div>
-        <div class="input-wrapper"><textarea id="customerAddress" placeholder="العنوان بالتفصيل"></textarea><span class="input-focus-border"></span></div>
-        <div class="input-wrapper"><textarea id="customerNotes" placeholder="ملاحظات إضافية على الطلب (اختياري)"></textarea><span class="input-focus-border"></span></div>
+        <div class="input-wrapper"><input type="text" id="customerName" placeholder="الاسم بالكامل" data-i18n-ph="cart.name"><span class="input-focus-border"></span></div>
+        <div class="input-wrapper"><input type="tel" id="customerPhone" placeholder="رقم الهاتف" data-i18n-ph="cart.phone"><span class="input-focus-border"></span></div>
+        <div class="input-wrapper"><input type="tel" id="customerExtraPhone" placeholder="رقم هاتف إضافي (اختياري)" data-i18n-ph="cart.phone2"><span class="input-focus-border"></span></div>
+        <div class="input-wrapper"><input type="text" id="customerCity" placeholder="المحافظة / المدينة" data-i18n-ph="cart.city"><span class="input-focus-border"></span></div>
+        <div class="input-wrapper"><textarea id="customerAddress" placeholder="العنوان بالتفصيل" data-i18n-ph="cart.address"></textarea><span class="input-focus-border"></span></div>
+        <div class="input-wrapper"><textarea id="customerNotes" placeholder="ملاحظات إضافية على الطلب (اختياري)" data-i18n-ph="cart.notes"></textarea><span class="input-focus-border"></span></div>
       </div>
     </div>
+
     <div class="cart-footer">
       <div class="cart-total">
-        <span>الإجمالي</span>
-        <strong><span id="cartTotal">0</span> ج.م</strong>
+        <span data-i18n="cart.total">الإجمالي</span>
+        <strong><span id="cartTotal">0</span> <em class="currency" data-i18n="common.currency">ج.م</em></strong>
       </div>
-      <button class="clear-cart-btn magnetic-btn" id="clearCartBtn">تفريغ السلة</button>
-      <button class="primary-btn checkout-btn magnetic-btn" id="checkoutBtn">
-        <span class="btn-text">إتمام الطلب عبر واتساب</span>
-        <span class="btn-icon"><svg class="ic" aria-hidden="true"><use href="#i-whatsapp"/></svg></span>
+      <button class="clear-cart-btn magnetic-btn" id="clearCartBtn" type="button">
+        <svg class="ic" aria-hidden="true"><use href="#i-trash" /></svg>
+        <span data-i18n="cart.clear">تفريغ السلة</span>
+      </button>
+      <button class="primary-btn checkout-btn magnetic-btn" id="checkoutBtn" type="button">
+        <span class="btn-text" data-i18n="cart.checkout">إتمام الطلب عبر واتساب</span>
+        <span class="btn-icon"><svg class="ic" aria-hidden="true"><use href="#i-whatsapp" /></svg></span>
         <span class="btn-shine"></span>
       </button>
     </div>
   </aside>
 
   <!-- ADMIN LOGIN -->
-  <div class="admin-modal" id="adminLoginModal">
+  <div class="admin-modal" id="adminLoginModal" role="dialog" aria-modal="true">
     <div class="admin-window">
       <div class="modal-top">
         <div>
           <span class="admin-small">NINJAWY CONTROL</span>
-          <h3>تسجيل دخول الإدارة</h3>
+          <h3 data-i18n="admin.loginTitle">تسجيل دخول الإدارة</h3>
         </div>
-        <button class="close-modal magnetic-btn" id="closeAdminLogin"><svg class="ic" aria-hidden="true"><use href="#i-close"/></svg></button>
+        <button class="close-modal magnetic-btn" id="closeAdminLogin" type="button" aria-label="إغلاق" data-i18n-aria="common.close"><svg class="ic" aria-hidden="true"><use href="#i-close" /></svg></button>
       </div>
       <form id="adminLoginForm" class="admin-login-form">
-        <div class="input-wrapper"><input type="text" id="adminUsername" placeholder="اسم المستخدم" required><span class="input-focus-border"></span></div>
-        <div class="input-wrapper"><input type="password" id="adminPassword" placeholder="كلمة المرور" required><span class="input-focus-border"></span></div>
-        <button type="submit" class="primary-btn magnetic-btn"><span class="btn-text">دخول لوحة الإدارة</span><span class="btn-icon"><svg class="ic" aria-hidden="true"><use href="#i-lock"/></svg></span><span class="btn-shine"></span></button>
+        <div class="input-wrapper with-icon">
+          <span class="input-icon"><svg class="ic" aria-hidden="true"><use href="#i-user" /></svg></span>
+          <input type="text" id="adminUsername" placeholder="اسم المستخدم" data-i18n-ph="admin.username" autocomplete="username" required>
+          <span class="input-focus-border"></span>
+        </div>
+        <div class="input-wrapper with-icon">
+          <span class="input-icon"><svg class="ic" aria-hidden="true"><use href="#i-lock" /></svg></span>
+          <input type="password" id="adminPassword" placeholder="كلمة المرور" data-i18n-ph="admin.password" autocomplete="current-password" required>
+          <span class="input-focus-border"></span>
+        </div>
+        <button type="submit" class="primary-btn magnetic-btn">
+          <span class="btn-text" data-i18n="admin.loginBtn">دخول لوحة الإدارة</span>
+          <span class="btn-icon"><svg class="ic" aria-hidden="true"><use href="#i-lock" /></svg></span>
+          <span class="btn-shine"></span>
+        </button>
       </form>
-      <p class="login-error" id="loginError"></p>
+      <p class="login-error" id="loginError" role="alert"></p>
     </div>
   </div>
 
   <!-- ADMIN PANEL -->
-  <div class="admin-modal" id="adminPanel">
+  <div class="admin-modal" id="adminPanel" role="dialog" aria-modal="true">
     <div class="admin-dashboard">
       <div class="modal-top">
         <div>
           <span class="admin-small">NINJAWY ADMIN PANEL</span>
-          <h2>إدارة المنتجات</h2>
+          <h2 data-i18n="admin.panelTitle">إدارة المنتجات</h2>
         </div>
         <div class="admin-actions">
-          <button id="logoutAdminBtn" class="logout-btn magnetic-btn">تسجيل الخروج</button>
-          <button class="close-modal magnetic-btn" id="closeAdminPanel"><svg class="ic" aria-hidden="true"><use href="#i-close"/></svg></button>
+          <button id="logoutAdminBtn" class="logout-btn magnetic-btn" type="button">
+            <svg class="ic" aria-hidden="true"><use href="#i-logout" /></svg>
+            <span data-i18n="admin.logout">تسجيل الخروج</span>
+          </button>
+          <button class="close-modal magnetic-btn" id="closeAdminPanel" type="button" aria-label="إغلاق" data-i18n-aria="common.close"><svg class="ic" aria-hidden="true"><use href="#i-close" /></svg></button>
         </div>
       </div>
+
       <div class="admin-content">
         <div class="admin-card">
-          <h3>إضافة منتج جديد</h3>
+          <h3><svg class="ic" aria-hidden="true"><use href="#i-plus" /></svg> <span data-i18n="admin.addTitle">إضافة منتج جديد</span></h3>
           <form id="addProductForm" class="product-form">
-            <div class="input-wrapper"><input type="text" id="productName" placeholder="اسم المنتج" required><span class="input-focus-border"></span></div>
-            <div class="input-wrapper"><textarea id="productDescription" placeholder="وصف المنتج" required></textarea><span class="input-focus-border"></span></div>
-            <div class="input-wrapper"><input type="number" id="productPrice" placeholder="سعر المنتج بالجنيه" required><span class="input-focus-border"></span></div>
-            <select id="productCategory" required>
-              <option value="">اختر القسم</option>
-              <option value="إلكترونيات">إلكترونيات</option>
-              <option value="أزياء">أزياء</option>
-              <option value="منزل">منزل</option>
-              <option value="ألعاب">ألعاب</option>
-              <option value="إكسسوارات">إكسسوارات</option>
-            </select>
-            <input type="file" id="productImage" accept="image/*">
-            <div class="image-preview" id="imagePreview">معاينة الصورة</div>
-            <button type="submit" class="primary-btn magnetic-btn"><span class="btn-text">إضافة المنتج</span><span class="btn-icon"><svg class="ic" aria-hidden="true"><use href="#i-plus"/></svg></span><span class="btn-shine"></span></button>
+            <div class="form-row">
+              <div class="input-wrapper"><input type="text" id="productNameAr" placeholder="اسم المنتج (عربي)" data-i18n-ph="admin.nameAr" required><span class="input-focus-border"></span></div>
+              <div class="input-wrapper"><input type="text" id="productNameEn" placeholder="Product name (English)" data-i18n-ph="admin.nameEn"><span class="input-focus-border"></span></div>
+            </div>
+            <div class="form-row">
+              <div class="input-wrapper"><textarea id="productDescriptionAr" placeholder="وصف المنتج (عربي)" data-i18n-ph="admin.descAr" required></textarea><span class="input-focus-border"></span></div>
+              <div class="input-wrapper"><textarea id="productDescriptionEn" placeholder="Description (English)" data-i18n-ph="admin.descEn"></textarea><span class="input-focus-border"></span></div>
+            </div>
+            <div class="form-row">
+              <div class="input-wrapper"><input type="number" id="productPrice" min="0" step="1" placeholder="السعر" data-i18n-ph="admin.price" required><span class="input-focus-border"></span></div>
+              <div class="input-wrapper"><input type="number" id="productOldPrice" min="0" step="1" placeholder="السعر قبل الخصم (اختياري)" data-i18n-ph="admin.oldPrice"><span class="input-focus-border"></span></div>
+            </div>
+            <div class="select-wrapper">
+              <select id="productCategory" required aria-label="Category">
+                <option value="" data-i18n="admin.chooseCat">اختر القسم</option>
+                <option value="electronics" data-i18n="cat.electronics">إلكترونيات</option>
+                <option value="fashion" data-i18n="cat.fashion">أزياء</option>
+                <option value="home" data-i18n="cat.home">منزل</option>
+                <option value="gaming" data-i18n="cat.gaming">ألعاب</option>
+                <option value="accessories" data-i18n="cat.accessories">إكسسوارات</option>
+              </select>
+              <span class="select-arrow"><svg class="ic" aria-hidden="true"><use href="#i-chevron-down" /></svg></span>
+            </div>
+
+            <div class="icon-picker" id="iconPicker" role="group" aria-label="Icon">
+              <span class="picker-label" data-i18n="admin.iconLabel">أيقونة المنتج</span>
+              <div class="picker-options" id="pickerOptions"></div>
+            </div>
+
+            <label class="file-field" for="productImage">
+              <span class="file-icon"><svg class="ic" aria-hidden="true"><use href="#i-image" /></svg></span>
+              <span data-i18n="admin.imageLabel">اختر صورة للمنتج (اختياري)</span>
+              <input type="file" id="productImage" accept="image/*" hidden>
+            </label>
+            <div class="image-preview" id="imagePreview" data-i18n="admin.imagePreview">معاينة الصورة</div>
+
+            <button type="submit" class="primary-btn magnetic-btn">
+              <span class="btn-text" data-i18n="admin.addBtn">إضافة المنتج</span>
+              <span class="btn-icon"><svg class="ic" aria-hidden="true"><use href="#i-plus" /></svg></span>
+              <span class="btn-shine"></span>
+            </button>
           </form>
         </div>
+
         <div class="admin-card">
-          <h3>المنتجات الحالية</h3>
+          <h3><svg class="ic" aria-hidden="true"><use href="#i-box" /></svg> <span data-i18n="admin.listTitle">المنتجات الحالية</span> <em class="admin-count" id="adminCount"></em></h3>
           <div class="admin-products" id="adminProductsList"></div>
         </div>
       </div>
@@ -522,8 +1084,17 @@
   </div>
 
   <!-- TOAST -->
-  <div class="toast" id="toast"></div>
+  <div class="toast" id="toast" role="status" aria-live="polite">
+    <span class="toast-icon"><svg class="ic" aria-hidden="true"><use href="#i-check-circle" /></svg></span>
+    <span class="toast-text"></span>
+  </div>
+
+  <!-- BACK TO TOP -->
+  <button class="back-to-top" id="backToTop" type="button" aria-label="العودة للأعلى" data-i18n-aria="common.top">
+    <svg class="ic" aria-hidden="true"><use href="#i-arrow-up" /></svg>
+  </button>
 
   <script src="script.js"></script>
 </body>
+
 </html>
