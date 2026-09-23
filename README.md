@@ -30,6 +30,7 @@ script.js                  المحرك: الترجمة، السمات، الخ�
 assets/icons/sprite.svg    مكتبة الأيقونات كملف مستقل (نفس الرموز المضمّنة)
 assets/ninja-hero.webp     صورة البطل (محسّنة — 127KB)
 assets/ninja-hero.png      نفس الصورة كاحتياطي للمتصفحات القديمة
+vercel.json                إعداد Vercel: توجيه أي مسار غير موجود إلى index.html (لمنع خطأ 404)
 ```
 
 ## ▶️ التشغيل | Run
