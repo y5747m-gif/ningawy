@@ -1,18 +1,8 @@
-/* ==========================================================================
-   SOUND SOUQ — LIGHTWEIGHT APP
-   · Bilingual (AR / EN) with RTL + LTR
-   · Dark / Light themes
-   · No animation loops, external fonts or heavy effects
-   · Cart · WhatsApp checkout · Admin panel
-   ========================================================================== */
 (function () {
   "use strict";
-
-  /* ---------------- CONFIG ---------------- */
-  const WHATSAPP_NUMBER = "201141362626";
+const WHATSAPP_NUMBER = "201500721881";
   const ADMIN_USERNAME = "yaseen";
   const ADMIN_PASSWORD = "NINJAWY2026";
-
   const KEYS = {
     products: "ninjawy_products",
     cart: "ninjawy_cart",
@@ -22,17 +12,13 @@
     lang: "ninjawy_lang",
     offerEnd: "ninjawy_offer_end"
   };
-
   const ICON_CHOICES = ["box", "headset", "keyboard", "gamepad", "mouse", "watch", "handbag", "shirt", "lamp", "gift", "bag", "sound"];
-
-  /* ---------------- I18N ---------------- */
-  const I18N = {
+const I18N = {
     ar: {
       "meta.title": "ساوند سوق | SOUND SOUQ — تسوّق بوضوح وثقة",
       "meta.description": "ساوند سوق - منتجات مختارة وعروض حصرية بتجربة خفيفة وسريعة، توصيل لكل المحافظات ودفع عند الاستلام.",
       "brand.name": "ساوند سوق",
                         "marquee.3": "توصيل لكل المحافظات · دفع عند الاستلام",
-
       "nav.home": "الرئيسية",
       "nav.categories": "الأقسام",
       "nav.products": "المنتجات",
@@ -43,7 +29,6 @@
       "nav.search": "بحث",
       "nav.cart": "سلة المشتريات",
       "nav.theme": "تبديل بين الوضع الداكن والفاتح",
-
       "hero.badge": "تجربة تسوق خفيفة واحترافية",
       "hero.title1": "كل ما تحتاجه...",
       "hero.title2": "تجده في ساوند سوق",
@@ -53,17 +38,14 @@
                                           
       "why.title": "لماذا ساوند سوق؟",
       "why.sub": "تسوّق واضح، سريع، وبدون تعقيد",
-
       "trust.1.title": "شحن سريع", "trust.1.sub": "لكل المحافظات",
       "trust.2.title": "ضمان الجودة", "trust.2.sub": "منتجات أصلية 100%",
       "trust.3.title": "طلب عبر واتساب", "trust.3.sub": "بدون تعقيد",
       "trust.4.title": "دفع عند الاستلام", "trust.4.sub": "افحص ثم ادفع",
-
       "stats.1": "منتج متوفر",
       "stats.2": "عميل سعيد",
       "stats.3": "متوسط التقييم",
       "stats.4": "دعم مستمر",
-
       "cat.eyebrow": "استكشف المتجر",
       "cat.title": "أقسام <em>ساوند سوق</em>",
       "cat.desc": "تسوّق حسب القسم واختار ما يناسبك في ثوانٍ.",
@@ -73,7 +55,6 @@
       "cat.home": "منزل",
       "cat.gaming": "ألعاب",
       "cat.accessories": "إكسسوارات",
-
       "prod.eyebrow": "مختارات ساوند سوق",
       "prod.title": "أحدث <em>المنتجات</em>",
       "prod.showAll": "عرض الكل",
@@ -109,7 +90,6 @@
       "rev.2.name": "سارة إبراهيم", "rev.2.role": "الإسكندرية",
       "rev.3.text": "الأسعار منافسة والجودة أعلى من المتوقع، هرجع أشتري تاني أكيد.",
       "rev.3.name": "أحمد سمير", "rev.3.role": "المنصورة",
-
       "nl.eyebrow": "كن أول من يعرف العروض",
       "nl.title": "انضم إلى مجتمع <em>ساوند سوق</em>",
       "nl.desc": "رسالة واحدة أسبوعيًا بأهم العروض والمنتجات الجديدة — بدون إزعاج.",
@@ -117,7 +97,6 @@
       "nl.cta": "اشترك الآن",
       "nl.invalid": "من فضلك اكتب بريدًا إلكترونيًا صحيحًا.",
       "nl.done": "تم الاشتراك بنجاح ✦",
-
       "footer.about": "ساوند سوق يجمع المنتجات المميزة والعروض الحصرية في تجربة تسوق بسيطة وسريعة، بجودة تثق بها.",
       "footer.quick": "روابط سريعة",
       "footer.help": "المساعدة",
@@ -131,7 +110,6 @@
       "footer.hours": "يوميًا من 10 صباحًا حتى 12 منتصف الليل",
       "footer.rights": "© 2026 SOUND SOUQ — جميع الحقوق محفوظة",
       "footer.dev": "تطوير <strong>yaseen amr abd el rahem</strong>",
-
       "cart.label": "سلة المشتريات",
       "cart.title": "حقيبة ساوند سوق",
       "cart.empty": "حقيبتك فارغة حاليًا",
@@ -157,12 +135,10 @@
       "cart.opened": "تم فتح واتساب لإتمام الطلب",
       "cart.popupBlocked": "تعذر فتح واتساب. اسمح بالنوافذ المنبثقة ثم حاول مجددًا.",
                   "cart.confirmClear": "هل تريد تفريغ السلة؟",
-
       "search.title": "البحث عن منتج",
       "search.placeholder": "اكتب اسم المنتج...",
       "search.hint": "جرّب: سماعات، ساعة، ألعاب...",
       "search.none": "لا توجد نتائج مطابقة.",
-
       "admin.loginTitle": "تسجيل دخول الإدارة",
       "admin.username": "اسم المستخدم",
       "admin.password": "كلمة المرور",
@@ -171,30 +147,43 @@
       "admin.panelTitle": "إدارة المنتجات",
       "admin.logout": "تسجيل الخروج",
       "admin.addTitle": "إضافة منتج جديد",
+      "admin.editTitle": "تعديل المنتج",
       "admin.nameAr": "اسم المنتج (عربي)",
-      "admin.nameEn": "اسم المنتج (إنجليزي)",
+      "admin.nameEn": "اسم المنتج (إنجليزي — يترجم تلقائيًا)",
       "admin.descAr": "وصف المنتج (عربي)",
-      "admin.descEn": "وصف المنتج (إنجليزي)",
+      "admin.descEn": "وصف المنتج (إنجليزي — يترجم تلقائيًا)",
+      "admin.autoTranslateHint": "الترجمة التلقائية للإنجليزية مفعّلة عند الكتابة بالعربي",
+      "admin.translateNow": "ترجمة فورية",
+      "admin.translated": "تمت الترجمة التلقائية للإنجليزية ✦",
       "admin.price": "السعر بالجنيه",
       "admin.oldPrice": "السعر قبل الخصم (اختياري)",
       "admin.chooseCat": "اختر القسم",
       "admin.iconLabel": "أيقونة المنتج",
       "admin.imageLabel": "اختر صورة للمنتج (اختياري)",
+      "admin.imageChangeLabel": "تغيير صورة المنتج",
+      "admin.removeImage": "إزالة الصورة",
       "admin.imagePreview": "معاينة الصورة",
       "admin.imageProcessing": "جاري تجهيز الصورة...",
       "admin.imageTooLarge": "الصورة كبيرة جدًا. اختر صورة أصغر من 8 ميجابايت.",
       "admin.imageError": "تعذر قراءة الصورة. جرّب صورة أخرى.",
       "admin.addBtn": "إضافة المنتج",
+      "admin.saveChanges": "حفظ التعديلات",
+      "admin.saveAsNew": "إضافة كنسخة جديدة",
+      "admin.cancelEdit": "إلغاء التعديل",
       "admin.listTitle": "المنتجات الحالية",
+      "admin.edit": "تعديل",
+      "admin.duplicate": "تكرار",
       "admin.delete": "حذف",
       "admin.added": "تمت إضافة المنتج بنجاح",
+      "admin.updated": "تم حفظ تعديلات المنتج بنجاح",
+      "admin.duplicated": "تمت إضافة نسخة جديدة من المنتج بنجاح",
+      "admin.editingNow": "وضع التعديل: عدّل البيانات أو الصورة ثم اضغط حفظ",
       "admin.deleted": "تم حذف المنتج.",
       "admin.fillAll": "أكمل بيانات المنتج المطلوبة.",
       "admin.confirmDelete": "هل تريد حذف هذا المنتج؟",
       "admin.loggedIn": "تم تسجيل الدخول بنجاح",
       "admin.loggedOut": "تم تسجيل الخروج",
       "admin.count": "{n} منتج",
-
       "common.currency": "ج.م",
       "common.skip": "تخطَّ إلى المحتوى",
       "common.close": "إغلاق",
@@ -202,8 +191,7 @@
       "common.theme.dark": "الوضع الداكن مفعّل",
       "common.theme.light": "الوضع الفاتح مفعّل",
       "common.lang": "تم التبديل إلى العربية",
-
-      "wa.title": "*طلب جديد من متجر ساوند سوق*",
+      "wa.title": "*طلب جديد من متجر ساوند سوق | SOUND SOUQ*",
       "wa.customer": "*بيانات العميل*",
       "wa.name": "الاسم",
       "wa.phone": "رقم الهاتف",
@@ -212,20 +200,25 @@
       "wa.city": "المدينة",
       "wa.address": "العنوان",
       "wa.notes": "الملاحظات",
-      "wa.products": "*المنتجات*",
+      "wa.products": "*تفاصيل المنتجات المطلوبة*",
+      "wa.category": "القسم",
+      "wa.details": "التفاصيل",
       "wa.qty": "الكمية",
       "wa.price": "السعر",
+      "wa.oldPrice": "بدلًا من",
       "wa.itemTotal": "إجمالي المنتج",
+      "wa.summary": "*ملخص الطلب*",
+      "wa.totalQty": "إجمالي عدد القطع",
+      "wa.payment": "طريقة الدفع",
+      "wa.cod": "الدفع عند الاستلام",
       "wa.total": "*الإجمالي النهائي*",
-      "wa.thanks": "شكرًا لاختيارك ساوند سوق ✦"
+      "wa.thanks": "شكرًا لاختيارك ساوند سوق — سيتم التواصل معك لتأكيد الطلب ✦"
     },
-
     en: {
       "meta.title": "SOUND SOUQ — Shop with confidence",
       "meta.description": "SOUND SOUQ - a lightweight storefront with hand-picked products, exclusive deals, nationwide delivery and cash on delivery.",
       "brand.name": "Sound Souq",
                         "marquee.3": "Nationwide delivery · Cash on delivery",
-
       "nav.home": "Home",
       "nav.categories": "Categories",
       "nav.products": "Products",
@@ -236,7 +229,6 @@
       "nav.search": "Search",
       "nav.cart": "Shopping bag",
       "nav.theme": "Toggle dark / light mode",
-
       "hero.badge": "A lightweight, professional store",
       "hero.title1": "Everything you need...",
       "hero.title2": "found at SOUND SOUQ",
@@ -246,17 +238,14 @@
                                           
       "why.title": "Why Sound Souq?",
       "why.sub": "Clear, fast and effortless shopping",
-
       "trust.1.title": "Fast shipping", "trust.1.sub": "To every governorate",
       "trust.2.title": "Quality guaranteed", "trust.2.sub": "100% authentic products",
       "trust.3.title": "Order via WhatsApp", "trust.3.sub": "Zero hassle",
       "trust.4.title": "Cash on delivery", "trust.4.sub": "Inspect, then pay",
-
       "stats.1": "Products in stock",
       "stats.2": "Happy customers",
       "stats.3": "Average rating",
       "stats.4": "Always-on support",
-
       "cat.eyebrow": "Explore the store",
       "cat.title": "Shop by <em>category</em>",
       "cat.desc": "Pick a category and find exactly what you need in seconds.",
@@ -266,7 +255,6 @@
       "cat.home": "Home",
       "cat.gaming": "Gaming",
       "cat.accessories": "Accessories",
-
       "prod.eyebrow": "Sound Souq picks",
       "prod.title": "Latest <em>products</em>",
       "prod.showAll": "Show all",
@@ -302,7 +290,6 @@
       "rev.2.name": "Sara Ibrahim", "rev.2.role": "Alexandria",
       "rev.3.text": "Great prices and better quality than expected. I'll definitely order again.",
       "rev.3.name": "Ahmed Samir", "rev.3.role": "Mansoura",
-
       "nl.eyebrow": "Be the first to know",
       "nl.title": "Join the <em>SOUND SOUQ</em> community",
       "nl.desc": "One email a week with the best deals and new arrivals — no spam, ever.",
@@ -310,7 +297,6 @@
       "nl.cta": "Subscribe",
       "nl.invalid": "Please enter a valid email address.",
       "nl.done": "Subscribed successfully ✦",
-
       "footer.about": "Sound Souq brings curated products and exclusive deals together in a simple, fast shopping experience with quality you can trust.",
       "footer.quick": "Quick links",
       "footer.help": "Help",
@@ -324,7 +310,6 @@
       "footer.hours": "Daily from 10 AM to 12 midnight",
       "footer.rights": "© 2026 SOUND SOUQ — All rights reserved",
       "footer.dev": "Developed by <strong>yaseen amr abd el rahem</strong>",
-
       "cart.label": "Shopping bag",
       "cart.title": "Sound Souq bag",
       "cart.empty": "Your bag is empty",
@@ -350,12 +335,10 @@
       "cart.opened": "WhatsApp opened to complete your order",
       "cart.popupBlocked": "Could not open WhatsApp. Allow pop-ups and try again.",
                   "cart.confirmClear": "Empty your bag?",
-
       "search.title": "Search for a product",
       "search.placeholder": "Type a product name...",
       "search.hint": "Try: headphones, watch, gaming...",
       "search.none": "No matching results.",
-
       "admin.loginTitle": "Admin sign in",
       "admin.username": "Username",
       "admin.password": "Password",
@@ -364,30 +347,43 @@
       "admin.panelTitle": "Product management",
       "admin.logout": "Log out",
       "admin.addTitle": "Add a new product",
+      "admin.editTitle": "Edit product",
       "admin.nameAr": "Product name (Arabic)",
-      "admin.nameEn": "Product name (English)",
+      "admin.nameEn": "Product name (English — auto-translated)",
       "admin.descAr": "Description (Arabic)",
-      "admin.descEn": "Description (English)",
+      "admin.descEn": "Description (English — auto-translated)",
+      "admin.autoTranslateHint": "Auto-translation to English is active while typing Arabic",
+      "admin.translateNow": "Translate now",
+      "admin.translated": "Auto-translated to English ✦",
       "admin.price": "Price (EGP)",
       "admin.oldPrice": "Price before discount (optional)",
       "admin.chooseCat": "Choose a category",
       "admin.iconLabel": "Product icon",
       "admin.imageLabel": "Choose a product image (optional)",
+      "admin.imageChangeLabel": "Change product image",
+      "admin.removeImage": "Remove image",
       "admin.imagePreview": "Image preview",
       "admin.imageProcessing": "Preparing image...",
       "admin.imageTooLarge": "Image is too large. Choose one under 8 MB.",
       "admin.imageError": "Could not read the image. Try another one.",
       "admin.addBtn": "Add product",
+      "admin.saveChanges": "Save changes",
+      "admin.saveAsNew": "Add as new copy",
+      "admin.cancelEdit": "Cancel edit",
       "admin.listTitle": "Current products",
+      "admin.edit": "Edit",
+      "admin.duplicate": "Duplicate",
       "admin.delete": "Delete",
       "admin.added": "Product added successfully",
+      "admin.updated": "Product changes saved successfully",
+      "admin.duplicated": "Product duplicated successfully",
+      "admin.editingNow": "Edit mode: update details or image then save",
       "admin.deleted": "Product deleted.",
       "admin.fillAll": "Please complete the required product fields.",
       "admin.confirmDelete": "Delete this product?",
       "admin.loggedIn": "Signed in successfully",
       "admin.loggedOut": "Logged out",
       "admin.count": "{n} products",
-
       "common.currency": "EGP",
       "common.skip": "Skip to content",
       "common.close": "Close",
@@ -395,7 +391,6 @@
       "common.theme.dark": "Dark mode enabled",
       "common.theme.light": "Light mode enabled",
       "common.lang": "Switched to English",
-
       "wa.title": "*New order from SOUND SOUQ store*",
       "wa.customer": "*Customer details*",
       "wa.name": "Name",
@@ -405,24 +400,28 @@
       "wa.city": "City",
       "wa.address": "Address",
       "wa.notes": "Notes",
-      "wa.products": "*Products*",
+      "wa.products": "*Ordered products details*",
+      "wa.category": "Category",
+      "wa.details": "Details",
       "wa.qty": "Qty",
       "wa.price": "Price",
+      "wa.oldPrice": "instead of",
       "wa.itemTotal": "Item total",
+      "wa.summary": "*Order summary*",
+      "wa.totalQty": "Total items",
+      "wa.payment": "Payment method",
+      "wa.cod": "Cash on delivery",
       "wa.total": "*Grand total*",
-      "wa.thanks": "Thank you for choosing SOUND SOUQ ✦"
+      "wa.thanks": "Thank you for choosing SOUND SOUQ — we will contact you shortly to confirm ✦"
     }
   };
-
   let lang = "ar";
   const t = (key, vars) => {
     let str = (I18N[lang] && I18N[lang][key]) || I18N.ar[key] || key;
     if (vars) Object.keys(vars).forEach(k => { str = str.replace(new RegExp("\\{" + k + "\\}", "g"), vars[k]); });
     return str;
   };
-
-  /* ---------------- CATALOG ---------------- */
-  const CATEGORIES = ["all", "electronics", "fashion", "home", "gaming", "accessories"];
+const CATEGORIES = ["all", "electronics", "fashion", "home", "gaming", "accessories"];
   const LEGACY_CATEGORIES = {
     "الكل": "all", "كل المنتجات": "all", "all": "all",
     "إلكترونيات": "electronics", "electronics": "electronics",
@@ -432,7 +431,6 @@
     "إكسسوارات": "accessories", "accessories": "accessories"
   };
   const LEGACY_ICONS = { "shuriken": "sound", "🔊": "sound", "🎧": "headset", "👜": "handbag", "💡": "lamp", "🎮": "gamepad", "⌚": "watch", "⌨️": "keyboard", "📦": "box", "🖱️": "mouse", "👕": "shirt", "🎁": "gift" };
-
   const defaultProducts = [
     {
       id: 1, category: "electronics", icon: "headset", price: 1299, oldPrice: 1699, rating: 4.8, sold: 320,
@@ -480,7 +478,6 @@
       en: { name: "Sound Souq Gift Box", desc: "A hand-picked surprise set delivered in a premium box." }
     }
   ];
-
   function normalizeProduct(p) {
     const iconRaw = p.icon || "box";
     const icon = LEGACY_ICONS[iconRaw] || (/^[a-z0-9-]+$/.test(iconRaw) ? iconRaw : "box");
@@ -500,7 +497,6 @@
       en: { name: en.name || ar.name || "Product", desc: en.desc || ar.desc || "" }
     };
   }
-
   function readStore(key, fallback) {
     try {
       const raw = localStorage.getItem(key);
@@ -510,10 +506,8 @@
   function writeStore(key, value) {
     try { localStorage.setItem(key, JSON.stringify(value)); } catch (e) { /* quota / private mode */ }
   }
-
   let products = readStore(KEYS.products, null);
   products = Array.isArray(products) && products.length ? products.map(normalizeProduct) : defaultProducts.slice();
-
   const rawCart = readStore(KEYS.cart, []);
   let cart = [];
   if (Array.isArray(rawCart)) {
@@ -527,20 +521,192 @@
       else cart.push(Object.assign({}, product, { quantity: q }));
     });
   }
-
   let favorites = readStore(KEYS.favorites, []);
   favorites = Array.isArray(favorites) ? favorites.map(Number).filter(Number.isFinite) : [];
   let selectedCategory = "all";
   let uploadedImage = "";
   let selectedIcon = "box";
-
-  /* ---------------- STATE HELPERS ---------------- */
-  const pName = p => (p[lang] && p[lang].name) || p.ar.name || p.en.name || "";
+  let editingProductId = null;
+  let nameEnManual = false;
+  let descEnManual = false;
+const AR_PHRASES = (
+    "سماعات لاسلكية احترافية:Pro Wireless Headphones|سماعة لاسلكية احترافية:Pro Wireless Headset|" +
+    "سماعات بلوتوث لاسلكية:Wireless Bluetooth Headphones|سماعة بلوتوث لاسلكية:Wireless Bluetooth Headset|" +
+    "لوحة مفاتيح ميكانيكية:Mechanical Keyboard|وحدة تحكم لاسلكية:Wireless Gaming Controller|" +
+    "ذراع تحكم لاسلكي:Wireless Gaming Controller|ماوس العاب لاسلكي:Wireless Gaming Mouse|" +
+    "ساعة ذكية انيقة:Elegant Smart Watch|حقيبة عصرية مميزة:Modern Everyday Tote|" +
+    "تيشيرت قطن بريميوم:Premium Cotton Tee|مصباح ذكي متعدد الالوان:Smart Multi-Color Lamp|" +
+    "صندوق هدايا ساوند سوق:Sound Souq Gift Box|ساوند سوق:Sound Souq|منتج اختبار:Test Product|وصف اختبار:Test Description|" +
+    "عزل للضوضاء:noise isolation|عزل الضوضاء:noise isolation|مانع للضوضاء:noise cancelling|" +
+    "للاستخدام اليومي:for everyday use|الاستخدام اليومي:daily use|سريعة الاستجابة:fast-response|سريع الاستجابة:fast-response|" +
+    "قابلة للتخصيص بالكامل:fully customizable|قابلة للتخصيص:customizable|لكل انواع الالعاب:for all types of games|" +
+    "بطارية تدوم طويلا:long-lasting battery|تدوم طويلا:long-lasting|متابعة الصحة واللياقة:health and fitness tracking|" +
+    "الوان ثابتة لا تبهت:fade-resistant colors|لا تبهت:fade-resistant|متعدد الالوان:multi-color|متعدد الاستخدامات:multi-purpose|" +
+    "مختارة بعناية:carefully curated|مقاوم للماء:water-resistant|مقاومة للماء:water-resistant|ضد الماء:waterproof|" +
+    "شحن سريع:fast charging|شحن لاسلكي:wireless charging|جودة عالية:high quality|عالي الجودة:high quality|عالية الجودة:high quality|" +
+    "دقة عالية:high precision|وزن خفيف:lightweight|خفيف الوزن:lightweight|خامة متينة:durable material|خامة ممتازة:premium material|" +
+    "تصميم مريح:comfortable design|تصميم انيق:elegant design|تصميم عصري:modern design|تصميم حديث:modern design|" +
+    "بقصة مريحة:with a relaxed fit|قصة مريحة:relaxed fit|صوت نقي:crisp sound|صوت قوي:powerful sound|اضاءة ذكية:smart lighting|" +
+    "ساعة ذكية:smart watch|سماعات بلوتوث:Bluetooth headphones|سماعة بلوتوث:Bluetooth headset|لوحة مفاتيح:keyboard|" +
+    "وحدة تحكم:gaming controller|يد تحكم:controller|ذراع تحكم:controller|باور بانك:power bank|دفع عند الاستلام:cash on delivery"
+  ).split("|").map(s => s.split(":"));
+  const AR_WORDS = {};
+  ("سماعات:headphones,سماعة:headset,مكبر:speaker,صوت:sound,صوتي:audio,مايك:microphone,ميكروفون:microphone,شاحن:charger,كابل:cable,سلك:cable,بطارية:battery," +
+   "شاشة:display,كاميرا:camera,هاتف:phone,موبايل:mobile,جوال:phone,تابلت:tablet,لابتوب:laptop,كمبيوتر:computer,فلاشة:flash drive,ذاكرة:memory,كارت:card,حامل:stand," +
+   "ستاند:stand,جراب:case,كفر:cover,عدسة:lens,راوتر:router,بلوتوث:Bluetooth,ذكي:smart,لاسلكي:wireless,رقمي:digital,الكتروني:electronic,الكترونيات:electronics," +
+   "العاب:gaming,لعبة:game,ماوس:mouse,فارة:mouse,كيبورد:keyboard,لوحة:board,مفاتيح:switches,ميكانيكي:mechanical,تحكم:control,بلايستيشن:PlayStation,اكس:X,بوكس:box," +
+   "كرسي:chair,احترافي:pro,سريع:fast,تيشيرت:t-shirt,قميص:shirt,بنطلون:pants,جاكيت:jacket,هودي:hoodie,فستان:dress,حذاء:shoes,كوتشي:sneakers,حقيبة:bag,شنطة:bag," +
+   "محفظة:wallet,حزام:belt,ساعة:watch,ساعات:watches,نظارة:glasses,نظارات:sunglasses,عطر:perfume,برفان:perfume,اكسسوار:accessory,اكسسوارات:accessories,خاتم:ring," +
+   "سلسلة:necklace,سوار:bracelet,قطن:cotton,جلد:leather,قماش:fabric,رجالي:men's,حريمي:women's,نسائي:women's,شبابي:youth,اطفال:kids',مقاس:size,مقاسات:sizes," +
+   "كلاسيك:classic,كاجوال:casual,رياضي:sport,منزل:home,منزلي:home,مصباح:lamp,لمبة:bulb,اضاءة:lighting,نور:light,ديكور:decor,مكتب:desk,مكتبي:office,غرفة:room," +
+   "غرفتك:your room,مطبخ:kitchen,خلاط:blender,ماكينة:machine,قهوة:coffee,مج:mug,كوب:cup,زجاجة:bottle,ترمس:flask,منظم:organizer,مروحة:fan,مكواة:iron,مكنسة:vacuum," +
+   "طقم:set,صندوق:box,هدية:gift,هدايا:gifts,جديد:new,اصلي:authentic,ممتاز:excellent,رائع:amazing,مميز:special,فخم:luxury,فاخر:luxury,بريميوم:premium,انيق:elegant," +
+   "عصري:modern,حديث:modern,مريح:comfortable,متين:durable,قوي:strong,خفيف:light,ناعم:soft,نقي:pure,عالي:high,فائق:ultra,كامل:full,بالكامل:fully,متعدد:multi," +
+   "كبير:large,صغير:compact,متوسط:medium,عملي:practical,سهل:easy,استخدام:use,يومي:daily,طويل:long,طويلا:long,ثابت:stable,واضح:clear,مثالي:perfect,مناسب:suitable," +
+   "تناسب:fits,يناسب:fits,اسود:black,سوداء:black,ابيض:white,بيضاء:white,احمر:red,حمراء:red,ازرق:blue,زرقاء:blue,اخضر:green,خضراء:green,اصفر:yellow,صفراء:yellow," +
+   "برتقالي:orange,رمادي:gray,رصاصي:gray,فضي:silver,ذهبي:gold,بني:brown,وردي:pink,بينك:pink,بنفسجي:purple,موف:purple,بيج:beige,كحلي:navy,الوان:colors,لون:color," +
+   "مع:with,بدون:without,من:from,في:in,على:on,الى:to,لكل:for all,كل:all,او:or,يدعم:supports,يتميز:features,تمنح:gives,يمنح:gives,يوفر:provides,توفر:provides," +
+   "يعمل:works,يدوم:lasts,تدوم:lasts,يشمل:includes,تشمل:includes,يحتوي:contains,ضد:resistant to,ضمان:warranty,عام:year,سنة:year,شهر:month,شهور:months,شحن:charging," +
+   "توصيل:delivery,منتج:product,وصف:description,اختبار:test,تجريبي:test,سعر:price,خصم:discount,عرض:offer,خامة:material,خامات:materials,جودة:quality,دقة:precision," +
+   "وزن:weight,استجابة:response,اجواء:ambiance,تشكيلة:collection,مفاجات:surprises,تصلك:delivered,اشعارات:notifications,الصحة:health,اللياقة:fitness,مليون:million," +
+   "انواع:types,سامسونج:Samsung,ابل:Apple,سوني:Sony,شاومي:Xiaomi,انكر:Anker").split(",").forEach(pair => {
+    const [k, v] = pair.split(":");
+    AR_WORDS[k] = v;
+    if (k.endsWith("ة")) AR_WORDS[k.slice(0, -1) + "ه"] = v;
+    else AR_WORDS[k + "ة"] = AR_WORDS[k + "ه"] = v;
+  });
+  const AR_CHAR_MAP = {
+    "ا": "a", "أ": "a", "إ": "e", "آ": "a", "ب": "b", "ت": "t", "ث": "th", "ج": "g", "ح": "h", "خ": "kh",
+    "د": "d", "ذ": "z", "ر": "r", "ز": "z", "س": "s", "ش": "sh", "ص": "s", "ض": "d", "ط": "t", "ظ": "z",
+    "ع": "a", "غ": "gh", "ف": "f", "ق": "q", "ك": "k", "ل": "l", "م": "m", "ن": "n", "ه": "h", "ة": "a",
+    "و": "w", "ؤ": "o", "ي": "y", "ى": "a", "ئ": "e", "ء": ""
+  };
+  function normalizeArText(str) {
+    return String(str || "")
+      .replace(/[٠-٩]/g, d => String(d.charCodeAt(0) - 0x0660))
+      .replace(/[\u064B-\u065F\u0670\u0640]/g, "")
+      .replace(/[أإآ]/g, "ا")
+      .replace(/ى/g, "ي")
+      .replace(/،/g, ", ")
+      .replace(/؛/g, "; ")
+      .replace(/\s+/g, " ")
+      .trim();
+  }
+  function transliterateWord(word) {
+    let out = "";
+    for (let i = 0; i < word.length; i++) {
+      const ch = word[i];
+      out += AR_CHAR_MAP[ch] !== undefined ? AR_CHAR_MAP[ch] : ch;
+    }
+    return out;
+  }
+  function lookupArWord(rawWord) {
+    const clean = rawWord.replace(/^[^\u0600-\u06FFa-zA-Z0-9%]+|[^\u0600-\u06FFa-zA-Z0-9%]+$/g, "");
+    if (!clean) return rawWord;
+    if (!/[\u0600-\u06FF]/.test(clean)) return rawWord;
+    if (AR_WORDS[clean]) return AR_WORDS[clean];
+    const altTaa = clean.replace(/ة$/, "ه");
+    if (AR_WORDS[altTaa]) return AR_WORDS[altTaa];
+    if (clean.startsWith("ال") && clean.length > 3) {
+      const bare = clean.slice(2);
+      if (AR_WORDS[bare]) return AR_WORDS[bare];
+    }
+    if (clean.startsWith("وال") && clean.length > 4) {
+      const bare = clean.slice(3);
+      if (AR_WORDS[bare]) return "and " + AR_WORDS[bare];
+    }
+    if (clean.startsWith("بال") && clean.length > 4) {
+      const bare = clean.slice(3);
+      if (AR_WORDS[bare]) return "with " + AR_WORDS[bare];
+    }
+    if (clean.startsWith("لل") && clean.length > 3) {
+      const bare = clean.slice(2);
+      if (AR_WORDS[bare]) return "for " + AR_WORDS[bare];
+    }
+    if (clean.startsWith("و") && clean.length > 2) {
+      const rest = clean.slice(1);
+      if (AR_WORDS[rest]) return "and " + AR_WORDS[rest];
+      if (rest.startsWith("ال") && AR_WORDS[rest.slice(2)]) return "and " + AR_WORDS[rest.slice(2)];
+    }
+    if (clean.startsWith("ب") && clean.length > 2) {
+      const rest = clean.slice(1);
+      if (AR_WORDS[rest]) return "with " + AR_WORDS[rest];
+    }
+    if (clean.startsWith("ل") && clean.length > 2) {
+      const rest = clean.slice(1);
+      if (AR_WORDS[rest]) return "for " + AR_WORDS[rest];
+    }
+    if (clean.endsWith("ية") && clean.length > 3) {
+      const stem = clean.slice(0, -1);
+      if (AR_WORDS[stem]) return AR_WORDS[stem];
+    }
+    if (clean.endsWith("ة") && clean.length > 3) {
+      const stem = clean.slice(0, -1);
+      if (AR_WORDS[stem]) return AR_WORDS[stem];
+    }
+    if (clean.endsWith("ات") && clean.length > 4) {
+      const sing = clean.slice(0, -2) + "ة";
+      if (AR_WORDS[sing]) return AR_WORDS[sing];
+      const stem = clean.slice(0, -2);
+      if (AR_WORDS[stem]) return AR_WORDS[stem];
+    }
+    return transliterateWord(clean);
+  }
+  function formatEnglishCase(str, isTitle) {
+    const cleaned = str.replace(/\s+/g, " ").replace(/\s+([,.;!?])/g, "$1").trim();
+    if (!cleaned) return "";
+    if (isTitle) {
+      const minor = new Set(["and", "or", "for", "with", "in", "on", "to", "of", "the", "a", "an"]);
+      return cleaned.split(" ").map((w, idx) => {
+        if (!w) return w;
+        if (/^[A-Z0-9]{2,}$/.test(w)) return w;
+        const lower = w.toLowerCase();
+        if (idx > 0 && minor.has(lower)) return lower;
+        return lower.charAt(0).toUpperCase() + lower.slice(1);
+      }).join(" ");
+    }
+    return cleaned.charAt(0).toUpperCase() + cleaned.slice(1);
+  }
+  function translateArToEnSync(text, isTitle) {
+    const raw = String(text || "").trim();
+    if (!raw) return "";
+    if (!/[\u0600-\u06FF]/.test(raw)) return raw;
+    let working = " " + normalizeArText(raw) + " ";
+    for (let i = 0; i < AR_PHRASES.length; i++) {
+      const [arPhrase, enPhrase] = AR_PHRASES[i];
+      if (working.includes(arPhrase)) {
+        working = working.split(arPhrase).join(" " + enPhrase + " ");
+      }
+    }
+    const tokens = working.trim().split(/\s+/);
+    const outTokens = tokens.map(tok => /[\u0600-\u06FF]/.test(tok) ? lookupArWord(tok) : tok);
+    return formatEnglishCase(outTokens.join(" "), isTitle);
+  }
+  const translateTimers = {};
+  function translateArToEnAsync(text, isTitle, key, onResult) {
+    clearTimeout(translateTimers[key]);
+    const raw = String(text || "").trim();
+    if (!raw || !/[\u0600-\u06FF]/.test(raw)) return;
+    if (navigator.webdriver || typeof fetch !== "function" || navigator.onLine === false) return;
+    translateTimers[key] = setTimeout(async () => {
+      try {
+        const url = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=ar&tl=en&dt=t&q=" + encodeURIComponent(raw);
+        const res = await fetch(url);
+        if (!res.ok) return;
+        const data = await res.json();
+        if (Array.isArray(data) && Array.isArray(data[0])) {
+          const translated = data[0].map(part => (part && part[0]) || "").join("").trim();
+          if (translated && !/[\u0600-\u06FF]/.test(translated)) {
+            onResult(formatEnglishCase(translated, isTitle));
+          }
+        }
+      } catch (e) { /* offline or blocked: local sync translation is already in place */ }
+    }, 320);
+  }
+const pName = p => (p[lang] && p[lang].name) || p.ar.name || p.en.name || "";
   const pDesc = p => (p[lang] && p[lang].desc) || p.ar.desc || p.en.desc || "";
   const catLabel = c => t("cat." + c);
   const icon = (n, cls = "ic") => `<svg class="${cls}" aria-hidden="true"><use href="#i-${n}"/></svg>`;
-
-  // Intl formatters are relatively expensive; create one per language.
   let formatter = null, formatterLang = "";
   function numberFmt() {
     if (!formatter || formatterLang !== lang) {
@@ -553,7 +719,6 @@
   function money(v) { return lang === "ar" ? `${formatPrice(v)} ${t("common.currency")}` : `${t("common.currency")} ${formatPrice(v)}`; }
   function saveProducts() { writeStore(KEYS.products, products); }
   function saveCart() {
-    // Store compact references for catalog products; keep unknown legacy items intact.
     writeStore(KEYS.cart, cart.map(item =>
       products.some(p => p.id === item.id) ? { id: item.id, quantity: item.quantity } : item));
   }
@@ -562,9 +727,7 @@
     return String(str).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   }
   const escapeAttr = escapeHTML;
-
-  /* ---------------- ELEMENTS ---------------- */
-  const $ = sel => document.querySelector(sel);
+const $ = sel => document.querySelector(sel);
   const $$ = (sel, scope) => Array.from((scope || document).querySelectorAll(sel));
   const el = {
     root: document.documentElement,
@@ -587,9 +750,7 @@
     mobileMenuBtn: $("#mobileMenuBtn"),
     langSwitch: $(".lang-switch")
   };
-
-  /* ---------------- TOAST ---------------- */
-  let toastTimer;
+let toastTimer;
   function showToast(message, type) {
     if (!el.toast) return;
     el.toast.querySelector(".toast-text").textContent = message;
@@ -599,9 +760,7 @@
     clearTimeout(toastTimer);
     toastTimer = setTimeout(() => el.toast.classList.remove("show"), 2600);
   }
-
-  /* ---------------- THEME ---------------- */
-  function applyTheme(theme, notify) {
+function applyTheme(theme, notify) {
     el.root.setAttribute("data-theme", theme);
     const meta = document.querySelector('meta[name="theme-color"]');
     if (meta) meta.setAttribute("content", "#111111");
@@ -617,9 +776,7 @@
       applyTheme(el.root.getAttribute("data-theme") === "light" ? "dark" : "light", true);
     });
   }
-
-  /* ---------------- LANGUAGE ---------------- */
-  function applyI18n() {
+function applyI18n() {
     $$("[data-i18n]").forEach(node => { node.textContent = t(node.dataset.i18n); });
     $$("[data-i18n-html]").forEach(node => { node.innerHTML = t(node.dataset.i18nHtml); });
     $$("[data-i18n-ph]").forEach(node => { node.setAttribute("placeholder", t(node.dataset.i18nPh)); });
@@ -648,6 +805,8 @@
     renderCart();
     if (el.adminPanel && el.adminPanel.classList.contains("show")) renderAdminProducts();
     renderIconPicker();
+    syncAdminFormMode();
+    updateImagePreview();
   }
   function setLang(next, notify) {
     next = next === "en" ? "en" : "ar";
@@ -664,9 +823,7 @@
     lang = stored === "en" ? "en" : "ar";
     $$(".lang-opt").forEach(btn => btn.addEventListener("click", () => setLang(btn.dataset.lang, true)));
   }
-
-  /* ---------------- PANELS (one open at a time, with focus handling) ---------------- */
-  let activePanel = null, returnFocus = null;
+let activePanel = null, returnFocus = null;
   function hidePanel(panel, restoreFocus) {
     if (!panel) return;
     panel.classList.remove("show", "open");
@@ -708,9 +865,7 @@
     el.mobileMenuBtn.classList.remove("active");
     el.mobileMenuBtn.setAttribute("aria-expanded", "false");
   }
-
-  /* ---------------- SCROLL (no layout reads or continuous loop) ---------------- */
-  function initScroll() {
+function initScroll() {
     if (!el.backToTop) return;
     let shown = false;
     const onScroll = () => {
@@ -721,9 +876,7 @@
     onScroll();
     el.backToTop.addEventListener("click", () => window.scrollTo(0, 0));
   }
-
-  /* ---------------- REVIEWS / CATEGORY COUNTS ---------------- */
-  function starsHTML(rating, cls = "stars-row") {
+function starsHTML(rating, cls = "stars-row") {
     let out = `<span class="${cls}" role="img" aria-label="${rating}/5">`;
     for (let i = 1; i <= 5; i++) {
       out += `<svg class="ic${i <= Math.round(rating) ? " on" : " off"}" aria-hidden="true"><use href="#i-star"/></svg>`;
@@ -738,9 +891,7 @@
     products.forEach(p => { counts[p.category] = (counts[p.category] || 0) + 1; });
     $$("[data-cat-count]").forEach(node => { node.textContent = counts[node.dataset.catCount] || 0; });
   }
-
-  /* ---------------- PRODUCTS ---------------- */
-  function visibleProducts() {
+function visibleProducts() {
     return selectedCategory === "all" ? products : products.filter(p => p.category === selectedCategory);
   }
   function productVisual(product, cls) {
@@ -810,9 +961,7 @@
     }
     showToast(t(has ? "prod.favRemove" : "prod.favAdd"));
   }
-
-  /* ---------------- CART (immediate data updates, no decorative flight) ---------------- */
-  const addButtonTimers = new WeakMap();
+const addButtonTimers = new WeakMap();
   function addToCart(id, button) {
     const product = products.find(p => p.id === id);
     if (!product) return;
@@ -835,7 +984,10 @@
     showToast(t("cart.added"));
   }
   function cartTotals() {
-    return cart.reduce((acc, i) => ({ total: acc.total + i.price * i.quantity, qty: acc.qty + i.quantity }), { total: 0, qty: 0 });
+    return cart.reduce((acc, i) => {
+      const fresh = products.find(p => p.id === i.id) || i;
+      return { total: acc.total + fresh.price * i.quantity, qty: acc.qty + i.quantity };
+    }, { total: 0, qty: 0 });
   }
   function renderCart() {
     if (!el.cartItems) return;
@@ -888,49 +1040,67 @@
     cart = cart.filter(i => i.id !== id);
     saveCart(); renderCart(); showToast(t("cart.removed"));
   }
-
-  /* ---------------- WHATSAPP CHECKOUT ---------------- */
-  function checkout() {
+function checkout() {
     if (!cart.length) { showToast(t("cart.isEmpty"), "error"); return; }
-    const name = $("#customerName").value.trim();
-    const phone = $("#customerPhone").value.trim();
-    const extraPhone = $("#customerExtraPhone").value.trim();
-    const city = $("#customerCity").value.trim();
-    const address = $("#customerAddress").value.trim();
-    const notes = $("#customerNotes").value.trim();
-    if (!name || !phone || !city || !address) { showToast(t("cart.needCustomer"), "error"); return; }
-
+    const nameEl = $("#customerName");
+    const phoneEl = $("#customerPhone");
+    const extraPhoneEl = $("#customerExtraPhone");
+    const cityEl = $("#customerCity");
+    const addressEl = $("#customerAddress");
+    const notesEl = $("#customerNotes");
+    const name = nameEl.value.trim();
+    const phone = phoneEl.value.trim();
+    const extraPhone = extraPhoneEl.value.trim();
+    const city = cityEl.value.trim();
+    const address = addressEl.value.trim();
+    const notes = notesEl.value.trim();
+    if (!name || !phone || !city || !address) {
+      const missing = !name ? nameEl : !phone ? phoneEl : !city ? cityEl : addressEl;
+      if (missing) missing.focus();
+      showToast(t("cart.needCustomer"), "error");
+      return;
+    }
     const btn = $("#checkoutBtn");
     const label = btn.querySelector(".btn-text");
     const original = label.textContent;
     label.textContent = t("cart.checkingout");
     btn.disabled = true;
-    const total = cartTotals().total;
+    const totals = cartTotals();
     const line = "━━━━━━━━━━━━━━";
     const keycap = n => String(n).replace(/\d/g, d => `${d}\uFE0F\u20E3`);
-    let msg = `🥷 ${t("wa.title")} 🛒\n\n${line}\n\n👤 ${t("wa.customer")}\n\n`;
+    let msg = `🛍️ ${t("wa.title")} 🛒\n\n${line}\n\n👤 ${t("wa.customer")}\n\n`;
     msg += `🧑 ${t("wa.name")}: ${name}\n📱 ${t("wa.phone")}: ${phone}\n`;
     msg += `☎️ ${t("wa.phone2")}: ${extraPhone || t("wa.none")}\n`;
     msg += `🏙️ ${t("wa.city")}: ${city}\n📍 ${t("wa.address")}: ${address}\n`;
-    msg += `📝 ${t("wa.notes")}: ${notes || t("wa.none")}\n\n${line}\n\n🛍️ ${t("wa.products")}\n\n`;
+    msg += `📝 ${t("wa.notes")}: ${notes || t("wa.none")}\n\n${line}\n\n📦 ${t("wa.products")}\n\n`;
     cart.forEach((item, i) => {
       const fresh = products.find(p => p.id === item.id) || item;
-      msg += `${keycap(i + 1)} ${pName(fresh)}\n`;
-      msg += `📦 ${t("wa.qty")}: ${item.quantity}\n💵 ${t("wa.price")}: ${money(fresh.price)}\n`;
-      msg += `🧾 ${t("wa.itemTotal")}: ${money(fresh.price * item.quantity)}\n\n`;
+      const desc = pDesc(fresh);
+      const oldPriceInfo = fresh.oldPrice > fresh.price ? ` (${t("wa.oldPrice")} ${money(fresh.oldPrice)} 🔥)` : "";
+      msg += `${keycap(i + 1)} *${pName(fresh)}*\n`;
+      msg += `🏷️ ${t("wa.category")}: ${catLabel(fresh.category)}\n`;
+      if (desc) msg += `📋 ${t("wa.details")}: ${desc}\n`;
+      msg += `🔢 ${t("wa.qty")}: ${item.quantity}\n`;
+      msg += `💵 ${t("wa.price")}: ${money(fresh.price)}${oldPriceInfo}\n`;
+      msg += `🧾 ${t("wa.itemTotal")}: *${money(fresh.price * item.quantity)}*\n\n`;
     });
-    msg += `${line}\n\n💰 ${t("wa.total")}\n💳 *${money(total)}*\n\n${line}\n\n🙏 ${t("wa.thanks")}\n`;
+    msg += `${line}\n\n💰 ${t("wa.summary")}\n`;
+    msg += `🛒 ${t("wa.totalQty")}: ${totals.qty}\n`;
+    msg += `🤝 ${t("wa.payment")}: ${t("wa.cod")} 💵\n`;
+    msg += `💳 ${t("wa.total")}: *${money(totals.total)}*\n\n${line}\n\n🙏 ${t("wa.thanks")}\n`;
+    const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
     try {
-      const opened = window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`, "_blank", "noopener,noreferrer");
-      showToast(t(opened ? "cart.opened" : "cart.popupBlocked"), opened ? undefined : "error");
+      const opened = window.open(waUrl, "_blank", "noopener,noreferrer");
+      if (!opened) {
+        window.location.href = waUrl;
+      }
+      showToast(t("cart.opened"));
     } finally {
       label.textContent = original;
       btn.disabled = false;
     }
   }
-
-  /* ---------------- SEARCH ---------------- */
-  let searchTimer;
+let searchTimer;
   function runSearch() {
     const value = el.searchInput.value.trim().toLowerCase();
     el.searchResults.innerHTML = "";
@@ -955,9 +1125,7 @@
     });
     el.searchResults.appendChild(fragment);
   }
-
-  /* ---------------- CATEGORIES ---------------- */
-  function selectCategory(key, scroll) {
+function selectCategory(key, scroll) {
     selectedCategory = CATEGORIES.includes(key) ? key : "all";
     $$(".category-card").forEach(c => {
       const on = c.dataset.category === selectedCategory;
@@ -970,8 +1138,55 @@
       if (target) target.scrollIntoView({ block: "start" });
     }
   }
-
-  /* ---------------- ADMIN ---------------- */
+let uploadToken = 0;
+  function updateImagePreview() {
+    const preview = $("#imagePreview");
+    const clearBtn = $("#clearImageBtn");
+    const label = $("#productImageLabel");
+    if (!preview) return;
+    if (uploadedImage) {
+      preview.innerHTML = `<img src="${escapeAttr(uploadedImage)}" alt="${escapeAttr(t("admin.imagePreview"))}" decoding="async">`;
+      if (clearBtn) clearBtn.hidden = false;
+      if (label) label.textContent = t("admin.imageChangeLabel");
+    } else {
+      preview.textContent = t("admin.imagePreview");
+      if (clearBtn) clearBtn.hidden = true;
+      if (label) label.textContent = t("admin.imageLabel");
+    }
+  }
+  function syncAdminFormMode() {
+    const isEdit = editingProductId !== null;
+    const card = $("#adminFormCard");
+    const formIcon = $("#adminFormIcon");
+    const formTitle = $("#adminFormTitle");
+    const submitText = $("#submitProductText");
+    const submitIcon = $("#submitProductIcon");
+    const extraActions = $("#editExtraActions");
+    if (card) card.classList.toggle("is-editing", isEdit);
+    if (formIcon) formIcon.setAttribute("href", isEdit ? "#i-edit" : "#i-plus");
+    if (formTitle) formTitle.textContent = t(isEdit ? "admin.editTitle" : "admin.addTitle");
+    if (submitText) submitText.textContent = t(isEdit ? "admin.saveChanges" : "admin.addBtn");
+    if (submitIcon) submitIcon.setAttribute("href", isEdit ? "#i-check-circle" : "#i-plus");
+    if (extraActions) extraActions.hidden = !isEdit;
+  }
+  function resetProductForm() {
+    editingProductId = null;
+    nameEnManual = false;
+    descEnManual = false;
+    uploadToken += 1;
+    uploadedImage = "";
+    selectedIcon = "box";
+    const form = $("#addProductForm");
+    if (form) form.reset();
+    const fileInput = $("#productImage");
+    if (fileInput) fileInput.value = "";
+    const submitBtn = $("#submitProductBtn");
+    if (submitBtn) submitBtn.disabled = false;
+    updateImagePreview();
+    renderIconPicker();
+    syncAdminFormMode();
+    renderAdminProducts();
+  }
   function openAdmin() {
     let session = null;
     try { session = localStorage.getItem(KEYS.admin); } catch (e) { }
@@ -997,31 +1212,86 @@
     const fragment = document.createDocumentFragment();
     products.forEach(product => {
       const row = document.createElement("div");
-      row.className = "admin-product-item";
+      row.className = "admin-product-item" + (editingProductId === product.id ? " is-editing" : "");
+      const oldPriceHTML = product.oldPrice > product.price ? ` <del>${money(product.oldPrice)}</del>` : "";
       row.innerHTML = `
         ${productVisual(product, "")}
         <div class="admin-product-info">
           <h4>${escapeHTML(pName(product))}</h4>
-          <span>${money(product.price)}</span>
+          <span>${money(product.price)}${oldPriceHTML}</span>
           <em>${catLabel(product.category)}</em>
         </div>
-        <button class="delete-product-btn" type="button" data-delete-product="${product.id}">${icon("trash")} ${t("admin.delete")}</button>`;
+        <div class="admin-product-actions">
+          <button class="edit-product-btn" type="button" data-edit-product="${product.id}">${icon("edit")} ${t("admin.edit")}</button>
+          <button class="duplicate-product-btn" type="button" data-duplicate-product="${product.id}">${icon("copy")} ${t("admin.duplicate")}</button>
+          <button class="delete-product-btn" type="button" data-delete-product="${product.id}">${icon("trash")} ${t("admin.delete")}</button>
+        </div>`;
       fragment.appendChild(row);
     });
     list.innerHTML = "";
     list.appendChild(fragment);
+  }
+  function startEditProduct(id) {
+    const product = products.find(p => p.id === id);
+    if (!product) return;
+    editingProductId = product.id;
+    nameEnManual = false;
+    descEnManual = false;
+    uploadToken += 1;
+    $("#productNameAr").value = product.ar.name || "";
+    $("#productNameEn").value = product.en.name || "";
+    $("#productDescriptionAr").value = product.ar.desc || "";
+    $("#productDescriptionEn").value = product.en.desc || "";
+    $("#productPrice").value = product.price;
+    $("#productOldPrice").value = product.oldPrice > 0 ? product.oldPrice : "";
+    $("#productCategory").value = product.category;
+    selectedIcon = ICON_CHOICES.includes(product.icon) ? product.icon : "box";
+    uploadedImage = product.image || "";
+    const fileInput = $("#productImage");
+    if (fileInput) fileInput.value = "";
+    const submitBtn = $("#submitProductBtn");
+    if (submitBtn) submitBtn.disabled = false;
+    renderIconPicker();
+    updateImagePreview();
+    syncAdminFormMode();
+    renderAdminProducts();
+    const card = $("#adminFormCard");
+    if (card) card.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    $("#productNameAr").focus({ preventScroll: true });
+    showToast(t("admin.editingNow"));
+  }
+  function duplicateProduct(id) {
+    const product = products.find(p => p.id === id);
+    if (!product) return;
+    const copy = normalizeProduct({
+      id: Date.now() + Math.floor(Math.random() * 1000),
+      category: product.category,
+      icon: product.icon,
+      price: product.price,
+      oldPrice: product.oldPrice,
+      rating: product.rating || 5,
+      sold: 0,
+      image: product.image || "",
+      ar: { name: product.ar.name, desc: product.ar.desc },
+      en: { name: product.en.name, desc: product.en.desc }
+    });
+    products.unshift(copy);
+    saveProducts();
+    renderProducts();
+    renderAdminProducts();
+    renderCategoryCounts();
+    showToast(t("admin.duplicated"));
   }
   function deleteProduct(id) {
     if (!window.confirm(t("admin.confirmDelete"))) return;
     products = products.filter(p => p.id !== id);
     cart = cart.filter(p => p.id !== id);
     favorites = favorites.filter(f => f !== id);
+    if (editingProductId === id) resetProductForm();
     saveProducts(); saveCart(); saveFavorites();
     renderProducts(); renderCart(); renderAdminProducts(); renderCategoryCounts();
     showToast(t("admin.deleted"));
   }
-
-  // Downscale uploaded images once, so localStorage and product cards stay small.
   function compressProductImage(file) {
     return new Promise((resolve, reject) => {
       if (!file || !/^image\//.test(file.type)) { reject(new Error("type")); return; }
@@ -1054,9 +1324,7 @@
       image.src = url;
     });
   }
-
-  /* ---------------- COUNTDOWN (minute precision, only while visible) ---------------- */
-  function initCountdown() {
+function initCountdown() {
     const boxes = { d: $("#cdDays"), h: $("#cdHours"), m: $("#cdMinutes") };
     const section = $("#offers");
     if (!boxes.d || !section) return;
@@ -1087,9 +1355,7 @@
     } else { visible = true; sync(); }
     document.addEventListener("visibilitychange", sync);
   }
-
-  /* ---------------- EVENTS (delegated lists, bound once) ---------------- */
-  function bindEvents() {
+function bindEvents() {
     $("#cartBtn").addEventListener("click", openCart);
     $("#closeCartBtn").addEventListener("click", closeCart);
     $("#clearCartBtn").addEventListener("click", () => {
@@ -1105,14 +1371,12 @@
       else if (button.dataset.decrease) changeQuantity(Number(button.dataset.decrease), -1);
       else if (button.dataset.remove) removeFromCart(Number(button.dataset.remove));
     });
-
     el.productsGrid.addEventListener("click", e => {
       const button = e.target.closest("button");
       if (!button || !el.productsGrid.contains(button)) return;
       if (button.dataset.add) addToCart(Number(button.dataset.add), button);
       else if (button.dataset.favorite) toggleFavorite(Number(button.dataset.favorite), button);
     });
-
     $("#searchBtn").addEventListener("click", openSearch);
     $("#closeSearchBtn").addEventListener("click", closeSearch);
     el.searchInput.addEventListener("input", () => { clearTimeout(searchTimer); searchTimer = setTimeout(runSearch, 120); });
@@ -1124,13 +1388,11 @@
       closeSearch();
       selectCategory(category, true);
     });
-
     $$(".category-card").forEach(btn => {
       btn.setAttribute("aria-pressed", String(btn.classList.contains("active")));
       btn.addEventListener("click", () => selectCategory(btn.dataset.category, true));
     });
     $("#showAllBtn").addEventListener("click", () => selectCategory("all", false));
-
     $("#newsletterForm").addEventListener("submit", e => {
       e.preventDefault();
       const input = $("#newsletterEmail");
@@ -1139,14 +1401,12 @@
       }
       e.target.reset(); showToast(t("nl.done"));
     });
-
     el.mobileMenuBtn.addEventListener("click", () => {
       const open = el.navLinks.classList.toggle("show");
       el.mobileMenuBtn.classList.toggle("active", open);
       el.mobileMenuBtn.setAttribute("aria-expanded", String(open));
     });
     $$(".nav-links a, .nav-links button").forEach(a => a.addEventListener("click", closeMenu));
-
     $("#adminOpenBtn").addEventListener("click", openAdmin);
     $("#adminOpenBtnMobile").addEventListener("click", openAdmin);
     $("#closeAdminLogin").addEventListener("click", closeActivePanel);
@@ -1168,7 +1428,6 @@
         showToast(t("admin.loggedIn"));
       } else error.textContent = t("admin.loginError");
     });
-
     $("#pickerOptions").addEventListener("click", e => {
       const btn = e.target.closest(".picker-opt");
       if (!btn) return;
@@ -1179,63 +1438,186 @@
         b.setAttribute("aria-pressed", String(on));
       });
     });
-
-    let uploadToken = 0;
     const addSubmit = $("#addProductForm").querySelector('button[type="submit"]');
+    const nameArInput = $("#productNameAr");
+    const nameEnInput = $("#productNameEn");
+    const descArInput = $("#productDescriptionAr");
+    const descEnInput = $("#productDescriptionEn");
+    nameEnInput.addEventListener("input", () => {
+      nameEnManual = nameEnInput.value.trim().length > 0;
+    });
+    descEnInput.addEventListener("input", () => {
+      descEnManual = descEnInput.value.trim().length > 0;
+    });
+    nameArInput.addEventListener("input", () => {
+      if (!nameEnManual || !nameEnInput.value.trim()) {
+        nameEnManual = false;
+        const val = nameArInput.value;
+        nameEnInput.value = translateArToEnSync(val, true);
+        translateArToEnAsync(val, true, "name", res => {
+          if (!nameEnManual) nameEnInput.value = res;
+        });
+      }
+    });
+    descArInput.addEventListener("input", () => {
+      if (!descEnManual || !descEnInput.value.trim()) {
+        descEnManual = false;
+        const val = descArInput.value;
+        descEnInput.value = translateArToEnSync(val, false);
+        translateArToEnAsync(val, false, "desc", res => {
+          if (!descEnManual) descEnInput.value = res;
+        });
+      }
+    });
+    const translateNowBtn = $("#translateNowBtn");
+    if (translateNowBtn) {
+      translateNowBtn.addEventListener("click", () => {
+        nameEnManual = false;
+        descEnManual = false;
+        const nVal = nameArInput.value.trim();
+        const dVal = descArInput.value.trim();
+        if (nVal) {
+          nameEnInput.value = translateArToEnSync(nVal, true);
+          translateArToEnAsync(nVal, true, "name", res => { if (!nameEnManual) nameEnInput.value = res; });
+        }
+        if (dVal) {
+          descEnInput.value = translateArToEnSync(dVal, false);
+          translateArToEnAsync(dVal, false, "desc", res => { if (!descEnManual) descEnInput.value = res; });
+        }
+        showToast(t("admin.translated"));
+      });
+    }
     $("#productImage").addEventListener("change", async e => {
       const file = e.target.files[0];
       const token = ++uploadToken;
       const preview = $("#imagePreview");
-      uploadedImage = "";
-      if (!file) { preview.textContent = t("admin.imagePreview"); addSubmit.disabled = false; return; }
+      if (!file) { updateImagePreview(); addSubmit.disabled = false; return; }
       preview.textContent = t("admin.imageProcessing");
       addSubmit.disabled = true;
       try {
         const data = await compressProductImage(file);
         if (token !== uploadToken) return;
         uploadedImage = data;
-        preview.innerHTML = `<img src="${data}" alt="${escapeAttr(t("admin.imagePreview"))}" decoding="async">`;
+        updateImagePreview();
       } catch (error) {
         if (token !== uploadToken) return;
-        preview.textContent = t("admin.imagePreview");
+        updateImagePreview();
         e.target.value = "";
         showToast(t(error.message === "size" ? "admin.imageTooLarge" : "admin.imageError"), "error");
       } finally {
         if (token === uploadToken) addSubmit.disabled = false;
       }
     });
-
-    $("#addProductForm").addEventListener("submit", e => {
-      e.preventDefault();
-      const nameAr = $("#productNameAr").value.trim();
-      const nameEn = $("#productNameEn").value.trim();
-      const descAr = $("#productDescriptionAr").value.trim();
-      const descEn = $("#productDescriptionEn").value.trim();
+    const clearImageBtn = $("#clearImageBtn");
+    if (clearImageBtn) {
+      clearImageBtn.addEventListener("click", () => {
+        uploadToken += 1;
+        uploadedImage = "";
+        const fileInput = $("#productImage");
+        if (fileInput) fileInput.value = "";
+        updateImagePreview();
+      });
+    }
+    function readProductFormPayload() {
+      const nameAr = nameArInput.value.trim();
+      const descAr = descArInput.value.trim();
       const price = Number($("#productPrice").value);
       const oldPrice = Number($("#productOldPrice").value) || 0;
       const category = $("#productCategory").value;
-      if (!nameAr || !descAr || !price || !category) { showToast(t("admin.fillAll"), "error"); return; }
-      products.unshift(normalizeProduct({
-        id: Date.now(), category, icon: selectedIcon, price,
+      if (!nameAr || !descAr || !price || !category) {
+        showToast(t("admin.fillAll"), "error");
+        return null;
+      }
+      const nameEn = nameEnInput.value.trim() || translateArToEnSync(nameAr, true) || nameAr;
+      const descEn = descEnInput.value.trim() || translateArToEnSync(descAr, false) || descAr;
+      return {
+        category,
+        icon: selectedIcon,
+        price,
         oldPrice: oldPrice > price ? oldPrice : 0,
-        rating: 5, sold: 0, image: uploadedImage,
+        image: uploadedImage,
         ar: { name: nameAr, desc: descAr },
-        en: { name: nameEn || nameAr, desc: descEn || descAr }
-      }));
-      saveProducts();
-      renderProducts(); renderAdminProducts(); renderCategoryCounts();
-      e.target.reset();
-      uploadToken += 1;
-      uploadedImage = "";
-      addSubmit.disabled = false;
-      $("#imagePreview").textContent = t("admin.imagePreview");
-      showToast(t("admin.added"));
+        en: { name: nameEn, desc: descEn }
+      };
+    }
+    $("#addProductForm").addEventListener("submit", e => {
+      e.preventDefault();
+      const payload = readProductFormPayload();
+      if (!payload) return;
+      if (editingProductId !== null) {
+        const idx = products.findIndex(p => p.id === editingProductId);
+        if (idx !== -1) {
+          const prev = products[idx];
+          const updated = normalizeProduct(Object.assign({}, prev, payload, {
+            id: prev.id,
+            rating: prev.rating || 5,
+            sold: prev.sold || 0
+          }));
+          products[idx] = updated;
+          cart.forEach(item => {
+            if (item.id === updated.id) {
+              Object.assign(item, updated, { quantity: item.quantity });
+            }
+          });
+        } else {
+          products.unshift(normalizeProduct(Object.assign({ id: editingProductId, rating: 5, sold: 0 }, payload)));
+        }
+        saveProducts();
+        saveCart();
+        renderProducts();
+        renderCart();
+        renderCategoryCounts();
+        resetProductForm();
+        showToast(t("admin.updated"));
+      } else {
+        products.unshift(normalizeProduct(Object.assign({
+          id: Date.now(),
+          rating: 5,
+          sold: 0
+        }, payload)));
+        saveProducts();
+        renderProducts();
+        renderCategoryCounts();
+        resetProductForm();
+        showToast(t("admin.added"));
+      }
     });
+    const duplicateFromEditBtn = $("#duplicateFromEditBtn");
+    if (duplicateFromEditBtn) {
+      duplicateFromEditBtn.addEventListener("click", () => {
+        const payload = readProductFormPayload();
+        if (!payload) return;
+        products.unshift(normalizeProduct(Object.assign({
+          id: Date.now() + Math.floor(Math.random() * 1000),
+          rating: 5,
+          sold: 0
+        }, payload)));
+        saveProducts();
+        renderProducts();
+        renderCategoryCounts();
+        resetProductForm();
+        showToast(t("admin.duplicated"));
+      });
+    }
+    const cancelEditBtn = $("#cancelEditBtn");
+    if (cancelEditBtn) {
+      cancelEditBtn.addEventListener("click", () => {
+        resetProductForm();
+      });
+    }
     $("#adminProductsList").addEventListener("click", e => {
-      const btn = e.target.closest("[data-delete-product]");
-      if (btn) deleteProduct(Number(btn.dataset.deleteProduct));
+      const editBtn = e.target.closest("[data-edit-product]");
+      if (editBtn) { startEditProduct(Number(editBtn.dataset.editProduct)); return; }
+      const dupBtn = e.target.closest("[data-duplicate-product]");
+      if (dupBtn) { duplicateProduct(Number(dupBtn.dataset.duplicateProduct)); return; }
+      const delBtn = e.target.closest("[data-delete-product]");
+      if (delBtn) deleteProduct(Number(delBtn.dataset.deleteProduct));
     });
-
+    $$("#customerName, #customerPhone, #customerExtraPhone, #customerCity").forEach(inp => {
+      inp.addEventListener("keydown", e => {
+        if (e.key === "Enter") { e.preventDefault(); checkout(); }
+      });
+    });
     document.addEventListener("keydown", e => {
       if (e.key === "Escape") { closeActivePanel(); closeMenu(); }
       if ((e.key === "k" || e.key === "K") && (e.metaKey || e.ctrlKey)) { e.preventDefault(); openSearch(); }
@@ -1249,9 +1631,7 @@
       }
     });
   }
-
-  /* ---------------- INIT ---------------- */
-  function init() {
+function init() {
     initLang();
     initTheme();
     applyI18n();

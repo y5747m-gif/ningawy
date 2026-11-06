@@ -138,8 +138,11 @@ async function sampleImage(page) {
       await page.evaluate(() => { window.__waUrl = ''; window.open = url => { window.__waUrl = url; return {}; }; });
       await page.locator('#checkoutBtn').click();
       const waUrl = await page.evaluate(() => window.__waUrl);
-      assert.ok(waUrl.startsWith('https://wa.me/201141362626?text='));
-      assert.ok(decodeURIComponent(waUrl).includes('عميل تجريبي'));
+      assert.ok(waUrl.startsWith('https://wa.me/201500721881?text='));
+      const decodedWa = decodeURIComponent(waUrl);
+      assert.ok(decodedWa.includes('عميل تجريبي'));
+      assert.ok(decodedWa.includes('التفاصيل'));
+      assert.ok(decodedWa.includes('الدفع عند الاستلام'));
       await page.locator('[data-remove]').first().click();
       assert.equal(await page.locator('#cartCount').textContent(), '0');
       await page.keyboard.press('Escape');
@@ -171,8 +174,10 @@ async function sampleImage(page) {
       await page.locator('#adminLoginForm button[type="submit"]').click();
       assert.equal(await page.locator('#adminPanel').isVisible(), true);
       await page.locator('#productNameAr').fill('منتج اختبار');
-      await page.locator('#productNameEn').fill('Test product');
-      await page.locator('#productDescriptionAr').fill('وصف اختبار');
+      assert.equal(await page.locator('#productNameEn').inputValue(), 'Test Product');
+      await page.locator('#productDescriptionAr').fill('سماعات لاسلكية مع صوت نقي وبطارية قوية');
+      const autoDescEn = await page.locator('#productDescriptionEn').inputValue();
+      assert.ok(autoDescEn.toLowerCase().includes('wireless') && autoDescEn.toLowerCase().includes('battery'), `expected auto-translated description, got: ${autoDescEn}`);
       await page.locator('#productPrice').fill('250');
       await page.locator('#productCategory').selectOption('electronics');
       await page.locator('#productImage').setInputFiles({ name: 'test.png', mimeType: 'image/png', buffer: await sampleImage(page) });
@@ -189,6 +194,26 @@ async function sampleImage(page) {
       assert.ok(/^data:image\/(webp|jpeg)/.test(imageInfo.type));
       assert.ok(imageInfo.w <= 640 && imageInfo.h <= 640);
       assert.ok(imageInfo.bytes < 200000);
+
+      // Edit product details & image preservation, then save changes.
+      await page.locator('[data-edit-product]').first().click();
+      assert.equal(await page.locator('#editExtraActions').isHidden(), false);
+      assert.equal(await page.locator('#imagePreview img').count(), 1);
+      await page.locator('#productNameAr').fill('سماعة بلوتوث ذكية');
+      assert.equal(await page.locator('#productNameEn').inputValue(), 'Bluetooth Headset Smart');
+      await page.locator('#productPrice').fill('350');
+      await page.locator('#addProductForm button[type="submit"]').click();
+      assert.equal(await page.locator('.product-card').count(), 10);
+      assert.equal(await page.locator('.product-info h3').first().textContent(), 'Bluetooth Headset Smart');
+      assert.equal(await page.evaluate(() => JSON.parse(localStorage.ninjawy_products)[0].price), 350);
+      assert.ok(await page.evaluate(() => JSON.parse(localStorage.ninjawy_products)[0].image.startsWith('data:image/')));
+
+      // Duplicate product with all details.
+      await page.locator('[data-duplicate-product]').first().click();
+      assert.equal(await page.locator('.product-card').count(), 11);
+      page.once('dialog', dialog => dialog.accept());
+      await page.locator('[data-delete-product]').first().click();
+      assert.equal(await page.locator('.product-card').count(), 10);
       page.once('dialog', dialog => dialog.accept());
       await page.locator('[data-delete-product]').first().click();
       assert.equal(await page.locator('.product-card').count(), 9);
