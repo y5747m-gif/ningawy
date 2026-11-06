@@ -1,33 +1,27 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl" data-theme="dark">
+<html lang="ar" dir="rtl" data-theme="light">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="ننجاوي - تجربة تسوق عصرية وسريعة بسرعة النينجا">
-  <meta name="theme-color" content="#0a0a0e">
+  <meta name="description" content="ساوند سوق — متجر خفيف واحترافي: منتجات مختارة، طلب عبر واتساب ودفع عند الاستلام.">
+  <meta name="theme-color" content="#111111">
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="NINJAWY">
-  <meta property="og:title" content="ننجاوي | NINJAWY — تسوّق بسرعة النينجا">
+  <meta property="og:site_name" content="SOUND SOUQ">
+  <meta property="og:title" content="ساوند سوق | SOUND SOUQ — تسوّق بوضوح وثقة">
   <meta property="og:description" content="متجر حديث: منتجات مختارة، عروض حصرية، توصيل لكل المحافظات ودفع عند الاستلام.">
   <meta property="og:locale" content="ar_EG">
   <meta property="og:locale:alternate" content="en_US">
-  <title>ننجاوي | NINJAWY — تسوّق بسرعة النينجا</title>
+  <title>ساوند سوق | SOUND SOUQ — تسوّق بوضوح وثقة</title>
 
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23e11d3f' d='M12 1.9 13.9 10.1 22.1 12 13.9 13.9 12 22.1 10.1 13.9 1.9 12 10.1 10.1Z'/%3E%3Ccircle cx='12' cy='12' r='1.8' fill='%230a0a0e'/%3E%3C/svg%3E">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Tajawal:wght@400;500;700;800&family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap"
-    rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="assets/sound-souq-mark.svg">
 
   <script>
     /* Apply saved theme + language before first paint (no flash) */
     (function () {
       try {
         var t = localStorage.getItem('ninjawy_theme');
-        if (!t) t = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+        if (!t) t = 'light';
         document.documentElement.setAttribute('data-theme', t);
         var l = localStorage.getItem('ninjawy_lang');
         if (!l) l = (navigator.language || 'ar').slice(0, 2).toLowerCase() === 'ar' ? 'ar' : 'en';
@@ -44,48 +38,25 @@
 
   <!-- ICON SPRITE -->
   <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
-  <!-- ============ NINJAWY ICON SYSTEM v2 ============
+  <!-- ============ SOUND SOUQ ICON SYSTEM ============
        24x24 grid · 1.5px stroke · round caps & joins
        Brand glyphs use solid fill.                     -->
 
   <!-- BRAND / THEME -->
-  <symbol id="i-shuriken" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M12 1.9 13.9 10.1 22.1 12 13.9 13.9 12 22.1 10.1 13.9 1.9 12 10.1 10.1Z"/>
-    <circle cx="12" cy="12" r="1.7"/>
+  <symbol id="i-brand" viewBox="0 0 715 780">
+    <path fill="currentColor" fill-rule="evenodd" d="M 228.500 8.600 C 192.044 12.353, 169.719 17.439, 142.500 28.193 C 19.019 76.977, -31.050 229.940, 40.644 339.369 C 67.548 380.434, 101.403 404.836, 175 436.210 C 180.225 438.438, 189.675 442.476, 196 445.183 C 202.325 447.891, 221.450 455.535, 238.500 462.169 C 315.233 492.028, 340.743 512.601, 348.936 551.233 C 357.641 592.279, 334.689 622.298, 294.500 622.431 C 275.674 622.492, 264.074 618.506, 231.765 600.872 C 221.754 595.408, 212.900 591.065, 212.088 591.222 C 211.276 591.378, 199.553 610.854, 186.035 634.503 C 172.518 658.151, 155.013 688.737, 147.136 702.472 L 132.814 727.444 135.256 729.544 C 144.116 737.165, 177.368 754.394, 195 760.500 C 274.868 788.157, 362.723 763.619, 414.507 699.191 C 488.972 606.547, 470.431 471.316, 374.482 407.266 C 351.780 392.111, 307.394 372.771, 250 353.025 C 181.985 329.625, 151.434 314.898, 135.415 297.793 C 99.290 259.219, 97.553 198.913, 131.154 149.854 C 185.937 69.869, 308.685 70.051, 362.233 150.197 C 375.895 170.645, 381.547 184.390, 387.545 211.750 C 387.816 212.988, 388.592 213.993, 389.269 213.984 C 389.946 213.976, 404.208 200.557, 420.963 184.165 L 451.425 154.363 450.110 149.931 C 427.175 72.646, 364.409 22.215, 276.500 10.440 C 265.455 8.961, 235.975 7.831, 228.500 8.600 M 564.360 147.460 C 557.414 152.326, 558.791 157.437, 570.629 170.721 C 604.028 208.201, 624.921 241.891, 639.331 281.500 C 679.769 392.654, 653.755 509.473, 567.793 602.749 C 560.301 610.877, 558.810 614.798, 561.346 619.701 C 566.478 629.627, 571.594 627.967, 598.254 607.730 C 741.225 499.200, 743.385 277.396, 602.551 166.481 C 578.463 147.511, 570.179 143.385, 564.360 147.460 M 521.327 226.721 C 517.259 227.466, 514 231.840, 514 236.557 C 514 240.370, 514.810 241.869, 521.359 250.171 C 586.859 333.200, 587.512 436.943, 523.048 518.547 C 518.124 524.781, 514.003 530.921, 513.892 532.191 C 512.991 542.450, 521.658 547.366, 530.882 541.828 C 565.743 520.899, 595.601 478.578, 607.309 433.500 C 620.499 382.717, 611.046 323.839, 582.974 281.924 C 562.813 251.821, 532.499 224.676, 521.327 226.721 M 458.329 291.458 C 451.038 294.629, 450.927 302.152, 458.040 311.051 C 491.957 353.480, 493.569 414.622, 461.844 455.363 C 451.599 468.520, 450.778 471.482, 455.816 477.121 C 461.735 483.745, 472.010 479.661, 487.321 464.598 C 532.799 419.859, 531.990 349.291, 485.493 305.124 C 471.723 292.043, 464.888 288.605, 458.329 291.458 M 86.867 530.509 C 70.213 533.827, 64.006 539.285, 51.584 561.532 C 46.680 570.314, 38.069 585.600, 32.450 595.500 C 17.908 621.117, 15.857 625.482, 15.257 632.101 C 12.493 662.585, 57.773 717.297, 95.355 728.886 C 99.126 730.049, 103 731, 103.964 731 C 105.811 731, 109.796 724.617, 127.059 694 C 132.176 684.925, 143.783 664.675, 152.851 649 C 161.920 633.325, 173.713 612.850, 179.058 603.500 C 184.403 594.150, 191.527 582.017, 194.888 576.538 C 202.254 564.533, 202.201 565.593, 195.750 559.355 C 173.407 537.750, 120.663 523.777, 86.867 530.509"/>
   </symbol>
 
-  <symbol id="i-katana" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M21.1 2.9 12.4 11.6"/>
-    <path d="M9.6 9.4 14.6 14.4"/>
-    <path d="m11.4 12.6-6.2 6.2"/>
-    <path d="m8.5 14.1 1.4 1.4M6.7 15.9l1.4 1.4"/>
-    <circle cx="4" cy="20" r="1.2"/>
+  <symbol id="i-sound" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 9.2v5.6h3.8l5 3.8V5.4l-5 3.8H4Z"/>
+    <path d="M16 9.1a4.1 4.1 0 0 1 0 5.8M18.6 6.5a7.8 7.8 0 0 1 0 11"/>
   </symbol>
 
-  <symbol id="i-mask" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M12 3.1a8.9 8.9 0 0 0-8.9 8.9c0 4.9 4 8.9 8.9 8.9s8.9-4 8.9-8.9A8.9 8.9 0 0 0 12 3.1Z"/>
-    <path d="M3.4 11.1h17.2"/>
-    <path d="m7.3 11.7 1.9 1.9h2.1M16.7 11.7l-1.9 1.9h-2.1"/>
-    <path d="M5.6 14.7c1.1 2.3 3.6 3.8 6.4 3.8s5.3-1.5 6.4-3.8"/>
-  </symbol>
-
-  <symbol id="i-sparkle" viewBox="0 0 24 24" fill="currentColor">
-    <path d="M12 1.8c.7 5.4 4.3 9 9.7 9.7-5.4.7-9 4.3-9.7 9.7-.7-5.4-4.3-9-9.7-9.7C7.7 10.8 11.3 7.2 12 1.8Z"/>
-  </symbol>
-
-  <symbol id="i-sparkle-line" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round">
-    <path d="M12 2.6c.6 4.9 3.9 8.2 8.8 8.8-4.9.6-8.2 3.9-8.8 8.8-.6-4.9-3.9-8.2-8.8-8.8 4.9-.6 8.2-3.9 8.8-8.8Z"/>
-    <path d="M18.6 16.4c.3 2.2 1.7 3.6 3.9 3.9-2.2.3-3.6 1.7-3.9 3.9-.3-2.2-1.7-3.6-3.9-3.9 2.2-.3 3.6-1.7 3.9-3.9Z" opacity=".55"/>
-  </symbol>
 
   <!-- NAVIGATION / UI -->
   <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
     <circle cx="10.9" cy="10.9" r="6.9"/>
     <path d="m20.4 20.4-4.7-4.7"/>
-  </symbol>
-
-  <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round">
-    <path d="M3.8 6.8h16.4M3.8 12h16.4M3.8 17.2h11.4"/>
   </symbol>
 
   <symbol id="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
@@ -94,14 +65,6 @@
 
   <symbol id="i-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round">
     <path d="M12 5.3v13.4M5.3 12h13.4"/>
-  </symbol>
-
-  <symbol id="i-minus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round">
-    <path d="M5.3 12h13.4"/>
-  </symbol>
-
-  <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="m4.9 12.6 4.6 4.6L19.2 7.1"/>
   </symbol>
 
   <symbol id="i-check-circle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
@@ -114,33 +77,16 @@
     <path d="M12 9.3v4.2M12 17.2h.01"/>
   </symbol>
 
-  <symbol id="i-info" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-    <circle cx="12" cy="12" r="9.2"/>
-    <path d="M12 11.2v5.2M12 7.9h.01"/>
-  </symbol>
-
   <symbol id="i-arrow-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
     <path d="M20 12H4.4M10.6 5.4 4 12l6.6 6.6"/>
-  </symbol>
-
-  <symbol id="i-arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M4 12h15.6M13.4 5.4 20 12l-6.6 6.6"/>
   </symbol>
 
   <symbol id="i-arrow-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
     <path d="M12 20V4.4M5.4 10.6 12 4l6.6 6.6"/>
   </symbol>
 
-  <symbol id="i-arrow-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M12 4v15.6M5.4 13.4 12 20l6.6-6.6"/>
-  </symbol>
-
   <symbol id="i-chevron-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
     <path d="m5.8 9.2 6.2 6.2 6.2-6.2"/>
-  </symbol>
-
-  <symbol id="i-chevron-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-    <path d="m5.8 14.8 6.2-6.2 6.2 6.2"/>
   </symbol>
 
   <symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
@@ -151,17 +97,6 @@
   <symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
     <path d="M20.8 14.4A8.8 8.8 0 0 1 9.6 3.2a8.9 8.9 0 1 0 11.2 11.2Z"/>
     <path d="M17.2 3.4v3M15.7 4.9h3" opacity=".6"/>
-  </symbol>
-
-  <symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-    <circle cx="12" cy="12" r="9.2"/>
-    <path d="M3.1 9.6h17.8M3.1 14.4h17.8"/>
-    <path d="M12 2.8c2.4 2.4 3.7 5.6 3.7 9.2S14.4 18.8 12 21.2c-2.4-2.4-3.7-5.6-3.7-9.2S9.6 5.2 12 2.8Z"/>
-  </symbol>
-
-  <symbol id="i-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M2.4 12S6.1 5.6 12 5.6 21.6 12 21.6 12 17.9 18.4 12 18.4 2.4 12 2.4 12Z"/>
-    <circle cx="12" cy="12" r="3.1"/>
   </symbol>
 
   <symbol id="i-grid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round">
@@ -206,34 +141,17 @@
     <path d="M9.2 11.1a2.8 2.8 0 0 0 5.6 0"/>
   </symbol>
 
-  <symbol id="i-cart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M2.6 3.6h2.2a1.6 1.6 0 0 1 1.6 1.3l1.9 9.2a1.8 1.8 0 0 0 1.8 1.4h7.6a1.8 1.8 0 0 0 1.7-1.3l1.6-5.4H6.2"/>
-    <circle cx="9.6" cy="19.6" r="1.6"/>
-    <circle cx="17.4" cy="19.6" r="1.6"/>
-  </symbol>
-
   <symbol id="i-box" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
     <path d="M20.6 7.9v8.2a1.7 1.7 0 0 1-.9 1.5l-6.9 3.6a1.7 1.7 0 0 1-1.6 0l-6.9-3.6a1.7 1.7 0 0 1-.9-1.5V7.9a1.7 1.7 0 0 1 .9-1.5l6.9-3.6a1.7 1.7 0 0 1 1.6 0l6.9 3.6c.5.3.9.9.9 1.5Z"/>
     <path d="m3.7 7 8.3 4.4L20.3 7M12 11.5V21"/>
   </symbol>
 
-  <symbol id="i-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+  <symbol id="i-heart" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
     <path d="M12 20.7 4.6 13.5A4.7 4.7 0 0 1 11.2 6.8L12 7.6l.8-.8a4.7 4.7 0 1 1 6.6 6.7Z"/>
   </symbol>
 
-  <symbol id="i-star" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <symbol id="i-star" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
     <path d="m12 3.2 2.6 5.5 6 .8-4.4 4.2 1.1 6-5.3-2.9-5.3 2.9 1.1-6L3.4 9.5l6-.8Z"/>
-  </symbol>
-
-  <symbol id="i-tag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M20.5 13.3 13.3 20.5a2 2 0 0 1-2.9 0l-7-7a2 2 0 0 1-.6-1.5V4.9A1.9 1.9 0 0 1 4.7 3h7.1a2 2 0 0 1 1.5.6l7.2 7.2a2 2 0 0 1 0 2.5Z"/>
-    <circle cx="7.8" cy="7.8" r="1.3" fill="currentColor" stroke="none"/>
-  </symbol>
-
-  <symbol id="i-percent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
-    <path d="M6.6 17.4 17.4 6.6"/>
-    <circle cx="7.7" cy="7.7" r="2.5"/>
-    <circle cx="16.3" cy="16.3" r="2.5"/>
   </symbol>
 
   <symbol id="i-fire" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -257,11 +175,6 @@
     <path d="M20.7 11.9h-3.3a2.1 2.1 0 0 0 0 4.2h3.3"/>
   </symbol>
 
-  <symbol id="i-card" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-    <rect x="2.7" y="5.2" width="18.6" height="13.6" rx="2.6"/>
-    <path d="M2.7 9.9h18.6M6.4 14.6h3.8"/>
-  </symbol>
-
   <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
     <circle cx="12" cy="12" r="9.1"/>
     <path d="M12 6.9V12l3.4 2"/>
@@ -280,26 +193,11 @@
     <path d="m8.7 11.9 2.4 2.4 4.3-4.7"/>
   </symbol>
 
-  <symbol id="i-refresh" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M20.4 12a8.4 8.4 0 0 1-14.3 6L3.4 15.4M3.6 12a8.4 8.4 0 0 1 14.3-6l2.7 2.6"/>
-    <path d="M20.6 3.9v4.7h-4.7M3.4 20.1v-4.7h4.7"/>
-  </symbol>
-
-  <symbol id="i-award" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-    <circle cx="12" cy="9.2" r="6"/>
-    <path d="m8.4 14.3-1.3 6.9 4.9-2.5 4.9 2.5-1.3-6.9"/>
-    <path d="m12 6.4.9 1.9 2 .3-1.5 1.4.4 2.1-1.8-1-1.8 1 .4-2.1L9.1 8.6l2-.3Z"/>
-  </symbol>
-
   <symbol id="i-headset" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
     <path d="M4.1 14.4v-2.2a7.9 7.9 0 0 1 15.8 0v2.2"/>
     <rect x="2.5" y="13.6" width="4.2" height="6.6" rx="2.1"/>
     <rect x="17.3" y="13.6" width="4.2" height="6.6" rx="2.1"/>
     <path d="M19.4 20.2v.4a2.4 2.4 0 0 1-2.4 2.4h-3.3"/>
-  </symbol>
-
-  <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M6.4 3.3h2.9a1.2 1.2 0 0 1 1.2.9l1 3.4a1.2 1.2 0 0 1-.4 1.3l-1.6 1.2a12.4 12.4 0 0 0 5.2 5.2l1.2-1.6a1.2 1.2 0 0 1 1.3-.4l3.4 1a1.2 1.2 0 0 1 .9 1.2v2.9a2 2 0 0 1-2.2 2A17.6 17.6 0 0 1 4.4 5.5a2 2 0 0 1 2-2.2Z"/>
   </symbol>
 
   <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -395,69 +293,10 @@
   <!-- SKIP LINK -->
   <a class="skip-link" href="#home" data-i18n="common.skip">تخطَّ إلى المحتوى</a>
 
-  <!-- SCROLL PROGRESS -->
-  <div class="scroll-progress" id="scrollProgress"></div>
-
-  <!-- CUSTOM CURSOR -->
-  <div class="cursor-dot" id="cursorDot"></div>
-  <div class="cursor-ring" id="cursorRing"></div>
-
-  <!-- PAGE LOADER -->
-  <div class="page-loader" id="pageLoader">
-    <div class="loader-content">
-      <div class="loader-logo">
-        <span class="loader-star"><svg class="ic" aria-hidden="true"><use href="#i-shuriken" /></svg></span>
-        <span data-i18n="brand.name">ننجاوي</span>
-      </div>
-      <div class="loader-bar">
-        <div class="loader-bar-fill"></div>
-      </div>
-      <span class="loader-text" data-i18n="loader.text">يتم تحميل التجربة...</span>
-    </div>
-    <div class="loader-orbs">
-      <div class="loader-orb"></div>
-      <div class="loader-orb"></div>
-      <div class="loader-orb"></div>
-    </div>
-  </div>
-
-  <!-- ============ ANIMATED BACKGROUND ============ -->
-  <div class="bg-stack" aria-hidden="true">
-    <div class="site-background"></div>
-    <div class="bg-aurora">
-      <span class="aurora a1"></span>
-      <span class="aurora a2"></span>
-      <span class="aurora a3"></span>
-      <span class="aurora a4"></span>
-    </div>
-    <canvas id="bgCanvas" class="bg-canvas"></canvas>
-    <div class="background-grid"></div>
-    <div class="bg-beams"><span></span><span></span><span></span></div>
-    <div class="bg-orbs">
-      <div class="orb orb-1"></div>
-      <div class="orb orb-2"></div>
-      <div class="orb orb-3"></div>
-      <div class="orb orb-4"></div>
-    </div>
-    <div class="shooting-stars"><span></span><span></span><span></span></div>
-    <div class="floating-particles">
-      <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-    </div>
-    <div class="noise-overlay"></div>
-  </div>
-
-  <!-- TOP OFFER MARQUEE -->
+  <!-- Static announcement: no marquee or animation. -->
   <div class="top-offer">
-    <div class="offer-marquee">
-      <div class="offer-track" id="offerTrack">
-        <span><svg class="ic" aria-hidden="true"><use href="#i-bolt" /></svg> <b data-i18n="marquee.1">عروض خاصة لفترة محدودة — شحن مجاني للطلبات فوق 500 ج.م</b> <svg class="ic" aria-hidden="true"><use href="#i-fire" /></svg></span>
-        <span><svg class="ic" aria-hidden="true"><use href="#i-shuriken" /></svg> <b data-i18n="marquee.2">خصم حتى 40% على منتجات مختارة</b> <svg class="ic" aria-hidden="true"><use href="#i-shuriken" /></svg></span>
-        <span><svg class="ic" aria-hidden="true"><use href="#i-truck" /></svg> <b data-i18n="marquee.3">توصيل لكل المحافظات · دفع عند الاستلام</b> <svg class="ic" aria-hidden="true"><use href="#i-shield" /></svg></span>
-        <span><svg class="ic" aria-hidden="true"><use href="#i-bolt" /></svg> <b data-i18n="marquee.1">عروض خاصة لفترة محدودة — شحن مجاني للطلبات فوق 500 ج.م</b> <svg class="ic" aria-hidden="true"><use href="#i-fire" /></svg></span>
-        <span><svg class="ic" aria-hidden="true"><use href="#i-shuriken" /></svg> <b data-i18n="marquee.2">خصم حتى 40% على منتجات مختارة</b> <svg class="ic" aria-hidden="true"><use href="#i-shuriken" /></svg></span>
-        <span><svg class="ic" aria-hidden="true"><use href="#i-truck" /></svg> <b data-i18n="marquee.3">توصيل لكل المحافظات · دفع عند الاستلام</b> <svg class="ic" aria-hidden="true"><use href="#i-shield" /></svg></span>
-      </div>
-    </div>
+    <svg class="ic" aria-hidden="true"><use href="#i-truck"/></svg>
+    <span data-i18n="marquee.3">توصيل لكل المحافظات · دفع عند الاستلام</span>
   </div>
 
   <!-- HEADER -->
@@ -468,55 +307,51 @@
         <span class="burger-line"></span>
         <span class="burger-line"></span>
       </button>
-      <a href="#home" class="brand magnetic-btn" aria-label="NINJAWY">
-        <span class="brand-mark"><svg class="ic" aria-hidden="true"><use href="#i-shuriken" /></svg></span>
+      <a href="#home" class="brand" aria-label="ساوند سوق | SOUND SOUQ">
+        <span class="brand-mark"><svg class="ic" aria-hidden="true"><use href="#i-brand"/></svg></span>
         <span class="brand-text-wrap">
-          <span class="brand-text" data-i18n="brand.name">ننجاوي</span>
-          <span class="brand-sub">NINJAWY STORE</span>
+          <span class="brand-text" data-i18n="brand.name">ساوند سوق</span>
+          <span class="brand-sub" dir="ltr">SOUND SOUQ</span>
         </span>
-        <div class="brand-shine"></div>
       </a>
     </div>
 
     <nav class="nav-links" id="navLinks" aria-label="Main">
-      <a href="#home" class="nav-link"><span data-i18n="nav.home">الرئيسية</span><i class="nav-underline"></i></a>
-      <a href="#categories" class="nav-link"><span data-i18n="nav.categories">الأقسام</span><i class="nav-underline"></i></a>
-      <a href="#products" class="nav-link"><span data-i18n="nav.products">المنتجات</span><i class="nav-underline"></i></a>
-      <a href="#offers" class="nav-link"><span data-i18n="nav.offers">العروض</span><i class="nav-underline"></i></a>
-      <a href="#reviews" class="nav-link"><span data-i18n="nav.reviews">آراء العملاء</span><i class="nav-underline"></i></a>
+      <a href="#home" class="nav-link"><span data-i18n="nav.home">الرئيسية</span></a>
+      <a href="#categories" class="nav-link"><span data-i18n="nav.categories">الأقسام</span></a>
+      <a href="#products" class="nav-link"><span data-i18n="nav.products">المنتجات</span></a>
+      <a href="#offers" class="nav-link"><span data-i18n="nav.offers">العروض</span></a>
+      <a href="#reviews" class="nav-link"><span data-i18n="nav.reviews">آراء العملاء</span></a>
       <button class="nav-link mobile-only admin-link" id="adminOpenBtnMobile" type="button">
-        <span data-i18n="nav.admin">الإدارة</span><i class="nav-underline"></i>
+        <span data-i18n="nav.admin">الإدارة</span>
       </button>
     </nav>
 
     <div class="nav-actions">
       <div class="lang-switch" role="group" aria-label="Language">
-        <span class="lang-thumb" aria-hidden="true"></span>
         <button type="button" class="lang-opt" data-lang="ar" aria-pressed="true">ع</button>
         <button type="button" class="lang-opt" data-lang="en" aria-pressed="false">EN</button>
       </div>
 
-      <button class="nav-icon theme-toggle magnetic-btn" id="themeToggle" type="button" aria-label="تبديل المظهر" data-i18n-aria="nav.theme">
+      <button class="nav-icon theme-toggle" id="themeToggle" type="button" aria-label="تبديل المظهر" data-i18n-aria="nav.theme">
         <span class="icon-inner">
           <svg class="ic ic-sun" aria-hidden="true"><use href="#i-sun" /></svg>
           <svg class="ic ic-moon" aria-hidden="true"><use href="#i-moon" /></svg>
         </span>
       </button>
 
-      <button class="nav-icon magnetic-btn" id="searchBtn" type="button" aria-label="بحث" data-i18n-aria="nav.search">
+      <button class="nav-icon" id="searchBtn" type="button" aria-label="بحث" data-i18n-aria="nav.search">
         <span class="icon-inner"><svg class="ic" aria-hidden="true"><use href="#i-search" /></svg></span>
       </button>
 
-      <button class="nav-icon cart-button magnetic-btn" id="cartBtn" type="button" aria-label="السلة" data-i18n-aria="nav.cart">
+      <button class="nav-icon cart-button" id="cartBtn" type="button" aria-label="السلة" data-i18n-aria="nav.cart">
         <span class="icon-inner"><svg class="ic" aria-hidden="true"><use href="#i-bag" /></svg></span>
         <span class="cart-count" id="cartCount">0</span>
-        <span class="cart-pulse"></span>
       </button>
 
-      <button class="admin-nav-btn magnetic-btn" id="adminOpenBtn" type="button">
+      <button class="admin-nav-btn" id="adminOpenBtn" type="button">
         <span class="btn-icon"><svg class="ic" aria-hidden="true"><use href="#i-lock" /></svg></span>
         <span data-i18n="nav.admin">الإدارة</span>
-        <span class="btn-glow"></span>
       </button>
     </div>
   </header>
@@ -524,107 +359,60 @@
   <!-- MAIN -->
   <main id="home">
 
-    <!-- HERO -->
+    <!-- Compact, image-free hero. -->
     <section class="hero">
-      <div class="hero-glow glow-one"></div>
-      <div class="hero-glow glow-two"></div>
-      <div class="hero-glow glow-three"></div>
-
       <div class="hero-content">
         <div class="hero-text">
-          <div class="hero-label reveal">
-            <span class="pulse-dot"></span>
-            <span data-i18n="hero.badge">تجربة تسوق بسرعة النينجا</span>
-            <span class="label-shine"></span>
-          </div>
-
+          <span class="hero-label" data-i18n="hero.badge">تجربة تسوق خفيفة واحترافية</span>
           <h1 class="hero-title">
-            <span class="title-line reveal" data-delay="100" data-i18n="hero.title1">كل ما تحتاجه...</span>
-            <span class="title-line accent reveal" data-delay="250" data-i18n="hero.title2">تجده في ننجاوي</span>
+            <span class="title-line" data-i18n="hero.title1">كل ما تحتاجه...</span>
+            <span class="title-line accent" data-i18n="hero.title2">تجده في ساوند سوق</span>
           </h1>
-
-          <p class="hero-desc reveal" data-delay="400" data-i18n="hero.desc">
-            متجر حديث يجمع لك المنتجات المميزة والعروض الحصرية وتجربة تسوق سريعة وسهلة في مكان واحد.
-          </p>
-
-          <div class="hero-buttons reveal" data-delay="550">
-            <a href="#products" class="primary-btn magnetic-btn">
+          <p class="hero-desc" data-i18n="hero.desc">متجر حديث يجمع لك المنتجات المميزة والعروض الحصرية وتجربة تسوق سريعة وسهلة في مكان واحد.</p>
+          <div class="hero-buttons">
+            <a href="#products" class="primary-btn">
               <span class="btn-text" data-i18n="hero.cta1">تسوق الآن</span>
-              <span class="btn-icon"><svg class="ic" aria-hidden="true"><use href="#i-bag" /></svg></span>
-              <span class="btn-shine"></span>
+              <span class="btn-icon"><svg class="ic" aria-hidden="true"><use href="#i-bag"/></svg></span>
             </a>
-            <a href="#offers" class="secondary-btn magnetic-btn">
+            <a href="#offers" class="secondary-btn">
               <span class="btn-text" data-i18n="hero.cta2">اكتشف العروض</span>
-              <span class="btn-icon"><svg class="ic" aria-hidden="true"><use href="#i-fire" /></svg></span>
-              <span class="btn-shine"></span>
             </a>
           </div>
-
-          <div class="hero-mini-stats reveal" data-delay="700">
-            <div class="mini-stat">
-              <strong data-count="12">+12K</strong>
-              <span data-i18n="hero.stat1">منتج</span>
-              <div class="stat-bar"></div>
-            </div>
-            <div class="mini-stat">
-              <strong data-count="50">+50K</strong>
-              <span data-i18n="hero.stat2">عميل</span>
-              <div class="stat-bar"></div>
-            </div>
-            <div class="mini-stat">
-              <strong>4.9</strong>
-              <span data-i18n="hero.stat3">تقييم</span>
-              <div class="stat-bar"></div>
-            </div>
-          </div>
         </div>
-
-        <!-- NINJA SCENE -->
-        <div class="ninja-scene reveal" data-delay="300">
-          <div class="ninja-light"></div>
-          <div class="ninja-rings">
-            <div class="ring"></div>
-            <div class="ring"></div>
-            <div class="ring"></div>
+        <!-- Lightweight CSS 3D composition: no images, canvas or animation loop. -->
+        <div class="hero-visual" aria-hidden="true">
+          <div class="hero-scene">
+            <span class="hero-platform"></span>
+            <span class="hero-ring"></span>
+            <span class="hero-sphere"></span>
+            <span class="hero-dot"></span>
+            <div class="hero-cube">
+              <span class="cube-face cube-front"><svg class="ic"><use href="#i-brand"/></svg></span>
+              <span class="cube-face cube-back"></span>
+              <span class="cube-face cube-right"></span>
+              <span class="cube-face cube-left"></span>
+              <span class="cube-face cube-top"></span>
+              <span class="cube-face cube-bottom"></span>
+            </div>
+            <div class="hero-cube hero-cube-small">
+              <span class="cube-face cube-front"></span>
+              <span class="cube-face cube-back"></span>
+              <span class="cube-face cube-right"></span>
+              <span class="cube-face cube-left"></span>
+              <span class="cube-face cube-top"></span>
+              <span class="cube-face cube-bottom"></span>
+            </div>
           </div>
-          <div class="ninja-float-icons">
-            <span class="float-icon"><svg class="ic" aria-hidden="true"><use href="#i-shuriken" /></svg></span>
-            <span class="float-icon"><svg class="ic" aria-hidden="true"><use href="#i-katana" /></svg></span>
-            <span class="float-icon"><svg class="ic" aria-hidden="true"><use href="#i-shuriken" /></svg></span>
-            <span class="float-icon"><svg class="ic" aria-hidden="true"><use href="#i-sparkle" /></svg></span>
-          </div>
-          <div class="ninja-card-badge">
-            <span class="ncb-icon"><svg class="ic" aria-hidden="true"><use href="#i-bolt" /></svg></span>
-            <span>
-              <strong data-i18n="hero.badgeCard1">توصيل سريع</strong>
-              <em data-i18n="hero.badgeCard2">خلال 2-4 أيام</em>
-            </span>
-          </div>
-          <!-- Fallback ninja art if the image fails -->
-          <div class="ninja-fallback">
-            <div class="ninja-silhouette"><svg class="ic" aria-hidden="true"><use href="#i-mask" /></svg></div>
-            <div class="ninja-glow-text">NINJA</div>
-          </div>
-          <picture class="ninja-picture">
-            <source srcset="assets/ninja-hero.webp" type="image/webp">
-            <img src="assets/ninja-hero.png" class="ninja-image" alt="نينجا ننجاوي" width="768" height="1376"
-              fetchpriority="high" data-i18n-alt="hero.ninjaAlt" onerror="this.style.display='none'">
-          </picture>
-          <div class="ninja-floor"></div>
-          <div class="ninja-shadow"></div>
-        </div>
-      </div>
-
-      <div class="hero-scroll-hint">
-        <span data-i18n="hero.scroll">اسحب للاستكشاف</span>
-        <div class="scroll-line">
-          <div class="scroll-dot"></div>
         </div>
       </div>
     </section>
 
     <!-- TRUST BADGES -->
-    <section class="trust-strip reveal">
+    <section class="trust-strip" aria-labelledby="whyTitle">
+      <div class="why-heading">
+        <h2 id="whyTitle" data-i18n="why.title">لماذا ساوند سوق؟</h2>
+        <span data-i18n="why.sub">تسوّق واضح، سريع، وبدون تعقيد</span>
+      </div>
       <div class="trust-item">
         <span class="trust-icon"><svg class="ic" aria-hidden="true"><use href="#i-truck" /></svg></span>
         <div><strong data-i18n="trust.1.title">شحن سريع</strong><span data-i18n="trust.1.sub">لكل المحافظات</span></div>
@@ -645,83 +433,66 @@
 
     <!-- STATS -->
     <section class="stats-section">
-      <div class="stat-box reveal" data-delay="0">
+      <div class="stat-box">
         <div class="stat-icon"><svg class="ic" aria-hidden="true"><use href="#i-box" /></svg></div>
-        <strong data-count="12000">+12K</strong>
+        <strong>+12K</strong>
         <span data-i18n="stats.1">منتج متوفر</span>
-        <div class="stat-hover-glow"></div>
       </div>
-      <div class="stat-box reveal" data-delay="100">
+      <div class="stat-box">
         <div class="stat-icon"><svg class="ic" aria-hidden="true"><use href="#i-users" /></svg></div>
-        <strong data-count="50000">+50K</strong>
+        <strong>+50K</strong>
         <span data-i18n="stats.2">عميل سعيد</span>
-        <div class="stat-hover-glow"></div>
       </div>
-      <div class="stat-box reveal" data-delay="200">
+      <div class="stat-box">
         <div class="stat-icon"><svg class="ic" aria-hidden="true"><use href="#i-star" /></svg></div>
-        <strong data-decimal="4.9">4.9</strong>
+        <strong>4.9</strong>
         <span data-i18n="stats.3">متوسط التقييم</span>
-        <div class="stat-hover-glow"></div>
       </div>
-      <div class="stat-box reveal" data-delay="300">
+      <div class="stat-box">
         <div class="stat-icon"><svg class="ic" aria-hidden="true"><use href="#i-headset" /></svg></div>
         <strong>24/7</strong>
         <span data-i18n="stats.4">دعم مستمر</span>
-        <div class="stat-hover-glow"></div>
       </div>
     </section>
 
     <!-- CATEGORIES -->
     <section class="section" id="categories">
       <div class="section-title">
-        <span class="section-small reveal" data-i18n="cat.eyebrow">استكشف المتجر</span>
-        <h2 class="reveal" data-delay="100" data-i18n-html="cat.title">أقسام <em>ننجاوي</em></h2>
-        <p class="section-desc reveal" data-delay="150" data-i18n="cat.desc">تسوّق حسب القسم واختار ما يناسبك في ثوانٍ.</p>
-        <div class="title-line-deco reveal" data-delay="200"></div>
+        <span class="section-small" data-i18n="cat.eyebrow">استكشف المتجر</span>
+        <h2 data-i18n-html="cat.title">أقسام <em>ساوند سوق</em></h2>
+        <p class="section-desc" data-i18n="cat.desc">تسوّق حسب القسم واختار ما يناسبك في ثوانٍ.</p>
       </div>
 
       <div class="categories-grid" id="categoriesGrid">
-        <button class="category-card active reveal" data-category="all" data-delay="0">
+        <button class="category-card active" data-category="all">
           <span class="category-icon"><svg class="ic" aria-hidden="true"><use href="#i-grid" /></svg></span>
           <span data-i18n="cat.all">كل المنتجات</span>
           <em class="cat-count" data-cat-count="all">0</em>
-          <div class="card-shine"></div>
-          <div class="card-glow"></div>
         </button>
-        <button class="category-card reveal" data-category="electronics" data-delay="80">
+        <button class="category-card" data-category="electronics">
           <span class="category-icon"><svg class="ic" aria-hidden="true"><use href="#i-headset" /></svg></span>
           <span data-i18n="cat.electronics">إلكترونيات</span>
           <em class="cat-count" data-cat-count="electronics">0</em>
-          <div class="card-shine"></div>
-          <div class="card-glow"></div>
         </button>
-        <button class="category-card reveal" data-category="fashion" data-delay="160">
+        <button class="category-card" data-category="fashion">
           <span class="category-icon"><svg class="ic" aria-hidden="true"><use href="#i-shirt" /></svg></span>
           <span data-i18n="cat.fashion">أزياء</span>
           <em class="cat-count" data-cat-count="fashion">0</em>
-          <div class="card-shine"></div>
-          <div class="card-glow"></div>
         </button>
-        <button class="category-card reveal" data-category="home" data-delay="240">
+        <button class="category-card" data-category="home">
           <span class="category-icon"><svg class="ic" aria-hidden="true"><use href="#i-home" /></svg></span>
           <span data-i18n="cat.home">منزل</span>
           <em class="cat-count" data-cat-count="home">0</em>
-          <div class="card-shine"></div>
-          <div class="card-glow"></div>
         </button>
-        <button class="category-card reveal" data-category="gaming" data-delay="320">
+        <button class="category-card" data-category="gaming">
           <span class="category-icon"><svg class="ic" aria-hidden="true"><use href="#i-gamepad" /></svg></span>
           <span data-i18n="cat.gaming">ألعاب</span>
           <em class="cat-count" data-cat-count="gaming">0</em>
-          <div class="card-shine"></div>
-          <div class="card-glow"></div>
         </button>
-        <button class="category-card reveal" data-category="accessories" data-delay="400">
+        <button class="category-card" data-category="accessories">
           <span class="category-icon"><svg class="ic" aria-hidden="true"><use href="#i-watch" /></svg></span>
           <span data-i18n="cat.accessories">إكسسوارات</span>
           <em class="cat-count" data-cat-count="accessories">0</em>
-          <div class="card-shine"></div>
-          <div class="card-glow"></div>
         </button>
       </div>
     </section>
@@ -730,12 +501,12 @@
     <section class="section products-section" id="products">
       <div class="products-header">
         <div>
-          <span class="section-small reveal" data-i18n="prod.eyebrow">مختارات ننجاوي</span>
-          <h2 class="reveal" data-delay="100" data-i18n-html="prod.title">أحدث <em>المنتجات</em></h2>
+          <span class="section-small" data-i18n="prod.eyebrow">مختارات ساوند سوق</span>
+          <h2 data-i18n-html="prod.title">أحدث <em>المنتجات</em></h2>
         </div>
-        <div class="products-tools reveal" data-delay="200">
+        <div class="products-tools">
           <span class="results-count" id="resultsCount"></span>
-          <button class="show-all-btn magnetic-btn" id="showAllBtn" type="button">
+          <button class="show-all-btn" id="showAllBtn" type="button">
             <span data-i18n="prod.showAll">عرض الكل</span>
             <span class="arrow dir-flip"><svg class="ic" aria-hidden="true"><use href="#i-arrow-left" /></svg></span>
           </button>
@@ -746,52 +517,44 @@
 
     <!-- OFFERS -->
     <section class="offer-section" id="offers">
-      <div class="offer-bg-anim"></div>
       <div class="offer-content">
-        <span class="offer-tag reveal">
+        <span class="offer-tag">
           <svg class="ic" aria-hidden="true"><use href="#i-fire" /></svg>
           <b data-i18n="offer.tag">عرض محدود</b>
-          <span class="tag-pulse"></span>
         </span>
-        <h2 class="reveal" data-delay="100" data-i18n-html="offer.title">ادخل ساحة العروض <span>واحصل على خصومات مميزة</span></h2>
-        <p class="reveal" data-delay="200" data-i18n="offer.desc">عروض متجددة على مجموعة مختارة من المنتجات، لفترة محدودة فقط.</p>
+        <h2 data-i18n-html="offer.title">ادخل ساحة العروض <span>واحصل على خصومات مميزة</span></h2>
+        <p data-i18n="offer.desc">عروض متجددة على مجموعة مختارة من المنتجات، لفترة محدودة فقط.</p>
 
-        <div class="countdown reveal" data-delay="260" id="countdown">
+        <div class="countdown" id="countdown">
           <div class="cd-box"><strong id="cdDays">00</strong><span data-i18n="offer.days">يوم</span></div>
           <div class="cd-sep">:</div>
           <div class="cd-box"><strong id="cdHours">00</strong><span data-i18n="offer.hours">ساعة</span></div>
           <div class="cd-sep">:</div>
           <div class="cd-box"><strong id="cdMinutes">00</strong><span data-i18n="offer.minutes">دقيقة</span></div>
-          <div class="cd-sep">:</div>
-          <div class="cd-box"><strong id="cdSeconds">00</strong><span data-i18n="offer.seconds">ثانية</span></div>
         </div>
 
-        <a href="#products" class="primary-btn magnetic-btn reveal" data-delay="320">
+        <a href="#products" class="primary-btn">
           <span class="btn-text" data-i18n="offer.cta">اكتشف المنتجات</span>
           <span class="btn-icon"><svg class="ic" aria-hidden="true"><use href="#i-bolt" /></svg></span>
-          <span class="btn-shine"></span>
         </a>
       </div>
-      <div class="offer-number reveal" data-delay="400">
+      <div class="offer-number">
         <span class="offer-up" data-i18n="offer.upTo">حتى</span>
-        <strong class="offer-percent"><span data-count="40">40</span>%</strong>
+        <strong class="offer-percent"><span>40</span>%</strong>
         <span class="offer-down" data-i18n="offer.off">خصم</span>
-        <div class="offer-circle"></div>
-        <div class="offer-circle-2"></div>
       </div>
     </section>
 
     <!-- REVIEWS -->
     <section class="section reviews-section" id="reviews">
       <div class="section-title center">
-        <span class="section-small reveal" data-i18n="rev.eyebrow">آراء العملاء</span>
-        <h2 class="reveal" data-delay="100" data-i18n-html="rev.title">ثقة <em>تستحقها</em></h2>
-        <p class="section-desc reveal" data-delay="150" data-i18n="rev.desc">تجارب حقيقية من عملاء اشتروا من ننجاوي.</p>
-        <div class="title-line-deco center reveal" data-delay="200"></div>
+        <span class="section-small" data-i18n="rev.eyebrow">آراء العملاء</span>
+        <h2 data-i18n-html="rev.title">ثقة <em>تستحقها</em></h2>
+        <p class="section-desc" data-i18n="rev.desc">تجارب حقيقية من عملاء اشتروا من ساوند سوق.</p>
       </div>
 
       <div class="reviews-grid">
-        <article class="review-card reveal" data-delay="0">
+        <article class="review-card">
           <span class="review-quote"><svg class="ic" aria-hidden="true"><use href="#i-quote" /></svg></span>
           <div class="review-stars" data-stars="5"></div>
           <p data-i18n="rev.1.text">الطلب وصل في يومين والتغليف ممتاز، والتعامل كان محترم جدًا.</p>
@@ -803,7 +566,7 @@
             </div>
           </footer>
         </article>
-        <article class="review-card reveal" data-delay="120">
+        <article class="review-card">
           <span class="review-quote"><svg class="ic" aria-hidden="true"><use href="#i-quote" /></svg></span>
           <div class="review-stars" data-stars="5"></div>
           <p data-i18n="rev.2.text">أحسن حاجة إن الدفع عند الاستلام، فحصت المنتج قبل ما أدفع.</p>
@@ -815,7 +578,7 @@
             </div>
           </footer>
         </article>
-        <article class="review-card reveal" data-delay="240">
+        <article class="review-card">
           <span class="review-quote"><svg class="ic" aria-hidden="true"><use href="#i-quote" /></svg></span>
           <div class="review-stars" data-stars="5"></div>
           <p data-i18n="rev.3.text">الأسعار منافسة والجودة أعلى من المتوقع، هرجع أشتري تاني أكيد.</p>
@@ -832,22 +595,19 @@
 
     <!-- NEWSLETTER -->
     <section class="newsletter">
-      <div class="newsletter-glow"></div>
-      <div class="newsletter-content reveal">
+      <div class="newsletter-content">
         <span class="section-small" data-i18n="nl.eyebrow">كن أول من يعرف العروض</span>
-        <h2 data-i18n-html="nl.title">انضم إلى مجتمع <em>ننجاوي</em></h2>
+        <h2 data-i18n-html="nl.title">انضم إلى مجتمع <em>ساوند سوق</em></h2>
         <p data-i18n="nl.desc">رسالة واحدة أسبوعيًا بأهم العروض والمنتجات الجديدة — بدون إزعاج.</p>
       </div>
-      <form id="newsletterForm" class="newsletter-form reveal" data-delay="200" novalidate>
+      <form id="newsletterForm" class="newsletter-form" novalidate>
         <div class="input-wrapper with-icon">
           <span class="input-icon"><svg class="ic" aria-hidden="true"><use href="#i-mail" /></svg></span>
           <input type="email" id="newsletterEmail" placeholder="اكتب بريدك الإلكتروني" data-i18n-ph="nl.placeholder" required>
-          <span class="input-focus-border"></span>
         </div>
-        <button type="submit" class="primary-btn magnetic-btn">
+        <button type="submit" class="primary-btn">
           <span class="btn-text" data-i18n="nl.cta">اشترك الآن</span>
           <span class="btn-icon"><svg class="ic" aria-hidden="true"><use href="#i-bolt" /></svg></span>
-          <span class="btn-shine"></span>
         </button>
       </form>
     </section>
@@ -856,17 +616,10 @@
 
   <!-- FOOTER -->
   <footer>
-    <div class="footer-glow"></div>
     <div class="footer-grid">
-      <div class="footer-brand reveal">
-        <div class="brand footer-logo">
-          <span class="brand-mark"><svg class="ic" aria-hidden="true"><use href="#i-shuriken" /></svg></span>
-          <span class="brand-text-wrap">
-            <span class="brand-text" data-i18n="brand.name">ننجاوي</span>
-            <span class="brand-sub">NINJAWY STORE</span>
-          </span>
-        </div>
-        <p data-i18n="footer.about">تجربة تسوق حديثة تجمع المنتجات المميزة والعروض الحصرية في مكان واحد. بسرعة النينجا، بجودة تثق بها.</p>
+      <div class="footer-brand">
+        <img class="footer-logo" src="assets/sound-souq-logo-white.svg" alt="ساوند سوق | SOUND SOUQ" width="1550" height="1190" loading="lazy" decoding="async">
+        <p data-i18n="footer.about">ساوند سوق يجمع المنتجات المميزة والعروض الحصرية في تجربة تسوق بسيطة وسريعة، بجودة تثق بها.</p>
         <div class="footer-socials">
           <a href="#" class="social-btn" aria-label="Instagram"><svg class="ic" aria-hidden="true"><use href="#i-instagram" /></svg></a>
           <a href="#" class="social-btn" aria-label="Facebook"><svg class="ic" aria-hidden="true"><use href="#i-facebook" /></svg></a>
@@ -876,7 +629,7 @@
         </div>
       </div>
 
-      <div class="footer-col reveal" data-delay="100">
+      <div class="footer-col">
         <h4 data-i18n="footer.quick">روابط سريعة</h4>
         <a href="#home" class="footer-link"><span data-i18n="nav.home">الرئيسية</span></a>
         <a href="#categories" class="footer-link"><span data-i18n="nav.categories">الأقسام</span></a>
@@ -885,7 +638,7 @@
         <a href="#reviews" class="footer-link"><span data-i18n="nav.reviews">آراء العملاء</span></a>
       </div>
 
-      <div class="footer-col reveal" data-delay="180">
+      <div class="footer-col">
         <h4 data-i18n="footer.help">المساعدة</h4>
         <a href="#" class="footer-link"><span data-i18n="footer.shipping">الشحن والتوصيل</span></a>
         <a href="#" class="footer-link"><span data-i18n="footer.returns">الاستبدال والاسترجاع</span></a>
@@ -894,13 +647,10 @@
         <a href="#" class="footer-link"><span data-i18n="footer.privacy">سياسة الخصوصية</span></a>
       </div>
 
-      <div class="footer-col reveal" data-delay="260">
+      <div class="footer-col">
         <h4 data-i18n="footer.contact">تواصل معنا</h4>
         <a href="https://wa.me/201141362626" class="footer-contact" target="_blank" rel="noopener">
           <svg class="ic" aria-hidden="true"><use href="#i-whatsapp" /></svg><span dir="ltr">+20 114 136 2626</span>
-        </a>
-        <a href="mailto:hello@ninjawy.store" class="footer-contact">
-          <svg class="ic" aria-hidden="true"><use href="#i-mail" /></svg><span dir="ltr">hello@ninjawy.store</span>
         </a>
         <p class="footer-contact static">
           <svg class="ic" aria-hidden="true"><use href="#i-pin" /></svg><span data-i18n="footer.address">مصر — توصيل لكل المحافظات</span>
@@ -912,7 +662,7 @@
     </div>
 
     <div class="footer-bottom">
-      <span data-i18n-html="footer.rights">© 2026 NINJAWY — صُنع بسرعة النينجا <svg class="ic" aria-hidden="true"><use href="#i-mask" /></svg></span>
+      <span data-i18n-html="footer.rights">© 2026 SOUND SOUQ — جميع الحقوق محفوظة <svg class="ic" aria-hidden="true"><use href="#i-sound" /></svg></span>
       <span class="developer" data-i18n-html="footer.dev">Developed by <strong>yaseen amr abd el rahem</strong></span>
     </div>
   </footer>
@@ -921,16 +671,15 @@
   <div class="overlay" id="overlay"></div>
 
   <!-- SEARCH -->
-  <div class="search-modal" id="searchModal" role="dialog" aria-modal="true">
+  <div class="search-modal" id="searchModal" role="dialog" aria-modal="true" aria-labelledby="searchTitle">
     <div class="search-window">
       <div class="modal-top">
-        <h3 data-i18n="search.title">البحث عن منتج</h3>
-        <button class="close-modal magnetic-btn" id="closeSearchBtn" type="button" aria-label="إغلاق" data-i18n-aria="common.close"><svg class="ic" aria-hidden="true"><use href="#i-close" /></svg></button>
+        <h3 id="searchTitle" data-i18n="search.title">البحث عن منتج</h3>
+        <button class="close-modal" id="closeSearchBtn" type="button" aria-label="إغلاق" data-i18n-aria="common.close"><svg class="ic" aria-hidden="true"><use href="#i-close" /></svg></button>
       </div>
       <div class="input-wrapper with-icon">
         <span class="input-icon"><svg class="ic" aria-hidden="true"><use href="#i-search" /></svg></span>
         <input type="text" id="searchInput" placeholder="اكتب اسم المنتج..." data-i18n-ph="search.placeholder">
-        <span class="input-focus-border"></span>
       </div>
       <p class="search-hint" data-i18n="search.hint">جرّب: سماعات، ساعة، ألعاب...</p>
       <div class="search-results" id="searchResults"></div>
@@ -938,14 +687,14 @@
   </div>
 
   <!-- CART -->
-  <aside class="cart-panel" id="cartPanel" aria-label="Cart">
+  <aside class="cart-panel" id="cartPanel" role="dialog" aria-modal="true" aria-labelledby="cartTitle" data-i18n-aria="cart.label" hidden>
     <div class="cart-header">
       <div>
         <span class="cart-label" data-i18n="cart.label">سلة المشتريات</span>
-        <h3><span data-i18n="cart.title">حقيبة ننجاوي</span> <svg class="ic" aria-hidden="true"><use href="#i-bag" /></svg></h3>
+        <h3 id="cartTitle"><span data-i18n="cart.title">حقيبة ساوند سوق</span> <svg class="ic" aria-hidden="true"><use href="#i-bag" /></svg></h3>
         <em class="cart-sub" id="cartSummary"></em>
       </div>
-      <button id="closeCartBtn" class="close-modal magnetic-btn" type="button" aria-label="إغلاق" data-i18n-aria="common.close"><svg class="ic" aria-hidden="true"><use href="#i-close" /></svg></button>
+      <button id="closeCartBtn" class="close-modal" type="button" aria-label="إغلاق" data-i18n-aria="common.close"><svg class="ic" aria-hidden="true"><use href="#i-close" /></svg></button>
     </div>
 
     <div class="cart-items" id="cartItems"></div>
@@ -953,12 +702,12 @@
     <div class="customer-section">
       <h3><svg class="ic" aria-hidden="true"><use href="#i-user" /></svg> <span data-i18n="cart.details">بيانات الطلب</span></h3>
       <div class="customer-fields">
-        <div class="input-wrapper"><input type="text" id="customerName" placeholder="الاسم بالكامل" data-i18n-ph="cart.name"><span class="input-focus-border"></span></div>
-        <div class="input-wrapper"><input type="tel" id="customerPhone" placeholder="رقم الهاتف" data-i18n-ph="cart.phone"><span class="input-focus-border"></span></div>
-        <div class="input-wrapper"><input type="tel" id="customerExtraPhone" placeholder="رقم هاتف إضافي (اختياري)" data-i18n-ph="cart.phone2"><span class="input-focus-border"></span></div>
-        <div class="input-wrapper"><input type="text" id="customerCity" placeholder="المحافظة / المدينة" data-i18n-ph="cart.city"><span class="input-focus-border"></span></div>
-        <div class="input-wrapper"><textarea id="customerAddress" placeholder="العنوان بالتفصيل" data-i18n-ph="cart.address"></textarea><span class="input-focus-border"></span></div>
-        <div class="input-wrapper"><textarea id="customerNotes" placeholder="ملاحظات إضافية على الطلب (اختياري)" data-i18n-ph="cart.notes"></textarea><span class="input-focus-border"></span></div>
+        <div class="input-wrapper"><input type="text" id="customerName" placeholder="الاسم بالكامل" data-i18n-ph="cart.name"></div>
+        <div class="input-wrapper"><input type="tel" id="customerPhone" placeholder="رقم الهاتف" data-i18n-ph="cart.phone"></div>
+        <div class="input-wrapper"><input type="tel" id="customerExtraPhone" placeholder="رقم هاتف إضافي (اختياري)" data-i18n-ph="cart.phone2"></div>
+        <div class="input-wrapper"><input type="text" id="customerCity" placeholder="المحافظة / المدينة" data-i18n-ph="cart.city"></div>
+        <div class="input-wrapper"><textarea id="customerAddress" placeholder="العنوان بالتفصيل" data-i18n-ph="cart.address"></textarea></div>
+        <div class="input-wrapper"><textarea id="customerNotes" placeholder="ملاحظات إضافية على الطلب (اختياري)" data-i18n-ph="cart.notes"></textarea></div>
       </div>
     </div>
 
@@ -967,43 +716,39 @@
         <span data-i18n="cart.total">الإجمالي</span>
         <strong><span id="cartTotal">0</span> <em class="currency" data-i18n="common.currency">ج.م</em></strong>
       </div>
-      <button class="clear-cart-btn magnetic-btn" id="clearCartBtn" type="button">
+      <button class="clear-cart-btn" id="clearCartBtn" type="button">
         <svg class="ic" aria-hidden="true"><use href="#i-trash" /></svg>
         <span data-i18n="cart.clear">تفريغ السلة</span>
       </button>
-      <button class="primary-btn checkout-btn magnetic-btn" id="checkoutBtn" type="button">
+      <button class="primary-btn checkout-btn" id="checkoutBtn" type="button">
         <span class="btn-text" data-i18n="cart.checkout">إتمام الطلب عبر واتساب</span>
         <span class="btn-icon"><svg class="ic" aria-hidden="true"><use href="#i-whatsapp" /></svg></span>
-        <span class="btn-shine"></span>
       </button>
     </div>
   </aside>
 
   <!-- ADMIN LOGIN -->
-  <div class="admin-modal" id="adminLoginModal" role="dialog" aria-modal="true">
+  <div class="admin-modal" id="adminLoginModal" role="dialog" aria-modal="true" aria-labelledby="adminLoginTitle">
     <div class="admin-window">
       <div class="modal-top">
         <div>
-          <span class="admin-small">NINJAWY CONTROL</span>
-          <h3 data-i18n="admin.loginTitle">تسجيل دخول الإدارة</h3>
+          <span class="admin-small">SOUND SOUQ CONTROL</span>
+          <h3 id="adminLoginTitle" data-i18n="admin.loginTitle">تسجيل دخول الإدارة</h3>
         </div>
-        <button class="close-modal magnetic-btn" id="closeAdminLogin" type="button" aria-label="إغلاق" data-i18n-aria="common.close"><svg class="ic" aria-hidden="true"><use href="#i-close" /></svg></button>
+        <button class="close-modal" id="closeAdminLogin" type="button" aria-label="إغلاق" data-i18n-aria="common.close"><svg class="ic" aria-hidden="true"><use href="#i-close" /></svg></button>
       </div>
       <form id="adminLoginForm" class="admin-login-form">
         <div class="input-wrapper with-icon">
           <span class="input-icon"><svg class="ic" aria-hidden="true"><use href="#i-user" /></svg></span>
           <input type="text" id="adminUsername" placeholder="اسم المستخدم" data-i18n-ph="admin.username" autocomplete="username" required>
-          <span class="input-focus-border"></span>
         </div>
         <div class="input-wrapper with-icon">
           <span class="input-icon"><svg class="ic" aria-hidden="true"><use href="#i-lock" /></svg></span>
           <input type="password" id="adminPassword" placeholder="كلمة المرور" data-i18n-ph="admin.password" autocomplete="current-password" required>
-          <span class="input-focus-border"></span>
         </div>
-        <button type="submit" class="primary-btn magnetic-btn">
+        <button type="submit" class="primary-btn">
           <span class="btn-text" data-i18n="admin.loginBtn">دخول لوحة الإدارة</span>
           <span class="btn-icon"><svg class="ic" aria-hidden="true"><use href="#i-lock" /></svg></span>
-          <span class="btn-shine"></span>
         </button>
       </form>
       <p class="login-error" id="loginError" role="alert"></p>
@@ -1011,19 +756,19 @@
   </div>
 
   <!-- ADMIN PANEL -->
-  <div class="admin-modal" id="adminPanel" role="dialog" aria-modal="true">
+  <div class="admin-modal" id="adminPanel" role="dialog" aria-modal="true" aria-labelledby="adminPanelTitle">
     <div class="admin-dashboard">
       <div class="modal-top">
         <div>
-          <span class="admin-small">NINJAWY ADMIN PANEL</span>
-          <h2 data-i18n="admin.panelTitle">إدارة المنتجات</h2>
+          <span class="admin-small">SOUND SOUQ ADMIN PANEL</span>
+          <h2 id="adminPanelTitle" data-i18n="admin.panelTitle">إدارة المنتجات</h2>
         </div>
         <div class="admin-actions">
-          <button id="logoutAdminBtn" class="logout-btn magnetic-btn" type="button">
+          <button id="logoutAdminBtn" class="logout-btn" type="button">
             <svg class="ic" aria-hidden="true"><use href="#i-logout" /></svg>
             <span data-i18n="admin.logout">تسجيل الخروج</span>
           </button>
-          <button class="close-modal magnetic-btn" id="closeAdminPanel" type="button" aria-label="إغلاق" data-i18n-aria="common.close"><svg class="ic" aria-hidden="true"><use href="#i-close" /></svg></button>
+          <button class="close-modal" id="closeAdminPanel" type="button" aria-label="إغلاق" data-i18n-aria="common.close"><svg class="ic" aria-hidden="true"><use href="#i-close" /></svg></button>
         </div>
       </div>
 
@@ -1032,16 +777,16 @@
           <h3><svg class="ic" aria-hidden="true"><use href="#i-plus" /></svg> <span data-i18n="admin.addTitle">إضافة منتج جديد</span></h3>
           <form id="addProductForm" class="product-form">
             <div class="form-row">
-              <div class="input-wrapper"><input type="text" id="productNameAr" placeholder="اسم المنتج (عربي)" data-i18n-ph="admin.nameAr" required><span class="input-focus-border"></span></div>
-              <div class="input-wrapper"><input type="text" id="productNameEn" placeholder="Product name (English)" data-i18n-ph="admin.nameEn"><span class="input-focus-border"></span></div>
+              <div class="input-wrapper"><input type="text" id="productNameAr" placeholder="اسم المنتج (عربي)" data-i18n-ph="admin.nameAr" required></div>
+              <div class="input-wrapper"><input type="text" id="productNameEn" placeholder="Product name (English)" data-i18n-ph="admin.nameEn"></div>
             </div>
             <div class="form-row">
-              <div class="input-wrapper"><textarea id="productDescriptionAr" placeholder="وصف المنتج (عربي)" data-i18n-ph="admin.descAr" required></textarea><span class="input-focus-border"></span></div>
-              <div class="input-wrapper"><textarea id="productDescriptionEn" placeholder="Description (English)" data-i18n-ph="admin.descEn"></textarea><span class="input-focus-border"></span></div>
+              <div class="input-wrapper"><textarea id="productDescriptionAr" placeholder="وصف المنتج (عربي)" data-i18n-ph="admin.descAr" required></textarea></div>
+              <div class="input-wrapper"><textarea id="productDescriptionEn" placeholder="Description (English)" data-i18n-ph="admin.descEn"></textarea></div>
             </div>
             <div class="form-row">
-              <div class="input-wrapper"><input type="number" id="productPrice" min="0" step="1" placeholder="السعر" data-i18n-ph="admin.price" required><span class="input-focus-border"></span></div>
-              <div class="input-wrapper"><input type="number" id="productOldPrice" min="0" step="1" placeholder="السعر قبل الخصم (اختياري)" data-i18n-ph="admin.oldPrice"><span class="input-focus-border"></span></div>
+              <div class="input-wrapper"><input type="number" id="productPrice" min="0" step="1" placeholder="السعر" data-i18n-ph="admin.price" required></div>
+              <div class="input-wrapper"><input type="number" id="productOldPrice" min="0" step="1" placeholder="السعر قبل الخصم (اختياري)" data-i18n-ph="admin.oldPrice"></div>
             </div>
             <div class="select-wrapper">
               <select id="productCategory" required aria-label="Category">
@@ -1067,10 +812,9 @@
             </label>
             <div class="image-preview" id="imagePreview" data-i18n="admin.imagePreview">معاينة الصورة</div>
 
-            <button type="submit" class="primary-btn magnetic-btn">
+            <button type="submit" class="primary-btn">
               <span class="btn-text" data-i18n="admin.addBtn">إضافة المنتج</span>
               <span class="btn-icon"><svg class="ic" aria-hidden="true"><use href="#i-plus" /></svg></span>
-              <span class="btn-shine"></span>
             </button>
           </form>
         </div>
@@ -1094,7 +838,7 @@
     <svg class="ic" aria-hidden="true"><use href="#i-arrow-up" /></svg>
   </button>
 
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 
 </html>
