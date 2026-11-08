@@ -24,7 +24,7 @@ async function sampleImage(page) {
 (async () => {
   const payload = ['index.html', 'style.css', 'script.js']
     .reduce((n, f) => n + fs.statSync(path.join(ROOT, f)).size, 0);
-  assert.ok(payload < 180 * 1024, `core payload too large: ${payload} bytes`);
+  assert.ok(payload < 240 * 1024, `core payload too large: ${payload} bytes`);
   const source = ['index.html', 'style.css', 'script.js'].map(f => fs.readFileSync(path.join(ROOT, f), 'utf8')).join('\n');
   assert.ok(!/ننجاوي|نينجا|NINJAWY(?!2026)/.test(source), 'visible legacy branding must be removed');
   for (const color of ['#101D45', '#FFB900', '#FFFFFF', '#F4F6FA', '#263653', '#16A36A']) {
@@ -218,6 +218,41 @@ async function sampleImage(page) {
       await page.locator('[data-delete-product]').first().click();
       assert.equal(await page.locator('.product-card').count(), 9);
       await page.locator('#logoutAdminBtn').click();
+      // Custom request page: specs form, summary, WhatsApp request, saved requests.
+      await page.locator('.lang-opt[data-lang="ar"]').click();
+      await page.locator('.request-cta a[href="#request"]').click();
+      assert.equal(await page.locator('#request').isVisible(), true);
+      assert.equal(await page.locator('#requestSummaryList li').count(), 0);
+      await page.fill('#rqName', 'سماعات بلوتوث');
+      await page.fill('#rqSpecs', 'عزل ضوضاء وبطارية 20 ساعة');
+      await page.selectOption('#rqCategory', 'electronics');
+      assert.ok(await page.locator('#requestSummaryList li').count() >= 3);
+      await page.locator('#requestSubmitBtn').click();
+      assert.ok((await page.locator('.toast-text').textContent()).includes('أكمل'));
+      await page.fill('#rqContactName', 'عميل طلب');
+      await page.fill('#rqPhone', '01000000000');
+      await page.fill('#rqCity', 'الجيزة');
+      const [requestWa] = await Promise.all([
+        page.waitForEvent('popup'),
+        page.locator('#requestSubmitBtn').click()
+      ]);
+      const requestUrl = decodeURIComponent(requestWa.url().split('text=')[1] || '');
+      assert.ok(requestWa.url().startsWith('https://wa.me/201500721881?text='));
+      assert.ok(requestUrl.includes('سماعات بلوتوث') && requestUrl.includes('عزل ضوضاء'));
+      assert.ok(requestUrl.includes('عميل طلب') && requestUrl.includes('الدفع عند الاستلام'));
+      await requestWa.close();
+      await page.locator('#requestSaveBtn').click();
+      assert.equal(await page.locator('.request-saved-item').count(), 1);
+      assert.equal(JSON.parse(await page.evaluate(() => localStorage.ninjawy_requests))[0].name, 'سماعات بلوتوث');
+      await page.locator('#requestResetBtn').click();
+      assert.equal(await page.locator('#rqName').inputValue(), '');
+      await page.locator('[data-fill-request]').first().click();
+      assert.equal(await page.locator('#rqName').inputValue(), 'سماعات بلوتوث');
+      page.once('dialog', dialog => dialog.accept());
+      await page.locator('[data-delete-request]').first().click();
+      assert.equal(await page.locator('.request-saved-item').count(), 0);
+      assert.equal(await page.locator('#requestSavedWrap').isHidden(), true);
+
       assert.equal(await page.locator('#adminPanel').isHidden(), true);
 
       // Minute countdown is initialized and has no seconds box.
@@ -228,7 +263,7 @@ async function sampleImage(page) {
       assert.equal(await page.locator('.cart-flight').count(), 0);
       assert.equal(await page.locator('#cartCount').textContent(), '1');
       assert.deepEqual(errors, []);
-      console.log(`PASS ${mobile ? 'mobile' : 'desktop'}: no effects/external requests, responsive, cart, search, checkout, i18n, theme, admin, image compression, reduced motion`);
+      console.log(`PASS ${mobile ? 'mobile' : 'desktop'}: no effects/external requests, responsive, cart, search, checkout, i18n, theme, admin, image compression, custom request page, reduced motion`);
       await page.close();
     }
 

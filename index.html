@@ -221,6 +221,11 @@
     <path d="M9.9 5.6C7 6.9 5.2 9.4 5.2 12.5v5.9h5.6v-5.9H8.1c0-1.9.8-3.3 2.5-4.2Z"/>
     <path d="M19.4 5.6c-2.9 1.3-4.7 3.8-4.7 6.9v5.9h5.6v-5.9h-2.7c0-1.9.8-3.3 2.5-4.2Z"/>
   </symbol>
+  <symbol id="i-clipboard" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M9 4.4H7.4a2.4 2.4 0 0 0-2.4 2.4v12.4a2.4 2.4 0 0 0 2.4 2.4h9.2a2.4 2.4 0 0 0 2.4-2.4V6.8a2.4 2.4 0 0 0-2.4-2.4H15"/>
+    <rect x="9" y="2.4" width="6" height="4" rx="1.4"/>
+    <path d="M8.6 11.4h6.8M8.6 14.8h6.8M8.6 18.2h4.2"/>
+  </symbol>
   <symbol id="i-whatsapp" viewBox="0 0 24 24" fill="currentColor">
     <path d="M12.04 2c-5.5 0-9.96 4.46-9.96 9.96 0 1.76.46 3.48 1.34 5L2 22l5.2-1.36a9.9 9.9 0 0 0 4.84 1.24h.01c5.5 0 9.96-4.46 9.96-9.96 0-2.66-1.04-5.16-2.92-7.04A9.89 9.89 0 0 0 12.04 2Zm0 1.82c2.17 0 4.21.85 5.74 2.38a8.09 8.09 0 0 1 2.38 5.74c0 4.5-3.66 8.15-8.15 8.15a8.2 8.2 0 0 1-4.16-1.14l-.3-.18-3.09.81.82-3.01-.2-.31a8.09 8.09 0 0 1-1.24-4.32c0-4.49 3.66-8.12 8.2-8.12Zm-4.5 4.4c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1s.9 2.44 1.03 2.6c.13.17 1.75 2.67 4.24 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.2-.58.2-1.07.14-1.18-.06-.1-.22-.16-.47-.28-.25-.13-1.47-.72-1.7-.81-.22-.08-.39-.12-.55.13-.16.25-.63.8-.77.97-.14.16-.28.18-.53.06-.25-.13-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.38-1.72-.15-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.41.09-.17.04-.31-.02-.43-.06-.13-.55-1.33-.76-1.82-.2-.47-.4-.41-.55-.42h-.47Z"/>
   </symbol>
@@ -265,6 +270,7 @@
       <a href="#products" class="nav-link"><span data-i18n="nav.products">المنتجات</span></a>
       <a href="#offers" class="nav-link"><span data-i18n="nav.offers">العروض</span></a>
       <a href="#reviews" class="nav-link"><span data-i18n="nav.reviews">آراء العملاء</span></a>
+      <a href="#request" class="nav-link nav-link-request"><span data-i18n="nav.request">اطلب منتجك</span></a>
       <button class="nav-link mobile-only admin-link" id="adminOpenBtnMobile" type="button">
         <span data-i18n="nav.admin">الإدارة</span>
       </button>
@@ -416,6 +422,17 @@
         </div>
       </div>
       <div class="products-grid" id="productsGrid"></div>
+      <div class="request-cta">
+        <span class="request-cta-icon"><svg class="ic" aria-hidden="true"><use href="#i-clipboard" /></svg></span>
+        <div class="request-cta-text">
+          <strong data-i18n="rq.ctaTitle">مالقيتش الي بتدور عليه؟</strong>
+          <span data-i18n="rq.ctaDesc">اكتبلنا مواصفات المنتج الي محتاجه وإحنا نجيبه لك.</span>
+        </div>
+        <a href="#request" class="primary-btn">
+          <span class="btn-text" data-i18n="rq.ctaBtn">اطلب منتجك</span>
+          <span class="btn-icon arrow dir-flip"><svg class="ic" aria-hidden="true"><use href="#i-arrow-left" /></svg></span>
+        </a>
+      </div>
     </section>
     <section class="offer-section" id="offers">
       <div class="offer-content">
@@ -488,6 +505,148 @@
         </article>
       </div>
     </section>
+    <section class="section request-page" id="request" aria-labelledby="requestTitle">
+      <div class="request-head">
+        <div>
+          <span class="section-small" data-i18n="rq.eyebrow">اطلب الي محتاجه</span>
+          <h2 id="requestTitle" data-i18n-html="rq.title">اكتب مواصفات <em>منتجك</em> وإحنا نجيبه</h2>
+          <p class="section-desc" data-i18n="rq.desc">مالقيتش الي بتدور عليه؟ اكتب تفاصيل المنتج ومواصفاته وإحنا نرد عليك بالمتاح والسعر ومدة التوصيل.</p>
+        </div>
+        <div class="request-steps">
+          <div class="request-step">
+            <span class="request-step-num">1</span>
+            <strong data-i18n="rq.step1">اكتب الطلب</strong>
+            <em data-i18n="rq.step1sub">اسم المنتج وتفاصيله</em>
+          </div>
+          <div class="request-step">
+            <span class="request-step-num">2</span>
+            <strong data-i18n="rq.step2">نتواصل معاك</strong>
+            <em data-i18n="rq.step2sub">نأكد السعر والمدة</em>
+          </div>
+          <div class="request-step">
+            <span class="request-step-num">3</span>
+            <strong data-i18n="rq.step3">يوصلك لبابك</strong>
+            <em data-i18n="rq.step3sub">وتدفع عند الاستلام</em>
+          </div>
+        </div>
+      </div>
+      <form id="requestForm" class="request-form" novalidate>
+        <div class="request-grid">
+          <div class="request-col">
+            <h3 class="request-col-title"><svg class="ic" aria-hidden="true"><use href="#i-clipboard" /></svg> <span data-i18n="rq.specTitle">مواصفات المنتج</span></h3>
+            <div class="request-field">
+              <label for="rqName" data-i18n="rq.nameLabel">اسم المنتج أو نوعه *</label>
+              <div class="input-wrapper"><input type="text" id="rqName" required maxlength="120" placeholder="مثال: سماعات بلوتوث لاسلكية" data-i18n-ph="rq.namePh"></div>
+            </div>
+            <div class="request-field">
+              <label for="rqCategory" data-i18n="rq.catLabel">القسم الأقرب للمنتج</label>
+              <div class="select-wrapper">
+                <select id="rqCategory">
+                  <option value="" data-i18n="rq.catAny">مش متأكد / قسم تاني</option>
+                  <option value="electronics" data-i18n="cat.electronics">إلكترونيات</option>
+                  <option value="fashion" data-i18n="cat.fashion">أزياء</option>
+                  <option value="home" data-i18n="cat.home">منزل</option>
+                  <option value="gaming" data-i18n="cat.gaming">ألعاب</option>
+                  <option value="accessories" data-i18n="cat.accessories">إكسسوارات</option>
+                </select>
+                <span class="select-arrow"><svg class="ic" aria-hidden="true"><use href="#i-chevron-down" /></svg></span>
+              </div>
+            </div>
+            <div class="request-row">
+              <div class="request-field">
+                <label for="rqColor" data-i18n="rq.colorLabel">اللون (اختياري)</label>
+                <div class="input-wrapper"><input type="text" id="rqColor" maxlength="60" placeholder="أسود / أبيض..." data-i18n-ph="rq.colorPh"></div>
+              </div>
+              <div class="request-field">
+                <label for="rqSize" data-i18n="rq.sizeLabel">المقاس أو الكمية (اختياري)</label>
+                <div class="input-wrapper"><input type="text" id="rqSize" maxlength="60" placeholder="مثال: 42 أو 3 قطع" data-i18n-ph="rq.sizePh"></div>
+              </div>
+            </div>
+            <div class="request-field">
+              <label for="rqBudget" data-i18n="rq.budgetLabel">ميزانيتك التقريبية (اختياري)</label>
+              <div class="input-wrapper with-icon">
+                <span class="input-icon"><svg class="ic" aria-hidden="true"><use href="#i-wallet" /></svg></span>
+                <input type="number" id="rqBudget" min="0" step="50" placeholder="مثال: 1500" data-i18n-ph="rq.budgetPh">
+              </div>
+            </div>
+            <div class="request-field">
+              <label for="rqSpecs" data-i18n="rq.specsLabel">المواصفات المطلوبة *</label>
+              <div class="input-wrapper"><textarea id="rqSpecs" rows="5" required maxlength="1200" placeholder="اكتب المواصفات بالتفصيل: الخامة، الحجم، الإمكانيات، العلامة التجارية..." data-i18n-ph="rq.specsPh"></textarea></div>
+              <span class="request-hint" data-i18n="rq.specsHint">كل ما كانت التفاصيل أوضح، كل ما قدرنا نجيب لك الأنسب.</span>
+            </div>
+            <div class="request-field">
+              <label for="rqReferences" data-i18n="rq.refLabel">لينك أو صورة مرجعية (اختياري)</label>
+              <div class="input-wrapper"><input type="url" id="rqReferences" maxlength="300" placeholder="https://..." data-i18n-ph="rq.refPh"></div>
+            </div>
+          </div>
+          <div class="request-col">
+            <h3 class="request-col-title"><svg class="ic" aria-hidden="true"><use href="#i-user" /></svg> <span data-i18n="rq.contactTitle">بياناتك والتواصل</span></h3>
+            <div class="request-row">
+              <div class="request-field">
+                <label for="rqContactName" data-i18n="rq.contactNameLabel">الاسم *</label>
+                <div class="input-wrapper"><input type="text" id="rqContactName" required maxlength="80" placeholder="الاسم بالكامل" data-i18n-ph="rq.contactNamePh"></div>
+              </div>
+              <div class="request-field">
+                <label for="rqPhone" data-i18n="rq.phoneLabel">رقم الهاتف *</label>
+                <div class="input-wrapper"><input type="tel" id="rqPhone" required maxlength="20" placeholder="01xxxxxxxxx" data-i18n-ph="rq.phonePh" dir="ltr"></div>
+              </div>
+            </div>
+            <div class="request-field">
+              <label for="rqCity" data-i18n="rq.cityLabel">المحافظة / المدينة *</label>
+              <div class="input-wrapper"><input type="text" id="rqCity" required maxlength="80" placeholder="المحافظة / المدينة" data-i18n-ph="rq.cityPh"></div>
+            </div>
+            <div class="request-field">
+              <label for="rqUrgency" data-i18n="rq.urgencyLabel">محتاجه إمتى؟</label>
+              <div class="select-wrapper">
+                <select id="rqUrgency">
+                  <option value="flexible" data-i18n="rq.urgencyFlexible">مش مستعجل</option>
+                  <option value="soon" data-i18n="rq.urgencySoon">خلال أسبوع</option>
+                  <option value="urgent" data-i18n="rq.urgencyUrgent">مستعجل جدًا</option>
+                </select>
+                <span class="select-arrow"><svg class="ic" aria-hidden="true"><use href="#i-chevron-down" /></svg></span>
+              </div>
+            </div>
+            <div class="request-field">
+              <label for="rqNotes" data-i18n="rq.notesLabel">تفاصيل إضافية (اختياري)</label>
+              <div class="input-wrapper"><textarea id="rqNotes" rows="4" maxlength="600" placeholder="أي ملاحظات تانية تحب تضيفها" data-i18n-ph="rq.notesPh"></textarea></div>
+            </div>
+            <div class="request-summary" id="requestSummary" aria-live="polite">
+              <div class="request-summary-head">
+                <svg class="ic" aria-hidden="true"><use href="#i-check-circle" /></svg>
+                <strong data-i18n="rq.previewTitle">ملخص طلبك</strong>
+              </div>
+              <p class="request-summary-empty" data-i18n="rq.previewEmpty">لسه مفيش بيانات — اكتب اسم المنتج ومواصفاته وهتلاقي الملخص هنا.</p>
+              <ul class="request-summary-list" id="requestSummaryList"></ul>
+            </div>
+            <div class="request-actions">
+              <button type="button" class="primary-btn" id="requestSubmitBtn">
+                <span class="btn-text" data-i18n="rq.cta">ابعت الطلب عبر واتساب</span>
+                <span class="btn-icon"><svg class="ic" aria-hidden="true"><use href="#i-whatsapp" /></svg></span>
+              </button>
+              <button type="button" class="secondary-btn" id="requestSaveBtn">
+                <span class="btn-icon"><svg class="ic" aria-hidden="true"><use href="#i-clipboard" /></svg></span>
+                <span class="btn-text" data-i18n="rq.save">حفظ الطلب</span>
+              </button>
+              <button type="button" class="secondary-btn request-reset-btn" id="requestResetBtn">
+                <span class="btn-icon"><svg class="ic" aria-hidden="true"><use href="#i-close" /></svg></span>
+                <span class="btn-text" data-i18n="rq.reset">تفريغ</span>
+              </button>
+            </div>
+            <p class="request-foot" data-i18n="rq.foot">الطلب مبدئي — بنأكده معاك على واتساب قبل أي دفع. الدفع عند الاستلام.</p>
+          </div>
+        </div>
+      </form>
+      <div class="request-saved" id="requestSavedWrap" hidden>
+        <div class="request-saved-head">
+          <h3><svg class="ic" aria-hidden="true"><use href="#i-clipboard" /></svg> <span data-i18n="rq.savedTitle">طلباتك المحفوظة</span> <em class="request-saved-count" id="requestSavedCount"></em></h3>
+          <button type="button" class="secondary-btn request-clear-saved" id="requestClearSavedBtn">
+            <svg class="ic" aria-hidden="true"><use href="#i-trash" /></svg>
+            <span data-i18n="rq.reset">تفريغ</span>
+          </button>
+        </div>
+        <div class="request-saved-list" id="requestSavedList"></div>
+      </div>
+    </section>
     <section class="newsletter">
       <div class="newsletter-content">
         <span class="section-small" data-i18n="nl.eyebrow">كن أول من يعرف العروض</span>
@@ -526,6 +685,7 @@
         <a href="#products" class="footer-link"><span data-i18n="nav.products">المنتجات</span></a>
         <a href="#offers" class="footer-link"><span data-i18n="nav.offers">العروض</span></a>
         <a href="#reviews" class="footer-link"><span data-i18n="nav.reviews">آراء العملاء</span></a>
+        <a href="#request" class="footer-link"><span data-i18n="nav.request">اطلب منتجك</span></a>
       </div>
       <div class="footer-col">
         <h4 data-i18n="footer.help">المساعدة</h4>
