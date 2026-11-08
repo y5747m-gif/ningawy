@@ -10,7 +10,9 @@ const WHATSAPP_NUMBER = "201500721881";
     admin: "ninjawy_admin_session",
     theme: "ninjawy_theme",
     lang: "ninjawy_lang",
-    offerEnd: "ninjawy_offer_end"
+    offerEnd: "ninjawy_offer_end",
+    requestDraft: "ninjawy_request_draft",
+    requests: "ninjawy_requests"
   };
   const ICON_CHOICES = ["box", "headset", "keyboard", "gamepad", "mouse", "watch", "handbag", "shirt", "lamp", "gift", "bag", "sound"];
 const I18N = {
@@ -24,6 +26,7 @@ const I18N = {
       "nav.products": "المنتجات",
       "nav.offers": "العروض",
       "nav.reviews": "آراء العملاء",
+      "nav.request": "اطلب منتجك",
       "nav.admin": "الإدارة",
       "nav.menu": "القائمة",
       "nav.search": "بحث",
@@ -97,6 +100,77 @@ const I18N = {
       "nl.cta": "اشترك الآن",
       "nl.invalid": "من فضلك اكتب بريدًا إلكترونيًا صحيحًا.",
       "nl.done": "تم الاشتراك بنجاح ✦",
+      "rq.ctaTitle": "مالقيتش الي بتدور عليه؟",
+      "rq.ctaDesc": "اكتبلنا مواصفات المنتج الي محتاجه وإحنا نجيبه لك.",
+      "rq.ctaBtn": "اطلب منتجك",
+      "rq.eyebrow": "اطلب الي محتاجه",
+      "rq.title": "اكتب مواصفات <em>منتجك</em> وإحنا نجيبه",
+      "rq.desc": "مالقيتش الي بتدور عليه؟ اكتب تفاصيل المنتج ومواصفاته وإحنا نرد عليك بالمتاح والسعر ومدة التوصيل.",
+      "rq.step1": "اكتب الطلب",
+      "rq.step1sub": "اسم المنتج وتفاصيله",
+      "rq.step2": "نتواصل معاك",
+      "rq.step2sub": "نأكد السعر والمدة",
+      "rq.step3": "يوصلك لبابك",
+      "rq.step3sub": "وتدفع عند الاستلام",
+      "rq.specTitle": "مواصفات المنتج",
+      "rq.contactTitle": "بياناتك والتواصل",
+      "rq.nameLabel": "اسم المنتج أو نوعه *",
+      "rq.namePh": "مثال: سماعات بلوتوث لاسلكية",
+      "rq.catLabel": "القسم الأقرب للمنتج",
+      "rq.catAny": "مش متأكد / قسم تاني",
+      "rq.colorLabel": "اللون (اختياري)",
+      "rq.colorPh": "أسود / أبيض...",
+      "rq.sizeLabel": "المقاس أو الكمية (اختياري)",
+      "rq.sizePh": "مثال: 42 أو 3 قطع",
+      "rq.budgetLabel": "ميزانيتك التقريبية (اختياري)",
+      "rq.budgetPh": "مثال: 1500",
+      "rq.specsLabel": "المواصفات المطلوبة *",
+      "rq.specsPh": "اكتب المواصفات بالتفصيل: الخامة، الحجم، الإمكانيات، العلامة التجارية...",
+      "rq.specsHint": "كل ما كانت التفاصيل أوضح، كل ما قدرنا نجيب لك الأنسب.",
+      "rq.refLabel": "لينك أو صورة مرجعية (اختياري)",
+      "rq.refPh": "https://...",
+      "rq.contactNameLabel": "الاسم *",
+      "rq.contactNamePh": "الاسم بالكامل",
+      "rq.phoneLabel": "رقم الهاتف *",
+      "rq.phonePh": "01xxxxxxxxx",
+      "rq.cityLabel": "المحافظة / المدينة *",
+      "rq.cityPh": "المحافظة / المدينة",
+      "rq.urgencyLabel": "محتاجه إمتى؟",
+      "rq.urgencyFlexible": "مش مستعجل",
+      "rq.urgencySoon": "خلال أسبوع",
+      "rq.urgencyUrgent": "مستعجل جدًا",
+      "rq.notesLabel": "تفاصيل إضافية (اختياري)",
+      "rq.notesPh": "أي ملاحظات تانية تحب تضيفها",
+      "rq.previewTitle": "ملخص طلبك",
+      "rq.previewEmpty": "لسه مفيش بيانات — اكتب اسم المنتج ومواصفاته وهتلاقي الملخص هنا.",
+      "rq.cta": "ابعت الطلب عبر واتساب",
+      "rq.save": "حفظ الطلب",
+      "rq.reset": "تفريغ",
+      "rq.foot": "الطلب مبدئي — بنأكده معاك على واتساب قبل أي دفع. الدفع عند الاستلام.",
+      "rq.savedTitle": "طلباتك المحفوظة",
+      "rq.savedCount": "{n} طلب",
+      "rq.saved": "تم حفظ الطلب على جهازك",
+      "rq.savedDeleted": "تم حذف الطلب المحفوظ",
+      "rq.savedCleared": "تم حذف كل الطلبات المحفوظة",
+      "rq.needFields": "اكتب اسم المنتج ومواصفاته وبياناتك الأساسية.",
+      "rq.needSpecs": "اكتب مواصفات المنتج المطلوب.",
+      "rq.needContact": "أكمل اسمك ورقم هاتفك والمحافظة.",
+      "rq.opened": "تم فتح واتساب لإرسال الطلب",
+      "rq.resetDone": "تم تفريغ الطلب",
+      "rq.confirmDelete": "هل تريد حذف هذا الطلب المحفوظ؟",
+      "rq.fillBtn": "املأ الطلب",
+      "rq.delete": "حذف",
+      "rq.specs": "المواصفات",
+      "rq.qty": "المقاس / الكمية",
+      "rq.color": "اللون",
+      "rq.budget": "الميزانية",
+      "rq.urgency": "ميعاد الاحتياج",
+      "rq.ref": "مرجع",
+      "rq.notes": "ملاحظات إضافية",
+      "rq.detailsHead": "*تفاصيل الطلب الخاص*",
+      "rq.customerHead": "*بيانات العميل*",
+      "rq.specHead": "*مواصفات المنتج المطلوب*",
+      "rq.thanks": "شكرًا لثقتك في لفة — بنراجع الطلب وهنرد عليك بالمتاح والسعر ✦",
       "footer.about": "لفة يجمع المنتجات المميزة والعروض الحصرية في تجربة تسوق بسيطة وسريعة، بجودة تثق بها.",
       "footer.quick": "روابط سريعة",
       "footer.help": "المساعدة",
@@ -224,6 +298,7 @@ const I18N = {
       "nav.products": "Products",
       "nav.offers": "Deals",
       "nav.reviews": "Reviews",
+      "nav.request": "Request a product",
       "nav.admin": "Admin",
       "nav.menu": "Menu",
       "nav.search": "Search",
@@ -297,6 +372,77 @@ const I18N = {
       "nl.cta": "Subscribe",
       "nl.invalid": "Please enter a valid email address.",
       "nl.done": "Subscribed successfully ✦",
+      "rq.ctaTitle": "Did not find what you need?",
+      "rq.ctaDesc": "Send us the specs of the product you are after and we will source it for you.",
+      "rq.ctaBtn": "Request a product",
+      "rq.eyebrow": "Tell us what you need",
+      "rq.title": "Describe <em>your product</em> and we will find it",
+      "rq.desc": "Could not find what you are looking for? Write down the details and specs, and we will reply with availability, price and delivery time.",
+      "rq.step1": "Write the request",
+      "rq.step1sub": "Product name and details",
+      "rq.step2": "We contact you",
+      "rq.step2sub": "Confirm price and timing",
+      "rq.step3": "Delivered to you",
+      "rq.step3sub": "Pay on delivery",
+      "rq.specTitle": "Product specs",
+      "rq.contactTitle": "Your details",
+      "rq.nameLabel": "Product name or type *",
+      "rq.namePh": "e.g. Wireless Bluetooth headphones",
+      "rq.catLabel": "Closest category",
+      "rq.catAny": "Not sure / another category",
+      "rq.colorLabel": "Color (optional)",
+      "rq.colorPh": "Black / white...",
+      "rq.sizeLabel": "Size or quantity (optional)",
+      "rq.sizePh": "e.g. 42 or 3 pieces",
+      "rq.budgetLabel": "Approximate budget (optional)",
+      "rq.budgetPh": "e.g. 1500",
+      "rq.specsLabel": "Required specs *",
+      "rq.specsPh": "Describe the specs in detail: material, size, features, brand...",
+      "rq.specsHint": "The clearer the details, the better we can source the right item.",
+      "rq.refLabel": "Reference link (optional)",
+      "rq.refPh": "https://...",
+      "rq.contactNameLabel": "Name *",
+      "rq.contactNamePh": "Full name",
+      "rq.phoneLabel": "Phone number *",
+      "rq.phonePh": "01xxxxxxxxx",
+      "rq.cityLabel": "Governorate / city *",
+      "rq.cityPh": "Governorate / city",
+      "rq.urgencyLabel": "When do you need it?",
+      "rq.urgencyFlexible": "No rush",
+      "rq.urgencySoon": "Within a week",
+      "rq.urgencyUrgent": "Urgent",
+      "rq.notesLabel": "Extra details (optional)",
+      "rq.notesPh": "Anything else you would like to add",
+      "rq.previewTitle": "Request summary",
+      "rq.previewEmpty": "No data yet — add the product name and specs and your summary will show up here.",
+      "rq.cta": "Send request via WhatsApp",
+      "rq.save": "Save request",
+      "rq.reset": "Clear",
+      "rq.foot": "This is a preliminary request — we confirm everything on WhatsApp before any payment. Cash on delivery.",
+      "rq.savedTitle": "Your saved requests",
+      "rq.savedCount": "{n} requests",
+      "rq.saved": "Request saved on your device",
+      "rq.savedDeleted": "Saved request deleted",
+      "rq.savedCleared": "All saved requests deleted",
+      "rq.needFields": "Add the product name, specs and your contact details.",
+      "rq.needSpecs": "Please describe the product specs.",
+      "rq.needContact": "Please complete your name, phone and governorate.",
+      "rq.opened": "WhatsApp opened to send your request",
+      "rq.resetDone": "Request cleared",
+      "rq.confirmDelete": "Delete this saved request?",
+      "rq.fillBtn": "Fill request",
+      "rq.delete": "Delete",
+      "rq.specs": "Specs",
+      "rq.qty": "Size / quantity",
+      "rq.color": "Color",
+      "rq.budget": "Budget",
+      "rq.urgency": "Needed by",
+      "rq.ref": "Reference",
+      "rq.notes": "Extra notes",
+      "rq.detailsHead": "*Custom request details*",
+      "rq.customerHead": "*Customer details*",
+      "rq.specHead": "*Product specs requested*",
+      "rq.thanks": "Thank you for trusting LAFFA — we are reviewing your request and will reply with availability and price ✦",
       "footer.about": "Laffa brings curated products and exclusive deals together in a simple, fast shopping experience with quality you can trust.",
       "footer.quick": "Quick links",
       "footer.help": "Help",
@@ -807,6 +953,8 @@ function applyI18n() {
     renderIconPicker();
     syncAdminFormMode();
     updateImagePreview();
+    renderRequestSummary();
+    renderSavedRequests();
   }
   function setLang(next, notify) {
     next = next === "en" ? "en" : "ar";
@@ -1100,6 +1248,200 @@ function checkout() {
       btn.disabled = false;
     }
   }
+  /* ---------- Custom product request page ---------- */
+  const RQ_FIELDS = {
+    name: "#rqName", category: "#rqCategory", color: "#rqColor", size: "#rqSize",
+    budget: "#rqBudget", specs: "#rqSpecs", ref: "#rqReferences",
+    contactName: "#rqContactName", phone: "#rqPhone", city: "#rqCity",
+    urgency: "#rqUrgency", notes: "#rqNotes"
+  };
+  let savedRequests = [];
+  const rawRequests = readStore(KEYS.requests, []);
+  if (Array.isArray(rawRequests)) {
+    savedRequests = rawRequests.filter(r => r && typeof r === "object" && (r.name || r.specs)).map(r => ({
+      id: Number(r.id) || Date.now(),
+      at: r.at || "",
+      name: String(r.name || ""),
+      category: String(r.category || ""),
+      color: String(r.color || ""),
+      size: String(r.size || ""),
+      budget: String(r.budget || ""),
+      specs: String(r.specs || ""),
+      ref: String(r.ref || ""),
+      contactName: String(r.contactName || ""),
+      phone: String(r.phone || ""),
+      city: String(r.city || ""),
+      urgency: String(r.urgency || "flexible"),
+      notes: String(r.notes || "")
+    }));
+  }
+  const rqEl = key => $(RQ_FIELDS[key]);
+  const urgencyLabel = value =>
+    t(value === "urgent" ? "rq.urgencyUrgent" : value === "soon" ? "rq.urgencySoon" : "rq.urgencyFlexible");
+  function readRequestForm() {
+    const data = {};
+    Object.keys(RQ_FIELDS).forEach(key => {
+      const node = rqEl(key);
+      data[key] = node ? String(node.value || "").trim() : "";
+    });
+    return data;
+  }
+  let draftTimer;
+  function saveRequestDraft() {
+    clearTimeout(draftTimer);
+    draftTimer = setTimeout(() => writeStore(KEYS.requestDraft, readRequestForm()), 300);
+  }
+  function restoreRequestDraft() {
+    const draft = readStore(KEYS.requestDraft, null);
+    if (!draft || typeof draft !== "object") return;
+    Object.keys(RQ_FIELDS).forEach(key => {
+      const node = rqEl(key);
+      if (node && typeof draft[key] === "string") node.value = draft[key];
+    });
+  }
+  function renderRequestSummary() {
+    const list = $("#requestSummaryList");
+    if (!list) return;
+    const data = readRequestForm();
+    const rows = [];
+    const add = (label, value) => { if (value) rows.push({ label, value }); };
+    add(t("rq.nameLabel").replace(/\s*\*$/, ""), data.name);
+    add(t("rq.catLabel"), data.category ? catLabel(data.category) : "");
+    add(t("rq.color"), data.color);
+    add(t("rq.qty"), data.size);
+    add(t("rq.budget"), data.budget ? money(data.budget) : "");
+    add(t("rq.urgency"), data.urgency && data.urgency !== "flexible" ? urgencyLabel(data.urgency) : "");
+    add(t("rq.specs"), data.specs);
+    add(t("rq.notes"), data.notes);
+    add(t("rq.ref"), data.ref);
+    list.innerHTML = rows.map(row =>
+      `<li><span>${escapeHTML(row.label)}</span><strong>${escapeHTML(row.value)}</strong></li>`).join("");
+    list.hidden = rows.length === 0;
+    const empty = $("#requestSummary .request-summary-empty");
+    if (empty) empty.hidden = rows.length > 0;
+  }
+  function requestValidation(data) {
+    if (!data.name && !data.specs) return { key: "rq.needFields", target: rqEl("name") };
+    if (!data.name) return { key: "rq.needFields", target: rqEl("name") };
+    if (!data.specs) return { key: "rq.needSpecs", target: rqEl("specs") };
+    if (!data.contactName || !data.phone || !data.city) {
+      const target = !data.contactName ? rqEl("contactName") : !data.phone ? rqEl("phone") : rqEl("city");
+      return { key: "rq.needContact", target };
+    }
+    return null;
+  }
+  function buildRequestMessage(data) {
+    const line = "━━━━━━━━━━━━━━";
+    let msg = `🛍️ ${t("wa.title")} 🛒\n\n${line}\n\n📝 ${t("rq.detailsHead")}\n\n`;
+    msg += `🧑 ${t("wa.name")}: ${data.contactName}\n📱 ${t("wa.phone")}: ${data.phone}\n🏙️ ${t("wa.city")}: ${data.city}\n`;
+    msg += `⏱️ ${t("rq.urgency")}: ${urgencyLabel(data.urgency)}\n\n${line}\n\n📦 ${t("rq.specHead")}\n\n`;
+    msg += `🏷️ ${t("wa.name")}: *${data.name}*\n`;
+    if (data.category) msg += `🗂️ ${t("wa.category")}: ${catLabel(data.category)}\n`;
+    if (data.color) msg += `🎨 ${t("rq.color")}: ${data.color}\n`;
+    if (data.size) msg += `📐 ${t("rq.qty")}: ${data.size}\n`;
+    if (data.budget) msg += `💵 ${t("rq.budget")}: ${money(data.budget)}\n`;
+    msg += `📋 ${t("rq.specs")}: ${data.specs}\n`;
+    if (data.ref) msg += `🔗 ${t("rq.ref")}: ${data.ref}\n`;
+    if (data.notes) msg += `🗒️ ${t("rq.notes")}: ${data.notes}\n`;
+    msg += `\n${line}\n\n🤝 ${t("wa.payment")}: ${t("wa.cod")} 💵\n\n🙏 ${t("rq.thanks")}\n`;
+    return msg;
+  }
+  function sendRequest() {
+    const data = readRequestForm();
+    const problem = requestValidation(data);
+    if (problem) {
+      showToast(t(problem.key), "error");
+      if (problem.target) problem.target.focus();
+      return;
+    }
+    const btn = $("#requestSubmitBtn");
+    const label = btn && btn.querySelector(".btn-text");
+    const original = label ? label.textContent : "";
+    if (label) label.textContent = t("cart.checkingout");
+    if (btn) btn.disabled = true;
+    try {
+      const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(buildRequestMessage(data))}`;
+      const opened = window.open(waUrl, "_blank", "noopener,noreferrer");
+      if (!opened) window.location.href = waUrl;
+      showToast(t("rq.opened"));
+    } finally {
+      if (label) label.textContent = original;
+      if (btn) btn.disabled = false;
+    }
+  }
+  function persistRequests() { writeStore(KEYS.requests, savedRequests); }
+  function saveRequestToList() {
+    const data = readRequestForm();
+    const problem = requestValidation(data);
+    if (problem) {
+      showToast(t(problem.key), "error");
+      if (problem.target) problem.target.focus();
+      return;
+    }
+    savedRequests.unshift(Object.assign({ id: Date.now(), at: new Date().toISOString() }, data));
+    if (savedRequests.length > 20) savedRequests = savedRequests.slice(0, 20);
+    persistRequests();
+    renderSavedRequests();
+    showToast(t("rq.saved"));
+  }
+  function fillRequest(id) {
+    const item = savedRequests.find(r => r.id === id);
+    if (!item) return;
+    Object.keys(RQ_FIELDS).forEach(key => {
+      const node = rqEl(key);
+      if (node) node.value = typeof item[key] === "string" ? item[key] : "";
+    });
+    saveRequestDraft();
+    renderRequestSummary();
+    const form = $("#requestForm");
+    if (form) form.scrollIntoView({ behavior: "smooth", block: "start" });
+    if (rqEl("name")) rqEl("name").focus({ preventScroll: true });
+    showToast(t("rq.saved"));
+  }
+  function deleteSavedRequest(id) {
+    if (!window.confirm(t("rq.confirmDelete"))) return;
+    savedRequests = savedRequests.filter(r => r.id !== id);
+    persistRequests();
+    renderSavedRequests();
+    showToast(t("rq.savedDeleted"));
+  }
+  function resetRequestForm() {
+    const form = $("#requestForm");
+    if (form) form.reset();
+    writeStore(KEYS.requestDraft, {});
+    renderRequestSummary();
+    showToast(t("rq.resetDone"));
+  }
+  function renderSavedRequests() {
+    const wrap = $("#requestSavedWrap");
+    const list = $("#requestSavedList");
+    if (!wrap || !list) return;
+    wrap.hidden = savedRequests.length === 0;
+    const count = $("#requestSavedCount");
+    if (count) count.textContent = t("rq.savedCount", { n: numberFmt().format(savedRequests.length) });
+    list.innerHTML = "";
+    if (!savedRequests.length) return;
+    const fragment = document.createDocumentFragment();
+    savedRequests.forEach(item => {
+      const row = document.createElement("div");
+      row.className = "request-saved-item";
+      const meta = [item.category ? catLabel(item.category) : "", item.size, item.color, urgencyLabel(item.urgency)]
+        .filter(Boolean).join(" · ");
+      const specsPreview = escapeHTML(item.specs).slice(0, 160);
+      row.innerHTML = `
+        <div class="request-saved-info">
+          <strong>${escapeHTML(item.name || t("rq.specs"))}</strong>
+          ${meta ? `<span>${escapeHTML(meta)}</span>` : ""}
+          ${specsPreview ? `<p>${specsPreview}</p>` : ""}
+        </div>
+        <div class="request-saved-actions">
+          <button type="button" class="secondary-btn" data-fill-request="${item.id}">${icon("edit")} ${t("rq.fillBtn")}</button>
+          <button type="button" class="secondary-btn request-delete-btn" data-delete-request="${item.id}">${icon("trash")} ${t("rq.delete")}</button>
+        </div>`;
+      fragment.appendChild(row);
+    });
+    list.appendChild(fragment);
+  }
 let searchTimer;
   function runSearch() {
     const value = el.searchInput.value.trim().toLowerCase();
@@ -1363,6 +1705,31 @@ function bindEvents() {
       cart = []; saveCart(); renderCart(); showToast(t("cart.cleared"));
     });
     $("#checkoutBtn").addEventListener("click", checkout);
+    const requestForm = $("#requestForm");
+    if (requestForm) {
+      requestForm.addEventListener("input", () => { saveRequestDraft(); renderRequestSummary(); });
+      requestForm.addEventListener("change", () => { saveRequestDraft(); renderRequestSummary(); });
+      requestForm.addEventListener("submit", e => { e.preventDefault(); sendRequest(); });
+      $("#requestSubmitBtn").addEventListener("click", sendRequest);
+      $("#requestSaveBtn").addEventListener("click", saveRequestToList);
+      $("#requestResetBtn").addEventListener("click", resetRequestForm);
+      const savedList = $("#requestSavedList");
+      if (savedList) savedList.addEventListener("click", e => {
+        const fillBtn = e.target.closest("[data-fill-request]");
+        if (fillBtn) { fillRequest(Number(fillBtn.dataset.fillRequest)); return; }
+        const delBtn = e.target.closest("[data-delete-request]");
+        if (delBtn) deleteSavedRequest(Number(delBtn.dataset.deleteRequest));
+      });
+      const clearSavedBtn = $("#requestClearSavedBtn");
+      if (clearSavedBtn) clearSavedBtn.addEventListener("click", () => {
+        if (!savedRequests.length) return;
+        if (!window.confirm(t("rq.confirmDelete"))) return;
+        savedRequests = [];
+        persistRequests();
+        renderSavedRequests();
+        showToast(t("rq.savedCleared"));
+      });
+    }
     el.overlay.addEventListener("click", closeActivePanel);
     el.cartItems.addEventListener("click", e => {
       const button = e.target.closest("button");
@@ -1637,7 +2004,10 @@ function init() {
     applyI18n();
     initCountdown();
     initScroll();
+    restoreRequestDraft();
     bindEvents();
+    renderRequestSummary();
+    renderSavedRequests();
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
   else init();
