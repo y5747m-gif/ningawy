@@ -85,6 +85,7 @@ python3 -m http.server 4173
 | Instagram | `https://www.instagram.com/pixelio36/` |
 | Facebook | `https://www.facebook.com/share/1D86vwBYcQ/` |
 | Threads | `https://www.threads.com/@pixelio36` |
+| TikTok | `https://www.tiktok.com/@yaseen.al.omaire` |
 | WhatsApp | `https://wa.me/201500721881` (نفس `WHATSAPP_NUMBER`) |
 
 لو اتغير أي رابط، عدّله مباشرة في `.footer-socials` داخل `index.html`.
