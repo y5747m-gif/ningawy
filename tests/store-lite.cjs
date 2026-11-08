@@ -14,7 +14,7 @@ async function sampleImage(page) {
     const canvas = document.createElement('canvas');
     canvas.width = 1200; canvas.height = 900;
     const ctx = canvas.getContext('2d');
-    ctx.fillStyle = '#FF6B00'; ctx.fillRect(0, 0, 1200, 900);
+    ctx.fillStyle = '#FFB900'; ctx.fillRect(0, 0, 1200, 900);
     ctx.fillStyle = '#fff'; ctx.fillRect(100, 100, 400, 300);
     return canvas.toDataURL('image/png').split(',')[1];
   });
@@ -27,10 +27,10 @@ async function sampleImage(page) {
   assert.ok(payload < 180 * 1024, `core payload too large: ${payload} bytes`);
   const source = ['index.html', 'style.css', 'script.js'].map(f => fs.readFileSync(path.join(ROOT, f), 'utf8')).join('\n');
   assert.ok(!/ننجاوي|نينجا|NINJAWY(?!2026)/.test(source), 'visible legacy branding must be removed');
-  for (const color of ['#FF6B00', '#E65F00', '#111111', '#1A1A1A', '#FFFFFF', '#F5F5F5', '#8A8A8A', '#E5E5E5', '#00C853', '#E53935']) {
+  for (const color of ['#101D45', '#FFB900', '#FFFFFF', '#F4F6FA', '#263653', '#16A36A']) {
     assert.ok(fs.readFileSync(path.join(ROOT, 'style.css'), 'utf8').includes(color), `missing brand color ${color}`);
   }
-  for (const asset of ['sound-souq-mark.svg', 'sound-souq-logo.svg', 'sound-souq-logo-white.svg']) {
+  for (const asset of ['laffa-logo.webp']) {
     assert.ok(fs.existsSync(path.join(ROOT, 'assets', asset)), `missing logo asset ${asset}`);
   }
 
@@ -61,11 +61,11 @@ async function sampleImage(page) {
       assert.equal(await page.locator('canvas, .page-loader, .cursor-dot, .cursor-ring, .bg-stack, .cart-flight').count(), 0);
       assert.equal(await page.locator('.hero-visual').count(), 1);
       assert.equal(await page.locator('.hero-visual').getAttribute('aria-hidden'), 'true');
-      assert.equal(await page.locator('.brand-mark use').getAttribute('href'), '#i-brand');
-      assert.equal(await page.locator('#whyTitle').textContent(), 'لماذا ساوند سوق؟');
+      assert.equal(await page.locator('.brand-mark img').getAttribute('src'), 'assets/laffa-logo.webp');
+      assert.equal(await page.locator('#whyTitle').textContent(), 'لماذا لفة؟');
       assert.equal(await page.locator('.product-stock').count(), 9);
       assert.equal(await page.locator('.product-badge').first().textContent(), 'أصلي');
-      assert.equal(await page.locator('.footer-logo').getAttribute('src'), 'assets/sound-souq-logo-white.svg');
+      assert.equal(await page.locator('.footer-logo').getAttribute('src'), 'assets/laffa-logo.webp');
       const brandStyles = await page.evaluate(() => {
         const css = el => getComputedStyle(el);
         return {
@@ -77,7 +77,7 @@ async function sampleImage(page) {
           cart: css(document.querySelector('.add-btn')).backgroundColor
         };
       });
-      assert.deepEqual(brandStyles, { body: 'rgb(255, 255, 255)', nav: 'rgb(17, 17, 17)', why: 'rgb(26, 26, 26)', cta: 'rgb(255, 107, 0)', ctaText: 'rgb(17, 17, 17)', cart: 'rgb(17, 17, 17)' });
+      assert.deepEqual(brandStyles, { body: 'rgb(255, 255, 255)', nav: 'rgb(16, 29, 69)', why: 'rgb(38, 54, 83)', cta: 'rgb(255, 185, 0)', ctaText: 'rgb(16, 29, 69)', cart: 'rgb(255, 185, 0)' });
       assert.equal(await page.locator('html').getAttribute('dir'), 'rtl');
       assert.equal(await page.locator('#cartPanel').isHidden(), true);
       await page.waitForTimeout(350);
@@ -151,7 +151,7 @@ async function sampleImage(page) {
       // Language and theme persist.
       await page.locator('.lang-opt[data-lang="en"]').click();
       assert.equal(await page.locator('html').getAttribute('dir'), 'ltr');
-      assert.equal(await page.title(), 'SOUND SOUQ — Shop with confidence');
+      assert.equal(await page.title(), 'LAFFA — Shop with confidence');
       assert.equal(await page.locator('.product-info h3').first().textContent(), 'Pro Wireless Headphones');
       await page.locator('#themeToggle').click();
       assert.equal(await page.locator('html').getAttribute('data-theme'), 'dark');
