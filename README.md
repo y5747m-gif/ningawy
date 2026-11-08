@@ -76,6 +76,19 @@ python3 -m http.server 4173
 
 أُبقيت مفاتيح التخزين الداخلية `ninjawy_*` وكلمة المرور الافتراضية `NINJAWY2026` كما هي عمدًا حتى لا تفقد السلة/المفضلة/المنتجات/السمة/اللغة المحفوظة سابقًا. الاسم الظاهر للعلامة هو **لفة | LAFFA** فقط. غيّر كلمة المرور قبل النشر الفعلي.
 
+### حسابات التواصل
+
+أزرار السوشيال في الفوتر بتفتح في تاب جديد بـ `rel="noopener"`:
+
+| الحساب | الرابط |
+|---|---|
+| Instagram | `https://www.instagram.com/pixelio36/` |
+| Facebook | `https://www.facebook.com/share/1D86vwBYcQ/` |
+| Threads | `https://www.threads.com/@pixelio36` |
+| WhatsApp | `https://wa.me/201500721881` (نفس `WHATSAPP_NUMBER`) |
+
+لو اتغير أي رابط، عدّله مباشرة في `.footer-socials` داخل `index.html`.
+
 ### بيانات صفحة الطلب
 
 - `localStorage.ninjawy_request_draft` — مسودة الطلب أثناء الكتابة (تُستعاد عند الرجوع للصفحة).
