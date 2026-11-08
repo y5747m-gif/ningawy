@@ -15,9 +15,9 @@ const WHATSAPP_NUMBER = "201500721881";
   const ICON_CHOICES = ["box", "headset", "keyboard", "gamepad", "mouse", "watch", "handbag", "shirt", "lamp", "gift", "bag", "sound"];
 const I18N = {
     ar: {
-      "meta.title": "ساوند سوق | SOUND SOUQ — تسوّق بوضوح وثقة",
-      "meta.description": "ساوند سوق - منتجات مختارة وعروض حصرية بتجربة خفيفة وسريعة، توصيل لكل المحافظات ودفع عند الاستلام.",
-      "brand.name": "ساوند سوق",
+      "meta.title": "لفة | LAFFA — تسوّق بوضوح وثقة",
+      "meta.description": "لفة - منتجات مختارة وعروض حصرية بتجربة خفيفة وسريعة، توصيل لكل المحافظات ودفع عند الاستلام.",
+      "brand.name": "لفة",
                         "marquee.3": "توصيل لكل المحافظات · دفع عند الاستلام",
       "nav.home": "الرئيسية",
       "nav.categories": "الأقسام",
@@ -29,14 +29,14 @@ const I18N = {
       "nav.search": "بحث",
       "nav.cart": "سلة المشتريات",
       "nav.theme": "تبديل بين الوضع الداكن والفاتح",
-      "hero.badge": "تجربة تسوق خفيفة واحترافية",
-      "hero.title1": "كل ما تحتاجه...",
-      "hero.title2": "تجده في ساوند سوق",
+      "hero.badge": "لفة للتوصيل السريع",
+      "hero.title1": "مش تدور...",
+      "hero.title2": "إحنا نجيّبلك!",
       "hero.desc": "متجر حديث يجمع لك المنتجات المميزة والعروض الحصرية وتجربة تسوق سريعة وسهلة في مكان واحد.",
       "hero.cta1": "تسوق الآن",
       "hero.cta2": "اكتشف العروض",
                                           
-      "why.title": "لماذا ساوند سوق؟",
+      "why.title": "لماذا لفة؟",
       "why.sub": "تسوّق واضح، سريع، وبدون تعقيد",
       "trust.1.title": "شحن سريع", "trust.1.sub": "لكل المحافظات",
       "trust.2.title": "ضمان الجودة", "trust.2.sub": "منتجات أصلية 100%",
@@ -47,7 +47,7 @@ const I18N = {
       "stats.3": "متوسط التقييم",
       "stats.4": "دعم مستمر",
       "cat.eyebrow": "استكشف المتجر",
-      "cat.title": "أقسام <em>ساوند سوق</em>",
+      "cat.title": "أقسام <em>لفة</em>",
       "cat.desc": "تسوّق حسب القسم واختار ما يناسبك في ثوانٍ.",
       "cat.all": "كل المنتجات",
       "cat.electronics": "إلكترونيات",
@@ -55,7 +55,7 @@ const I18N = {
       "cat.home": "منزل",
       "cat.gaming": "ألعاب",
       "cat.accessories": "إكسسوارات",
-      "prod.eyebrow": "مختارات ساوند سوق",
+      "prod.eyebrow": "مختارات لفة",
       "prod.title": "أحدث <em>المنتجات</em>",
       "prod.showAll": "عرض الكل",
       "prod.addToCart": "أضف للسلة",
@@ -83,7 +83,7 @@ const I18N = {
       
       "rev.eyebrow": "آراء العملاء",
       "rev.title": "ثقة <em>تستحقها</em>",
-      "rev.desc": "تجارب حقيقية من عملاء اشتروا من ساوند سوق.",
+      "rev.desc": "تجارب حقيقية من عملاء اشتروا من لفة.",
       "rev.1.text": "الطلب وصل في يومين والتغليف ممتاز، والتعامل كان محترم جدًا.",
       "rev.1.name": "محمود عادل", "rev.1.role": "القاهرة",
       "rev.2.text": "أحسن حاجة إن الدفع عند الاستلام، فحصت المنتج قبل ما أدفع.",
@@ -91,13 +91,13 @@ const I18N = {
       "rev.3.text": "الأسعار منافسة والجودة أعلى من المتوقع، هرجع أشتري تاني أكيد.",
       "rev.3.name": "أحمد سمير", "rev.3.role": "المنصورة",
       "nl.eyebrow": "كن أول من يعرف العروض",
-      "nl.title": "انضم إلى مجتمع <em>ساوند سوق</em>",
+      "nl.title": "انضم إلى مجتمع <em>لفة</em>",
       "nl.desc": "رسالة واحدة أسبوعيًا بأهم العروض والمنتجات الجديدة — بدون إزعاج.",
       "nl.placeholder": "اكتب بريدك الإلكتروني",
       "nl.cta": "اشترك الآن",
       "nl.invalid": "من فضلك اكتب بريدًا إلكترونيًا صحيحًا.",
       "nl.done": "تم الاشتراك بنجاح ✦",
-      "footer.about": "ساوند سوق يجمع المنتجات المميزة والعروض الحصرية في تجربة تسوق بسيطة وسريعة، بجودة تثق بها.",
+      "footer.about": "لفة يجمع المنتجات المميزة والعروض الحصرية في تجربة تسوق بسيطة وسريعة، بجودة تثق بها.",
       "footer.quick": "روابط سريعة",
       "footer.help": "المساعدة",
       "footer.contact": "تواصل معنا",
@@ -108,10 +108,10 @@ const I18N = {
       "footer.privacy": "سياسة الخصوصية",
       "footer.address": "مصر — توصيل لكل المحافظات",
       "footer.hours": "يوميًا من 10 صباحًا حتى 12 منتصف الليل",
-      "footer.rights": "© 2026 SOUND SOUQ — جميع الحقوق محفوظة",
+      "footer.rights": "© 2026 LAFFA — جميع الحقوق محفوظة",
       "footer.dev": "تطوير <strong>yaseen amr abd el rahem</strong>",
       "cart.label": "سلة المشتريات",
-      "cart.title": "حقيبة ساوند سوق",
+      "cart.title": "حقيبة لفة",
       "cart.empty": "حقيبتك فارغة حاليًا",
       "cart.emptyHint": "أضف منتجات من المتجر وابدأ طلبك في ثوانٍ.",
       "cart.summary": "{n} منتج · إجمالي {total}",
@@ -191,7 +191,7 @@ const I18N = {
       "common.theme.dark": "الوضع الداكن مفعّل",
       "common.theme.light": "الوضع الفاتح مفعّل",
       "common.lang": "تم التبديل إلى العربية",
-      "wa.title": "*طلب جديد من متجر ساوند سوق | SOUND SOUQ*",
+      "wa.title": "*طلب جديد من متجر لفة | LAFFA*",
       "wa.customer": "*بيانات العميل*",
       "wa.name": "الاسم",
       "wa.phone": "رقم الهاتف",
@@ -212,12 +212,12 @@ const I18N = {
       "wa.payment": "طريقة الدفع",
       "wa.cod": "الدفع عند الاستلام",
       "wa.total": "*الإجمالي النهائي*",
-      "wa.thanks": "شكرًا لاختيارك ساوند سوق — سيتم التواصل معك لتأكيد الطلب ✦"
+      "wa.thanks": "شكرًا لاختيارك لفة — سيتم التواصل معك لتأكيد الطلب ✦"
     },
     en: {
-      "meta.title": "SOUND SOUQ — Shop with confidence",
-      "meta.description": "SOUND SOUQ - a lightweight storefront with hand-picked products, exclusive deals, nationwide delivery and cash on delivery.",
-      "brand.name": "Sound Souq",
+      "meta.title": "LAFFA — Shop with confidence",
+      "meta.description": "LAFFA - a lightweight storefront with hand-picked products, exclusive deals, nationwide delivery and cash on delivery.",
+      "brand.name": "Laffa",
                         "marquee.3": "Nationwide delivery · Cash on delivery",
       "nav.home": "Home",
       "nav.categories": "Categories",
@@ -229,14 +229,14 @@ const I18N = {
       "nav.search": "Search",
       "nav.cart": "Shopping bag",
       "nav.theme": "Toggle dark / light mode",
-      "hero.badge": "A lightweight, professional store",
-      "hero.title1": "Everything you need...",
-      "hero.title2": "found at SOUND SOUQ",
+      "hero.badge": "Laffa fast delivery",
+      "hero.title1": "No need to search...",
+      "hero.title2": "We bring it to you!",
       "hero.desc": "A modern store that brings you curated products, exclusive deals and a fast, effortless shopping experience — all in one place.",
       "hero.cta1": "Shop now",
       "hero.cta2": "Explore deals",
                                           
-      "why.title": "Why Sound Souq?",
+      "why.title": "Why Laffa?",
       "why.sub": "Clear, fast and effortless shopping",
       "trust.1.title": "Fast shipping", "trust.1.sub": "To every governorate",
       "trust.2.title": "Quality guaranteed", "trust.2.sub": "100% authentic products",
@@ -255,7 +255,7 @@ const I18N = {
       "cat.home": "Home",
       "cat.gaming": "Gaming",
       "cat.accessories": "Accessories",
-      "prod.eyebrow": "Sound Souq picks",
+      "prod.eyebrow": "Laffa picks",
       "prod.title": "Latest <em>products</em>",
       "prod.showAll": "Show all",
       "prod.addToCart": "Add to bag",
@@ -283,7 +283,7 @@ const I18N = {
       
       "rev.eyebrow": "Customer reviews",
       "rev.title": "Trust <em>earned</em>",
-      "rev.desc": "Real experiences from customers who shopped with Sound Souq.",
+      "rev.desc": "Real experiences from customers who shopped with Laffa.",
       "rev.1.text": "My order arrived in two days, packaging was excellent and the service was respectful.",
       "rev.1.name": "Mahmoud Adel", "rev.1.role": "Cairo",
       "rev.2.text": "Cash on delivery is the best part — I inspected the product before paying.",
@@ -291,13 +291,13 @@ const I18N = {
       "rev.3.text": "Great prices and better quality than expected. I'll definitely order again.",
       "rev.3.name": "Ahmed Samir", "rev.3.role": "Mansoura",
       "nl.eyebrow": "Be the first to know",
-      "nl.title": "Join the <em>SOUND SOUQ</em> community",
+      "nl.title": "Join the <em>LAFFA</em> community",
       "nl.desc": "One email a week with the best deals and new arrivals — no spam, ever.",
       "nl.placeholder": "Enter your email address",
       "nl.cta": "Subscribe",
       "nl.invalid": "Please enter a valid email address.",
       "nl.done": "Subscribed successfully ✦",
-      "footer.about": "Sound Souq brings curated products and exclusive deals together in a simple, fast shopping experience with quality you can trust.",
+      "footer.about": "Laffa brings curated products and exclusive deals together in a simple, fast shopping experience with quality you can trust.",
       "footer.quick": "Quick links",
       "footer.help": "Help",
       "footer.contact": "Get in touch",
@@ -308,10 +308,10 @@ const I18N = {
       "footer.privacy": "Privacy policy",
       "footer.address": "Egypt — delivery to all governorates",
       "footer.hours": "Daily from 10 AM to 12 midnight",
-      "footer.rights": "© 2026 SOUND SOUQ — All rights reserved",
+      "footer.rights": "© 2026 LAFFA — All rights reserved",
       "footer.dev": "Developed by <strong>yaseen amr abd el rahem</strong>",
       "cart.label": "Shopping bag",
-      "cart.title": "Sound Souq bag",
+      "cart.title": "Laffa bag",
       "cart.empty": "Your bag is empty",
       "cart.emptyHint": "Add products from the store and checkout in seconds.",
       "cart.summary": "{n} items · total {total}",
@@ -391,7 +391,7 @@ const I18N = {
       "common.theme.dark": "Dark mode enabled",
       "common.theme.light": "Light mode enabled",
       "common.lang": "Switched to English",
-      "wa.title": "*New order from SOUND SOUQ store*",
+      "wa.title": "*New order from LAFFA store*",
       "wa.customer": "*Customer details*",
       "wa.name": "Name",
       "wa.phone": "Phone",
@@ -412,7 +412,7 @@ const I18N = {
       "wa.payment": "Payment method",
       "wa.cod": "Cash on delivery",
       "wa.total": "*Grand total*",
-      "wa.thanks": "Thank you for choosing SOUND SOUQ — we will contact you shortly to confirm ✦"
+      "wa.thanks": "Thank you for choosing LAFFA — we will contact you shortly to confirm ✦"
     }
   };
   let lang = "ar";
@@ -474,8 +474,8 @@ const CATEGORIES = ["all", "electronics", "fashion", "home", "gaming", "accessor
     },
     {
       id: 9, category: "accessories", icon: "gift", price: 599, oldPrice: 0, rating: 4.9, sold: 95,
-      ar: { name: "صندوق هدايا ساوند سوق", desc: "تشكيلة مفاجآت مختارة بعناية تصلك في صندوق أنيق." },
-      en: { name: "Sound Souq Gift Box", desc: "A hand-picked surprise set delivered in a premium box." }
+      ar: { name: "صندوق هدايا لفة", desc: "تشكيلة مفاجآت مختارة بعناية تصلك في صندوق أنيق." },
+      en: { name: "Laffa Gift Box", desc: "A hand-picked surprise set delivered in a premium box." }
     }
   ];
   function normalizeProduct(p) {
@@ -536,7 +536,7 @@ const AR_PHRASES = (
     "ذراع تحكم لاسلكي:Wireless Gaming Controller|ماوس العاب لاسلكي:Wireless Gaming Mouse|" +
     "ساعة ذكية انيقة:Elegant Smart Watch|حقيبة عصرية مميزة:Modern Everyday Tote|" +
     "تيشيرت قطن بريميوم:Premium Cotton Tee|مصباح ذكي متعدد الالوان:Smart Multi-Color Lamp|" +
-    "صندوق هدايا ساوند سوق:Sound Souq Gift Box|ساوند سوق:Sound Souq|منتج اختبار:Test Product|وصف اختبار:Test Description|" +
+    "صندوق هدايا ساوند سوق:Sound Souq Gift Box|ساوند سوق:Sound Souq|صندوق هدايا لفة:Laffa Gift Box|لفة:Laffa|منتج اختبار:Test Product|وصف اختبار:Test Description|" +
     "عزل للضوضاء:noise isolation|عزل الضوضاء:noise isolation|مانع للضوضاء:noise cancelling|" +
     "للاستخدام اليومي:for everyday use|الاستخدام اليومي:daily use|سريعة الاستجابة:fast-response|سريع الاستجابة:fast-response|" +
     "قابلة للتخصيص بالكامل:fully customizable|قابلة للتخصيص:customizable|لكل انواع الالعاب:for all types of games|" +
